@@ -18,6 +18,7 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.23.1",
     "frontmatter-markdown-loader": "^2.0.0"
   }
 }
