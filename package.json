@@ -6,7 +6,13 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export",
+    "cache-cards":"node scripts/cache.js"
+  },
+  "husky":{
+    "hooks": {
+      "pre-commit":"yarn cache-cards"
+    }
   },
   "repository": {
     "type": "git",
@@ -43,6 +49,7 @@
     "eslint": "^8.23.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "frontmatter-markdown-loader": "^3.7.0",
+    "husky": "^8.0.1",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",

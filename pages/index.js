@@ -6,6 +6,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import { attributes, react as HomeContent } from '../content/home.md';
+import Search from '@/components/search/Search';
 
 const Home = ({ slugs }) => {
   let { title, cats } = attributes;
@@ -20,7 +21,7 @@ const Home = ({ slugs }) => {
         <h1>{title}</h1>
 
         <HomeContent />
-
+        <Search />
         <ul>
           {cats.map((cat, k) => (
             <li key={k}>
