@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script';
 
 import { attributes, react as HomeContent } from '../content/home.md';
 
@@ -10,9 +9,8 @@ const Home = () => {
     <>
       <Head>
         <title>Home Page</title>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
-
-      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
       <article>
         <h1>{title}</h1>
