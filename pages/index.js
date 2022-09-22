@@ -30,7 +30,7 @@ const Home = ({ slugs }) => {
           ))}
         </ul>
         <h2 className="mt-12 text-center font-bold">Ссылки</h2>
-        <ul className=" list-inside list-disc text-center">
+        <ul className="mx-auto mt-4 max-w-lg list-inside list-disc ">
           {slugs.map((slug, idx) => (
             <li key={idx}>
               <Link href={`/${slug.href}`}>

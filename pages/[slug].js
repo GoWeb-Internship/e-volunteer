@@ -13,13 +13,13 @@ const Page = ({ contents, data }) => {
         <title>{data.title}</title>
       </Head>
       <h1 className="mb-8 text-center text-2xl font-bold">{data.title}</h1>
-      <div className=" prose mx-auto max-w-5xl prose-a:text-blue-600">
+      <div className="prose mx-auto max-w-5xl prose-a:text-blue-600">
         <ReactMarkdown>{contents}</ReactMarkdown>
       </div>
       {data.links && (
         <h2 className="mt-8 text-center text-xl font-bold">Ссылки</h2>
       )}
-      <ul className="mt-4 list-inside list-disc text-center">
+      <ul className="mx-auto mt-4 max-w-xl list-inside list-disc">
         {data.links?.map((link, idx) => (
           <li key={idx}>
             <a
