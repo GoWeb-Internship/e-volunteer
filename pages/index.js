@@ -17,12 +17,6 @@ const Home = () => {
 
         <HomeContent />
 
-        <input type="email" class="form-input rounded-full px-4 py-3" />
-
-        <select class="form-select rounded-full px-4 py-3"></select>
-
-        <input type="checkbox" class="form-checkbox rounded text-pink-500" />
-
         <ul>
           {cats.map((cat, k) => (
             <li key={k}>
