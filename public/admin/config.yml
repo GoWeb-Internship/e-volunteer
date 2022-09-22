@@ -21,3 +21,17 @@ collections:
             fields:
               - { label: 'Name', name: 'name', widget: 'string' }
               - { label: 'Description', name: 'description', widget: 'text' }
+  - name: 'card'
+    label: 'Card'
+    folder: 'content/cards'
+    slug: '{{title}}'
+    identifier_field: title
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Links'
+        name: 'links'
+        widget: list
+        fields:
+          - { label: 'Href', name: 'href', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
