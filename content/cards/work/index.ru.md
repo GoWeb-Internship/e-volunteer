@@ -1,6 +1,7 @@
 ---
 title: Работа
 date: 2022-09-20
+language: ru
 links:
   - description: портал по поиску работы cv.ee
     href: https://cv.ee/ru/ 

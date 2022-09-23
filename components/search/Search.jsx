@@ -1,11 +1,13 @@
 import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Search() {
   const searchRef = useRef(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
+  const { locale } = useRouter();
 
   const searchEndpoint = query => `/api/search?q=${query}`;
 
@@ -50,13 +52,17 @@ export default function Search() {
       />
       {active && results.length > 0 && (
         <ul className="absolute top-full left-0 right-0 mt-2 truncate">
-          {results.map(({ id, title }) => (
-            <li className="mb-4 bg-slate-500 p-4 text-slate-50" key={id}>
-              <Link href="/[id]" as={`/${id}`}>
-                <a>{title}</a>
-              </Link>
-            </li>
-          ))}
+          {results.map(({ id, title, language }) => {
+            return (
+              locale === language && (
+                <li className="mb-4 bg-slate-500 p-4 text-slate-50" key={title}>
+                  <Link href="/[id]" as={`/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                </li>
+              )
+            );
+          })}
         </ul>
       )}
     </div>

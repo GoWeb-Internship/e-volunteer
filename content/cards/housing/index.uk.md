@@ -1,6 +1,7 @@
 ---
 title: Житло
 date: 2022-09-10
+language: uk
 links:
   - description: Пошук житла
     href: https://kinnisvara24.delfi.ee/ru/ukraini 
