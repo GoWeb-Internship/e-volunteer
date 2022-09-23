@@ -7,34 +7,43 @@ public_folder: '/img'
 collections:
   - name: 'cards'
     label: 'Cards'
-    folder: 'content/cards'
+    folder: 'content'
     identifier_field: title
+    path: '{{slug}}/cards'
     create: true
     nested:
       depth: 100
       summary: '{{title}}'
     fields:
-      - {
-          label: 'Group identifier',
-          name: 'fieldIdName',
-          widget: 'hidden',
-          default: 'index',
-        }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'date' }
-      - {
-          label: 'Language',
-          name: 'language',
-          widget: 'select',
-          options: ['ru', 'uk'],
-        }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'Links'
-        name: 'links'
-        widget: list
-        fields:
-          - { label: 'Href', name: 'href', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'text' }
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    # fields:
+    #   - {
+    #       label: 'Group identifier',
+    #       name: 'fieldIdName',
+    #       widget: 'hidden',
+    #       default: 'index',
+    #     }
+    #   - { label: 'Title', name: 'title', widget: 'string' }
+    #   - { label: 'Date', name: 'date', widget: 'date' }
+    #   - {
+    #       label: 'Language',
+    #       name: 'language',
+    #       widget: 'select',
+    #       options: ['ru', 'uk'],
+    #     }
+    #   - { label: 'Body', name: 'body', widget: 'markdown' }
+    #   - label: 'Links'
+    #     name: 'links'
+    #     widget: list
+    #     fields:
+    #       - { label: 'Href', name: 'href', widget: 'string' }
+    #       - { label: 'Description', name: 'description', widget: 'text' }
 
   # - name: 'pages'
   #   label: 'Pages'
