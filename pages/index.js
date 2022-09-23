@@ -28,7 +28,9 @@ const Home = ({ slugs }) => {
             </li>
           ))}
         </ul>
+
         <h2 className="mt-12 text-center font-bold">Ссылки</h2>
+
         <ul className="mx-auto mt-4 max-w-lg list-inside list-disc ">
           {slugs.map((slug, idx) => (
             <li key={idx}>
@@ -42,6 +44,7 @@ const Home = ({ slugs }) => {
     </>
   );
 };
+
 export const getStaticProps = async ({ locale }) => {
   const slugs = getSortedCardData(locale);
   return {
