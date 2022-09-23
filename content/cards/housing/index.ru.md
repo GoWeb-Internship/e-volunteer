@@ -1,5 +1,7 @@
 ---
 title: Жилье
+date: 2022-09-10
+language: ru
 links:
   - description: поиск жилья
     href: https://kinnisvara24.delfi.ee/ru/ukraini 

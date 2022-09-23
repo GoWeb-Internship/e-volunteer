@@ -1,7 +1,8 @@
 import '../styles/index.css';
+import { appWithTranslation } from 'next-i18next';
 
 const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

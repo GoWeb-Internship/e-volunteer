@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
 import { attributes, react as HomeContent } from '../content/home.md';
 import Search from '@/components/search/Search';
+import { getSortedCardData } from '@/lib/cards';
 
 const Home = ({ slugs }) => {
   let { title, cats } = attributes;
@@ -44,15 +42,8 @@ const Home = ({ slugs }) => {
     </>
   );
 };
-export const getStaticProps = async () => {
-  const files = fs.readdirSync('content/cards');
-  const slugs = files.map(filename => {
-    const href = filename.replace('.md', '');
-    const title = matter(fs.readFileSync(path.join('content/cards/', filename)))
-      .data.title;
-    return { title, href };
-  });
-
+export const getStaticProps = async ({ locale }) => {
+  const slugs = getSortedCardData(locale);
   return {
     props: {
       slugs,

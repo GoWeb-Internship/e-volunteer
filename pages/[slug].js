@@ -1,10 +1,9 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 
 import Head from 'next/head';
+import { getAllCardsPath, getCardData } from '@/lib/cards';
+import { data } from 'autoprefixer';
 
 const Page = ({ contents, data }) => {
   return (
@@ -36,26 +35,18 @@ const Page = ({ contents, data }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync('content/cards');
+export const getStaticPaths = async ({ locales }) => {
+  const paths = getAllCardsPath(locales);
   return {
-    paths: files.map(filename => ({
-      params: {
-        slug: filename.replace('.md', ''),
-      },
-    })),
+    paths,
     fallback: false,
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
-  const markdown = fs.readFileSync(path.join('content/cards', slug + '.md'));
-  const parsedMarkdown = matter(markdown);
+export const getStaticProps = async ({ params: { slug }, locale }) => {
+  const data = getCardData(slug, locale);
   return {
-    props: {
-      contents: parsedMarkdown.content,
-      data: parsedMarkdown.data,
-    },
+    props: data,
   };
 };
 export default Page;
