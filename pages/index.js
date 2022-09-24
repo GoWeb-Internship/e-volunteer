@@ -6,6 +6,7 @@ import { attributes, react as HomeContent } from '../content/home.md';
 import Search from '@/components/search/Search';
 import { getSortedCardData } from '@/lib/cards';
 
+
 const Home = ({ slugs }) => {
   let { title, cats } = attributes;
   return (
@@ -17,7 +18,6 @@ const Home = ({ slugs }) => {
 
       <article>
         <h1>{title}</h1>
-
         <HomeContent />
         <Search />
         <ul>

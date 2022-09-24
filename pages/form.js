@@ -6,7 +6,7 @@ import sendMessageToTg from '../services/telegramApi';
 import TextField from "@material-ui/core/TextField";
 import useFormPersist from 'react-hook-form-persist'
 
- 
+
 
 export default function form() {
 
@@ -20,7 +20,6 @@ export default function form() {
         cellphone: yup.string().required("поле обовязкове для заповнення").required("Поле обов'язкове для заповнення")
         .min(9, 'Мінімальна кількість символів 9')
         .max(18, 'Максимальна кількість символів 18'),    
-        offers: yup.string().required("поле обовязкове для заповнення")
       });
     
       const {
@@ -33,11 +32,11 @@ export default function form() {
         resolver: yupResolver(formSchema)
       });
 
-      useFormPersist("storageKey", {
-        watch, 
-        setValue,
-      });
-      useFormPersist ( 'form' ,  { watch , setValue } ) ;
+    //   useFormPersist("storageKey", {
+    //     watch, 
+    //     setValue,
+    //   });
+    //   useFormPersist ( 'form' ,  { watch , setValue } ) ;
 
       const onSubmit =  (data) => {
         console.log(data)
@@ -70,17 +69,17 @@ export default function form() {
       <div className="container">
       <h2>Form</h2>
       <form className="form" method="POST" onSubmit={handleSubmit(onSubmit)}>
-        <TextField label="Имя" className="input-custom"  {...register("name")} />
+        <TextField label="Имя"   {...register("name")} />
         {errors.name?.message}
-        <TextField label="Фамилия" className="input-custom" {...register("last")} />
+        <TextField label="Фамилия"  {...register("last")} />
         {errors.name?.message}
-        <TextField label="+380" className="input-custom"  {...register("cellphone")} />
+        <TextField label="+380"   {...register("cellphone")} />
         {errors.cellphone?.message}
         <TextField label="Email" className="input-custom" {...register("email")} />
         {errors.email?.message}
         <TextField label="Текст" className="input-custom" {...register("address")} />
         {errors.offers?.message}
-        <button className='btn' type="submit">Відправити</button>
+        <button className='btn' type="submit" >Відправити</button>
       </form>
     </div>
     </div>
