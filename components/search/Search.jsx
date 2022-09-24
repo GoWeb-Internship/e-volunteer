@@ -14,6 +14,7 @@ export default function Search() {
   const onChange = useCallback(event => {
     const query = event.target.value;
     setQuery(query);
+
     if (query.length) {
       fetch(searchEndpoint(query))
         .then(res => res.json())
@@ -50,6 +51,7 @@ export default function Search() {
         type="text"
         value={query}
       />
+
       {active && results.length > 0 && (
         <ul className="absolute top-full left-0 right-0 mt-2 truncate">
           {results.map(({ id, title, language }) => {
@@ -57,7 +59,10 @@ export default function Search() {
               locale === language && (
                 <li className="mb-4 bg-slate-500 p-4 text-slate-50" key={title}>
                   <Link href="/[id]" as={`/${id}`}>
-                    <a>{title}</a>
+                    <a>
+                      {title}
+                      <span>some text</span>
+                    </a>
                   </Link>
                 </li>
               )

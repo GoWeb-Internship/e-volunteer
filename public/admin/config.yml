@@ -3,35 +3,59 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'static/img'
 public_folder: '/img'
+
 collections:
-  - name: 'pages'
-    label: 'Pages'
-    files:
-      - label: 'Home'
-        name: 'home'
-        file: 'content/home.md'
-        slug: '{{test}}'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-          - label: 'Cats'
-            name: 'cats'
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string' }
-              - { label: 'Description', name: 'description', widget: 'text' }
-  - name: 'card'
-    label: 'Card'
+  - name: 'cards'
+    label: 'Cards'
     folder: 'content/cards'
-    slug: '{{title}}'
-    identifier_field: title
+    identifier_field: 'cards'
+    create: true
+    nested: { depth: 100, summary: '{{index}}' }
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'Links'
-        name: 'links'
-        widget: list
-        fields:
-          - { label: 'Href', name: 'href', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'text' }
+      - label: Title
+        name: 'title'
+        widget: string
+        meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+        folder: '{{index}}/index'
+        path: '{{slug}}/index'
+        # fields:
+        #   - {
+        #       label: 'Group identifier',
+        #       name: 'fieldIdName',
+        #       widget: 'hidden',
+        #       default: 'index',
+        #     }
+        #   - { label: 'Title', name: 'title', widget: 'string' }
+        #   - { label: 'Date', name: 'date', widget: 'date' }
+        #   - {
+        #       label: 'Language',
+        #       name: 'language',
+        #       widget: 'select',
+        #       options: ['ru', 'uk'],
+        #     }
+        #   - { label: 'Body', name: 'body', widget: 'markdown' }
+        #   - label: 'Links'
+        #     name: 'links'
+        #     widget: list
+        #     fields:
+        #       - { label: 'Href', name: 'href', widget: 'string' }
+        #       - { label: 'Description', name: 'description', widget: 'text' }
+        # meta: { path: { widget: string, label: 'Title',    index_file: 'index', pattern: ['.*',]
+
+  # - name: 'pages'
+  #   label: 'Pages'
+  #   files:
+  #     - label: 'Home'
+  #       name: 'home'
+  #       file: 'content/home.md'
+  #       slug: '{{test}}'
+  #       fields:
+  #         - { label: 'Title', name: 'title', widget: 'string' }
+  #         - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+  #         - { label: 'Body', name: 'body', widget: 'markdown' }
+  #         - label: 'Cats'
+  #           name: 'cats'
+  #           widget: list
+  #           fields:
+  #             - { label: 'Name', name: 'name', widget: 'string' }
+  #             - { label: 'Description', name: 'description', widget: 'text' }
