@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* FORM */
+@media (max-width: 1080px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+  
+  /* button {
+    cursor: pointer;
+  } */
+  .btn{
+    border: 1px solid #3498db;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 0%;
+    top: 0;
+    transition: 0.8s;
+    border-radius: 0% 0% 50% 0%;
+    background-color: yellow;
+    z-index: -1;
+  }
+  .btn:hover::after{
+    height: 180%;
+    bottom: 0;
+    border-radius: 0% 0% 90% 0%;
+    /* background-color: yellow */
+}
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form input {
+    margin-top: 4px;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 4px;
+  }
+  
+  .form button {
+    margin-top: 16px;
+    height: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007aff;
+    border: 0px;
+    transition: 0.5s;
+  }
+  
+  button:hover {
+    filter: brightness(90%);
+  }
+  

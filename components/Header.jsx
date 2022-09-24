@@ -1,5 +1,4 @@
 import React from "react";
-// import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function  () {
@@ -14,7 +13,8 @@ export default function  () {
   };
 
   return (
-    <header>
+    <header >
+   
       <select onChange={handleLocaleChange} value={router.locale}>
         <option value="ru">RU</option>
         <option value="uk">UK</option>
