@@ -2541,6 +2541,11 @@ next-i18next@^12.0.1:
     i18next-fs-backend "^1.1.5"
     react-i18next "^11.18.4"
 
+next-translate@1.0.0-experimental.18:
+  version "1.0.0-experimental.18"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.0.0-experimental.18.tgz#a02e15dc9502d5744f715ed2310133ed700f816e"
+  integrity sha512-vioxTgzmwnAiYwF8hrwU6GQq/ebAfJT9xKqhZrcg5+iaSKm0RQOUO4keANf5k/O/DFu0D5HHiPQ6yt1TyL3CBw==
+
 next@^12.3.1:
   version "12.3.1"
   resolved "https://registry.npmjs.org/next/-/next-12.3.1.tgz"
