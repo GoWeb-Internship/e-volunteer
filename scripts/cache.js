@@ -9,8 +9,8 @@ function getCards() {
   let cards = [];
   for (let fileName of fileNames) {
     for (let locale of i18n.locales) {
-      const id = fileName;
-      let fullPath = path.join('content/cards', fileName, `index.${locale}.md`);
+      const id = fileName.replace(`-${locale}.md`, '');
+      let fullPath = path.join('content/cards', `${id}-${locale}.md`);
       if (!fs.existsSync(fullPath)) continue;
       const fileContents = fs.readFileSync(fullPath, 'utf8'); //getting the contents of the file
       const matterResult = matter(fileContents);

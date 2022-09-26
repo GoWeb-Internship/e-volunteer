@@ -59,10 +59,7 @@ export default function Search() {
               locale === language && (
                 <li className="mb-4 bg-slate-500 p-4 text-slate-50" key={title}>
                   <Link href="/[id]" as={`/${id}`}>
-                    <a>
-                      {title}
-                      <span>some text</span>
-                    </a>
+                    <a>{title}</a>
                   </Link>
                 </li>
               )
