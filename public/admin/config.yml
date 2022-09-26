@@ -1,70 +1,35 @@
 backend:
   name: git-gateway
   repo: GoWeb-Internship/e-volunteer
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 media_folder: 'static/img'
 public_folder: '/img'
-
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
 collections:
+  # Cards
   - name: 'cards'
     label: 'Cards'
+    identifier_field: title
     folder: 'content/cards'
-    identifier_field: 'cards'
     create: true
-    nested: { depth: 100, summary: '{{index}}' }
+    slug: '{{fieldIdName}}-{{language}}'
     fields:
-      - label: Title
-        name: 'title'
-        widget: string
-        meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-        folder: '{{index}}/index'
-        path: '{{slug}}/index'
-        files:
-          - label: 'Card'
-            name: 'card'
-            file: '/index.{{language}}'
-            fields:
-              - {
-                  label: 'Group identifier',
-                  name: 'fieldIdName',
-                  widget: 'hidden',
-                  default: 'index',
-                }
-              - { label: 'Title', name: 'title', widget: 'string' }
-              - { label: 'Date', name: 'date', widget: 'date' }
-              - {
-                  label: 'Language',
-                  name: 'language',
-                  widget: 'select',
-                  options: ['ru', 'uk'],
-                }
-              - { label: 'Body', name: 'body', widget: 'markdown' }
-              - label: 'Links'
-                name: 'links'
-                widget: list
-                fields:
-                  - { label: 'Href', name: 'href', widget: 'string' }
-                  - {
-                      label: 'Description',
-                      name: 'description',
-                      widget: 'text',
-                    }
-    # meta: { path: { widget: string, label: 'Title',    index_file: 'index', pattern: ['.*',]
-
-  # - name: 'pages'
-  #   label: 'Pages'
-  #   files:
-  #     - label: 'Home'
-  #       name: 'home'
-  #       file: 'content/home.md'
-  #       slug: '{{test}}'
-  #       fields:
-  #         - { label: 'Title', name: 'title', widget: 'string' }
-  #         - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-  #         - { label: 'Body', name: 'body', widget: 'markdown' }
-  #         - label: 'Cats'
-  #           name: 'cats'
-  #           widget: list
-  #           fields:
-  #             - { label: 'Name', name: 'name', widget: 'string' }
-  #             - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Path', name: 'fieldIdName', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['ru', 'uk'],
+        }
+      - label: 'Links'
+        name: 'links'
+        widget: list
+        fields:
+          - { label: 'Href', name: 'href', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
