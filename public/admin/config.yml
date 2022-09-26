@@ -6,42 +6,47 @@ media_folder: 'static/img'
 public_folder: '/img'
 
 collections:
-  - name: 'cards'
-    label: 'Cards'
-    folder: 'content/cards'
+  - name: cards
+    label: Cards
+    label_singular: 'Card'
+    folder: content/cards
     identifier_field: 'cards'
     create: true
-    nested: { depth: 100, summary: '{{index}}' }
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{index}}' # optional summary for a tree node, defaults to the inferred title field
     fields:
       - label: Title
-        name: 'title'
+        name: title
         widget: string
-        meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-        folder: '{{index}}/index'
-        path: '{{slug}}/index'
-        # fields:
-        #   - {
-        #       label: 'Group identifier',
-        #       name: 'fieldIdName',
-        #       widget: 'hidden',
-        #       default: 'index',
-        #     }
-        #   - { label: 'Title', name: 'title', widget: 'string' }
-        #   - { label: 'Date', name: 'date', widget: 'date' }
-        #   - {
-        #       label: 'Language',
-        #       name: 'language',
-        #       widget: 'select',
-        #       options: ['ru', 'uk'],
-        #     }
-        #   - { label: 'Body', name: 'body', widget: 'markdown' }
-        #   - label: 'Links'
-        #     name: 'links'
-        #     widget: list
-        #     fields:
-        #       - { label: 'Href', name: 'href', widget: 'string' }
-        #       - { label: 'Description', name: 'description', widget: 'text' }
-        # meta: { path: { widget: string, label: 'Title',    index_file: 'index', pattern: ['.*',]
+      - label: Body
+        name: body
+        widget: markdown
+    meta:
+      { path: { widget: string, label: 'Path', index_file: 'index' } }
+      # fields:
+      #   - {
+      #       label: 'Group identifier',
+      #       name: 'fieldIdName',
+      #       widget: 'hidden',
+      #       default: 'index',
+      #     }
+      #   - { label: 'Title', name: 'title', widget: 'string' }
+      #   - { label: 'Date', name: 'date', widget: 'date' }
+      #   - {
+      #       label: 'Language',
+      #       name: 'language',
+      #       widget: 'select',
+      #       options: ['ru', 'uk'],
+      #     }
+      #   - { label: 'Body', name: 'body', widget: 'markdown' }
+      #   - label: 'Links'
+      #     name: 'links'
+      #     widget: list
+      #     fields:
+      #       - { label: 'Href', name: 'href', widget: 'string' }
+      #       - { label: 'Description', name: 'description', widget: 'text' }
+      # meta: { path: { widget: string, label: 'Title',    index_file: 'index', pattern: ['.*',]
 
   # - name: 'pages'
   #   label: 'Pages'
