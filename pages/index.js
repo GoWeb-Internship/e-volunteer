@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Search from '@/components/search/Search';
 import { getSortedCardData } from '@/lib/cards';
 import { useEffect } from 'react';
+
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -19,13 +20,14 @@ const Home = ({ slugs }) => {
     }
   }, []);
 
+
   return (
     <>
       <Head>
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-
+  
       <Search />
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
@@ -48,7 +50,7 @@ export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       slugs,
-      message: require(`../../locales/${locale}.json`)
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 };

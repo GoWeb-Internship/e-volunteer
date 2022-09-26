@@ -1,9 +1,11 @@
-const { i18n } = require('./next-i18next.config');
-// const nextTranslate = require("next-translate");
+// const { i18n } = require('./next-i18next.config');
 
-module.exports = {
-  i18n,
-  // ...nextTranslate(),
+
+module.exports = ({
+  i18n: {
+    locales: ["ru", "uk"],
+    defaultLocale: "ru",
+  },
 
   webpack: (cfg, { isServer }) => {
     cfg.module.rules.push({
@@ -20,4 +22,4 @@ module.exports = {
 
     return cfg;
   },
-};
+});
