@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import sendMessageToTg from '../services/telegramApi';
+import { useState } from "react";
 import TextField from '@material-ui/core/TextField';
 import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
@@ -11,7 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function form() {
   const { t } = useTranslation('common');
-
+  const [showModal, setShowModal] = useState(false);
   const formSchema = yup.object().shape({
     email: yup
       .string()
@@ -50,7 +51,7 @@ export default function form() {
     //TELEGRAM
 
     let message = `
-      <b>Остались вопросы:</b>
+      <b>Остались вопросы?:</b>
       Name: ${data.name}
       last name: ${data.last}
       Email: ${data.email}
@@ -75,7 +76,8 @@ export default function form() {
   return (
     <div>
       <div className="container">
-        <h2>Form</h2>
+        <h2>{t('textForm')}</h2>
+        <p>{t('write')}</p>
         <form className="form" method="POST" onSubmit={handleSubmit(onSubmit)}>
           <TextField label={t('name')} {...register('name')} />
           <span className='text-red-600 '>{errors.name?.message}</span>
@@ -95,11 +97,26 @@ export default function form() {
             {...register('textN')}
           />
          <span className='text-red '>{errors.offers?.message}</span> 
-          <button className="btn" type="submit">
+          <button className="btn" type="submit"    onClick={() => setShowModal(true)}>
             Відправити
           </button>
+          {showModal ? (
+        <div className="mt-10 flex justify-center items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
+          <h2 className="text-base mt-2 mx-4 text-gray-400 font-semibold text-center">
+          {t('gratitude')}
+          </h2>
+          <button
+            className="my-5 w-auto px-8 h-10 bg-blue-600 text-white rounded-md shadow hover:shadow-lg font-semibold"
+            onClick={() => setShowModal(false)}
+          >
+            Close
+          </button>
+        </div>
+      ) : null}
         </form>
       </div>
+   
+
     </div>
   );
 }
