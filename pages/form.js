@@ -8,7 +8,7 @@ import useFormPersist from 'react-hook-form-persist';
 // import { useRouter } from 'next/router';
 // import ru from '../locales/ru/form'
 // import uk from '../locales/uk/form';
-import useTranslation from "next-translate/useTranslation";
+// import useTranslation from "next-translate/useTranslation";
 
 
 
@@ -18,7 +18,7 @@ export default function form() {
   // const router = useRouter();
   // const { locale } = router;
   // const t = locale === 'ru' ? ru : uk;
-  let { t } = useTranslation();
+  // let { t } = useTranslation();
 
     const formSchema = yup.object().shape({
         email: yup.string().trim().required().email().min(10)
