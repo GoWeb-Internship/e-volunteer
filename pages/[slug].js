@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 
 import Head from 'next/head';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
-import { data } from 'autoprefixer';
 
 const Page = ({ contents, data }) => {
   return (
