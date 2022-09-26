@@ -1,4 +1,4 @@
-export default {
+ {
     "name": "Ім'я",
     "lactName": "Прізвище",
     "nameMatch": "Введіть коректне ім'я",
@@ -14,5 +14,5 @@ export default {
     "phoneReguired": "Поле обов'язкове",
     "textMin": "Має бути більш 10 символов",
     "textMax": "Має бути не більш 2000 символов",
-    "gratitude": "Дякую за заявку!",
+    "gratitude": "Дякую за заявку!"
 }
