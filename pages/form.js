@@ -6,9 +6,10 @@ import sendMessageToTg from '../services/telegramApi';
 import TextField from "@material-ui/core/TextField";
 import useFormPersist from 'react-hook-form-persist';
 // import { useRouter } from 'next/router';
-// import ru from '../locales/ru';
-// import uk from '../locales/uk';
+// import ru from '../locales/ru/form'
+// import uk from '../locales/uk/form';
 import useTranslation from "next-translate/useTranslation";
+
 
 
 
@@ -18,15 +19,16 @@ export default function form() {
   // const { locale } = router;
   // const t = locale === 'ru' ? ru : uk;
   let { t } = useTranslation();
+
     const formSchema = yup.object().shape({
-        email: yup.string().trim().required(t.nameRequired).email(t.emailMatch).min(10, t.emailMin)
-        .max(63, t.emailMax) .matches(
+        email: yup.string().trim().required().email().min(10)
+        .max(63) .matches(
           /^[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.]{1}[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż._-]{1,}[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.]{1}@[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.-]+.[a-zA-Z]{2,4}$/,
-        t.nameRequired),
-        name: yup.string().trim().required(t.nameRequired).min(3, t.nameMin).max(100, t.nameMax),
-        last: yup.string().trim().required(t.nameRequired).min(3, t.nameMin).max(100, t.nameMax),
-        cellphone: yup.string().trim().required(t.nameRequired).min(9, t.phoneMin).max(18, t.phoneMax),  
-        textN:  yup.string().required(t.nameRequired).min(10, t.textMin).max(2000, t.textMax),  
+       ),
+        name: yup.string().trim().required().min(3).max(100),
+        last: yup.string().trim().required().min(3).max(100),
+        cellphone: yup.string().trim().required().min(9).max(18),  
+        textN:  yup.string().required().min(10).max(2000),  
       });
     
       const {
@@ -78,7 +80,7 @@ export default function form() {
       <div className="container">
       <h2>Form</h2>
       <form className="form" method="POST" onSubmit={handleSubmit(onSubmit)}>
-        <TextField label={t("form:name")} z   {...register("name")} />
+        <TextField label={t("common:name")}    {...register("name")} />
         {errors.name?.message}
         <TextField label={t.lactName}  {...register("last")} />
         {errors.name?.message}

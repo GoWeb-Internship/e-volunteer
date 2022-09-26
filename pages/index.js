@@ -35,6 +35,7 @@ export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       slugs,
+      message: require(`../../locales/${locale}.json`)
     },
   };
 };

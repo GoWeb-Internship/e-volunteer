@@ -2,6 +2,7 @@
     "locales": ["ru", "uk"],
     "defaultLocale": "ru",
     "pages": {
-        "/form": ["form"]
+      "*": ["common"],
+      "/about": ["about"]
     }
-}
+  }
