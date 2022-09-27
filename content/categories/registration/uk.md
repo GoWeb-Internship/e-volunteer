@@ -3,10 +3,8 @@ category: registration
 title: Перші кроки
 poster: registration.jpeg
 language: uk
-date: 2022-09-27T10:42:14.133Z
+date: 2022-09-17T10:40:49.030Z
 ---
-
-1. # Перші кроки:
 
 ## Реєстрація
 
@@ -14,10 +12,9 @@ date: 2022-09-27T10:42:14.133Z
 військових біженців) звертатись до інфопункту за адресою **Pikk 18, Pärnu**,
 [+37253499911](+37253499911)
 
-1.2 Якщо потрібен лише тимчасовий захист звертатись за адресою **Tammsaare pst,
-61** у відділення поліції, забронювавши час за посиланням
-
-<https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA>
+1.2 Якщо потрібен лише тимчасовий захист звертатись за адресою **Tammsaare
+pst,61** у відділення поліції, забронювавши час за
+[посиланням](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA)
 
 ## Придбання стартового пакета мобільного зв'язку
 

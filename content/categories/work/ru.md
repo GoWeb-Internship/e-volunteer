@@ -3,26 +3,29 @@ category: work
 title: Работа
 poster: work.jpeg
 language: ru
-date: Sep 27th 22
+date: 2022-09-19T14:45:36.413Z
 ---
 
+## Встать на учет на биржу труда
 
-1. (RU) Работа:
+[https://www.tootukassa.ee/ru](https://www.tootukassa.ee/ru) - При достаточном
+трудовом стаже будет выплачиваться пособие в размере до 292 евро в месяц.
 
-Встать на учет на биржу труда
+## Работа
 
-<https://www.tootukassa.ee/ru> - При достаточном трудовом стаже будет выплачиваться пособие в размере до 292 евро в месяц.
+!!! Важная информация о торговле людьми! О том, как найти работу и не попасть на
+мошенников вы можете узнать
+[здесь](https://www.facebook.com/events/426128778967948)
 
-Работа
+- [https://cv.ee/ru/](https://cv.ee/ru/) - Портал по поиску работы
 
-!!! Важная информация о торговле людьми! О том, как найти работу и не попасть на мошенников вы можете узнать здесь   <https://www.facebook.com/events/426128778967948>
+- [https://www.cvkeskus.ee/](https://www.cvkeskus.ee/) - Портал по поиску работы
 
-<https://cv.ee/ru/> - портал по поиску работы
+- [https://www.onlineexpo.com/ru/rabota-dlia-ukraintcev-v-estonii/](https://www.onlineexpo.com/ru/rabota-dlia-ukraintcev-v-estonii/) -
+  Портал по поиску работы
 
-<https://www.cvkeskus.ee/> - портал по поиску работы
+- [https://t.me/+Otv3occTk5ZkNDZk](https://t.me/+Otv3occTk5ZkNDZk) - Телеграм
+  канал с вакансиями для военных беженцев с Украины
 
-<https://www.onlineexpo.com/ru/rabota-dlia-ukraintcev-v-estonii/> - портал по поиску работы
-
-<https://t.me/+Otv3occTk5ZkNDZk> – Телеграм канал с вакансиями для военных беженцев с Украины
-
-<https://goworkabit.ee/ru-simple-jobs-to-earn-money> - подработка
+- [https://goworkabit.ee/ru-simple-jobs-to-earn-money](https://goworkabit.ee/ru-simple-jobs-to-earn-money) -
+  подработка
