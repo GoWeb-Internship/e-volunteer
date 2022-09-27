@@ -1,62 +1,88 @@
 backend:
   name: git-gateway
+  branch: main
   repo: GoWeb-Internship/e-volunteer
-  branch: main # Branch to update (optional; defaults to master)
 media_folder: 'static/img'
 public_folder: '/img'
-
 collections:
-  - name: 'cards'
-    label: 'Cards'
-    folder: 'content/cards'
-    identifier_field: 'cards'
+  # Categories
+  - label: 'Categories_RU'
+    name: 'categories_ru'
+    folder: 'content/categories'
+    label_singular: 'Categories_RU'
+    slug: '{{fields.slug}}'
     create: true
-    nested: { depth: 100, summary: '{{index}}' }
+    delete: false
+    path: '{{category}}/{{language}}'
+    filter: { field: 'language', value: 'ru' }
     fields:
-      - label: Title
-        name: 'title'
-        widget: string
-        meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-        folder: '{{index}}/index'
-        path: '{{slug}}/index'
-        # fields:
-        #   - {
-        #       label: 'Group identifier',
-        #       name: 'fieldIdName',
-        #       widget: 'hidden',
-        #       default: 'index',
-        #     }
-        #   - { label: 'Title', name: 'title', widget: 'string' }
-        #   - { label: 'Date', name: 'date', widget: 'date' }
-        #   - {
-        #       label: 'Language',
-        #       name: 'language',
-        #       widget: 'select',
-        #       options: ['ru', 'uk'],
-        #     }
-        #   - { label: 'Body', name: 'body', widget: 'markdown' }
-        #   - label: 'Links'
-        #     name: 'links'
-        #     widget: list
-        #     fields:
-        #       - { label: 'Href', name: 'href', widget: 'string' }
-        #       - { label: 'Description', name: 'description', widget: 'text' }
-        # meta: { path: { widget: string, label: 'Title',    index_file: 'index', pattern: ['.*',]
-
-  # - name: 'pages'
-  #   label: 'Pages'
-  #   files:
-  #     - label: 'Home'
-  #       name: 'home'
-  #       file: 'content/home.md'
-  #       slug: '{{test}}'
-  #       fields:
-  #         - { label: 'Title', name: 'title', widget: 'string' }
-  #         - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-  #         - { label: 'Body', name: 'body', widget: 'markdown' }
-  #         - label: 'Cats'
-  #           name: 'cats'
-  #           widget: list
-  #           fields:
-  #             - { label: 'Name', name: 'name', widget: 'string' }
-  #             - { label: 'Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              { label: 'Первые шаги', value: 'registration' },
+              { label: 'Жильё', value: 'housing' },
+              { label: 'Работа', value: 'work' },
+              { label: 'Медицинская помощь', value: 'medicine' },
+              { label: 'Психологическая помощь', value: 'counselling' },
+              { label: 'Дети', value: 'kids' },
+              { label: 'Выплаты', value: 'payment' },
+              { label: 'Инфо телефоны', value: 'info' },
+              { label: 'Полезные ссылки', value: 'references' },
+            ],
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['ru'],
+          default: 'ru',
+        }
+      - label: 'Links'
+        name: 'links'
+        widget: list
+        fields:
+          - { label: 'Href', name: 'href', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Categories_UA'
+    name: 'categories_ua'
+    folder: 'content/categories'
+    label_singular: 'categories_UA'
+    slug: '{{fields.slug}}'
+    create: true
+    delete: false
+    path: '{{category}}/{{language}}'
+    filter: { field: 'language', value: 'uk' }
+    fields:
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              { label: 'Перші кроки', value: 'registration' },
+              { label: 'Житло', value: 'housing' },
+              { label: 'Робота', value: 'work' },
+              { label: 'Медична допомога', value: 'medicine' },
+              { label: 'Психологічна допомога', value: 'counselling' },
+              { label: 'Діти', value: 'kids' },
+              { label: 'Виплати', value: 'payment' },
+              { label: 'Інфо телефоны', value: 'info' },
+              { label: 'Корисні посилання', value: 'references' },
+            ],
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['uk'],
+          default: 'uk',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
