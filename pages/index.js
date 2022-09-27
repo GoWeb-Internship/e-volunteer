@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-
-import Search from '@/components/Search/Search';
-import { getSortedCardData } from '@/lib/cards';
-import { Spinner } from 'components';
 import { useEffect } from 'react';
+
+import { getSortedCardData } from '@/lib/cards';
+import { Spinner, Search } from 'components';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
