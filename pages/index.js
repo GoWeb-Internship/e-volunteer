@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Search from '@/components/search/Search';
 import { getSortedCardData } from '@/lib/cards';
+import { Spinner } from 'components';
 
 const Home = ({ slugs }) => {
   return (
@@ -14,6 +15,8 @@ const Home = ({ slugs }) => {
       </Head>
 
       <Search />
+
+      <Spinner />
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
 

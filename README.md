@@ -27,3 +27,8 @@ yarn install
 ```bash
 yarn dev
 ```
+
+> Локальний сервер - [http://localhost:3000](http://localhost:3000)
+>
+> Адмін панель -
+> [http://localhost:3000/admin/index.html](http://localhost:3000/admin/index.html)
