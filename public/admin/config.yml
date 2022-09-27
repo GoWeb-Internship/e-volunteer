@@ -5,18 +5,34 @@ backend:
 media_folder: 'static/img'
 public_folder: '/img'
 collections:
-  # Cards
-  - label: 'Cards_RU'
-    name: 'cards_ru'
-    folder: 'content/cards'
-    label_singular: 'Cards_RU'
+  # Categories
+  - label: 'Categories_RU'
+    name: 'categories_ru'
+    folder: 'content/categories'
+    label_singular: 'Categories_RU'
     slug: '{{fields.slug}}'
     create: true
-    path: '{{folder}}/{{language}}'
+    delete: false
+    path: '{{category}}/{{language}}'
     filter: { field: 'language', value: 'ru' }
     fields:
-      - { label: 'Folder', name: 'folder', widget: 'string' }
-
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              { label: 'Первые шаги', value: 'registration' },
+              { label: 'Жильё', value: 'housing' },
+              { label: 'Работа', value: 'work' },
+              { label: 'Медицинская помощь', value: 'medicine' },
+              { label: 'Психологическая помощь', value: 'counselling' },
+              { label: 'Дети', value: 'kids' },
+              { label: 'Выплаты', value: 'payment' },
+              { label: 'Инфо телефоны', value: 'info' },
+              { label: 'Полезные ссылки', value: 'references' },
+            ],
+        }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'date' }
       - {
@@ -33,16 +49,33 @@ collections:
           - { label: 'Href', name: 'href', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - label: 'Cards_UA'
-    name: 'cards_ua'
-    folder: 'content/cards'
-    label_singular: 'Cards_UA'
+  - label: 'Categories_UA'
+    name: 'categories_ua'
+    folder: 'content/categories'
+    label_singular: 'categories_UA'
     slug: '{{fields.slug}}'
     create: true
-    path: '{{folder}}/{{language}}'
+    delete: false
+    path: '{{category}}/{{language}}'
     filter: { field: 'language', value: 'uk' }
     fields:
-      - { label: 'Folder', name: 'folder', widget: 'string' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options:
+            [
+              { label: 'Перші кроки', value: 'registration' },
+              { label: 'Житло', value: 'housing' },
+              { label: 'Робота', value: 'work' },
+              { label: 'Медична допомога', value: 'medicine' },
+              { label: 'Психологічна допомога', value: 'counselling' },
+              { label: 'Діти', value: 'kids' },
+              { label: 'Виплати', value: 'payment' },
+              { label: 'Інфо телефоны', value: 'info' },
+              { label: 'Корисні посилання', value: 'references' },
+            ],
+        }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'date' }
       - {
