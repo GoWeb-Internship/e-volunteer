@@ -52,3 +52,4 @@ collections:
           options: ['uk'],
           default: 'uk',
         }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
