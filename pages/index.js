@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 import { getSortedCardData } from '@/lib/cards';
-import { Spinner, Search } from 'components';
+import { Search, Spinner } from 'components';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
