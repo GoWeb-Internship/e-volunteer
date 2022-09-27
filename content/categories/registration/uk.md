@@ -1,8 +1,9 @@
 ---
 category: registration
 title: Перші кроки
-date: 2022-09-27T10:42:14.133Z
+poster: registration.jpeg
 language: uk
+date: 2022-09-27T10:42:14.133Z
 ---
 
 1. # Перші кроки:
