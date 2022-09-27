@@ -28,13 +28,13 @@ collections:
               { label: 'Медицинская помощь', value: 'medicine' },
               { label: 'Психологическая помощь', value: 'counselling' },
               { label: 'Дети', value: 'kids' },
-              { label: 'Выплаты', value: 'payment' },
+              { label: 'Выплаты', value: 'payments' },
               { label: 'Инфо телефоны', value: 'info' },
               { label: 'Полезные ссылки', value: 'references' },
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
       - {
           label: 'Language',
           name: 'language',
@@ -42,12 +42,13 @@ collections:
           options: ['ru'],
           default: 'ru',
         }
-      - label: 'Links'
-        name: 'links'
-        widget: list
-        fields:
-          - { label: 'Href', name: 'href', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Date', name: 'date', widget: 'date', format: 'MMM Do YY' }
+      # - label: 'Links'
+      #   name: 'links'
+      #   widget: list
+      #   fields:
+      #     - { label: 'Href', name: 'href', widget: 'string' }
+      #     - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: 'Categories_UA'
     name: 'categories_ua'
@@ -71,13 +72,13 @@ collections:
               { label: 'Медична допомога', value: 'medicine' },
               { label: 'Психологічна допомога', value: 'counselling' },
               { label: 'Діти', value: 'kids' },
-              { label: 'Виплати', value: 'payment' },
-              { label: 'Інфо телефоны', value: 'info' },
+              { label: 'Виплати', value: 'payments' },
+              { label: 'Інфо телефони', value: 'info' },
               { label: 'Корисні посилання', value: 'references' },
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
       - {
           label: 'Language',
           name: 'language',
@@ -85,4 +86,5 @@ collections:
           options: ['uk'],
           default: 'uk',
         }
+      - { label: 'Date', name: 'date', widget: 'date' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
