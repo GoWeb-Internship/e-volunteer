@@ -6,8 +6,8 @@ const { i18n } = require('../next-i18next.config');
 const PATH = 'content/categories';
 
 function getCards() {
-  const cardsDirectory = path.join(process.cwd(), PATH); //retrieving the posts directory path
-  const fileNames = fs.readdirSync(cardsDirectory); // getting the names of the files, with the .md extension
+  const cardsDirectory = path.join(process.cwd(), PATH);
+  const fileNames = fs.readdirSync(cardsDirectory);
   let cards = [];
   for (let fileName of fileNames) {
     for (let locale of i18n.locales) {

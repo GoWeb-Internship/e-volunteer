@@ -1,1 +1,1 @@
-export const cards = [{"id":"registration","title":"Первые шаги","text":"Первые шаги","language":"ru"},{"id":"registration","title":"Перші кроки","text":"П﻿ерші кроки","language":"uk"}]
+export const cards = [{"id":"registration","title":"Первые шаги","text":"Первые шаги","language":"ru"},{"id":"registration","title":"Перші кроки","text":"Перші кроки","language":"uk"}]

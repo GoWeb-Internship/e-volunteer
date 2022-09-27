@@ -1,4 +1,4 @@
-const cards = require('../../cache/data').cards;
+const cards = require('/cache/data').cards;
 
 const getCardsCache = (req, res) => {
   const results = req.query.q
