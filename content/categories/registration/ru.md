@@ -1,8 +1,9 @@
 ---
 category: registration
 title: Первые шаги
-date: 2022-09-27T10:40:49.030Z
+poster: registration.jpeg
 language: ru
+date: 2022-09-27T10:40:49.030Z
 ---
 
 1. # Первые шаги:
