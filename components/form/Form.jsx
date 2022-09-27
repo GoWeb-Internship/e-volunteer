@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import sendMessageToTg from '../../services/telegramApi';
-import { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { yupResolver } from '@hookform/resolvers/yup';
+import useFormPersist from 'react-hook-form-persist';
+import * as yup from 'yup';
 
-export default function Form() {
+import sendMessageToTg from '../../services/telegramApi';
+import TextField from '@material-ui/core/TextField';
+
+export const Form = () => {
   const { t } = useTranslation('common');
 
   const [showModal, setShowModal] = useState(false);
@@ -152,12 +151,4 @@ export default function Form() {
       </div>
     </div>
   );
-}
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-}
+};
