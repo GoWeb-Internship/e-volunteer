@@ -15,6 +15,8 @@ module.exports = {
     if (isServer) {
       require('./scripts/cache');
     }
+
+
     const fileLoaderRule = cfg.module.rules.find(
       rule => rule.test && rule.test.test('.svg'),
     );
@@ -23,14 +25,9 @@ module.exports = {
       test: /\.svg$/,
       loader: require.resolve('@svgr/webpack'),
     });
+
     return cfg;
   },
 };
 
-module.exports = {
-  webpack(config) {
-   
-    return config;
-  },
-};
 
