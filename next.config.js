@@ -16,20 +16,15 @@ module.exports = {
       require('./scripts/cache');
     }
 
-    return cfg;
-  },
-};
-
-module.exports = {
-  webpack(config) {
-    const fileLoaderRule = config.module.rules.find(
+    const fileLoaderRule = cfg.module.rules.find(
       rule => rule.test && rule.test.test('.svg'),
     );
     fileLoaderRule.exclude = /\.svg$/;
-    config.module.rules.push({
+    cfg.module.rules.push({
       test: /\.svg$/,
       loader: require.resolve('@svgr/webpack'),
     });
-    return config;
+
+    return cfg;
   },
 };
