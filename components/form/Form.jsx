@@ -9,7 +9,7 @@ import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function Form() {
+export const Form = () => {
   const { t } = useTranslation('common');
 
   const [showModal, setShowModal] = useState(false);
@@ -152,7 +152,7 @@ export default function Form() {
       </div>
     </div>
   );
-}
+};
 
 export async function getStaticProps({ locale }) {
   return {
