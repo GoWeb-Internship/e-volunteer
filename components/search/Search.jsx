@@ -43,21 +43,27 @@ export const Search = () => {
       className="relative my-8 mx-auto flex max-w-lg items-center justify-center"
       ref={searchRef}
     >
-  <form role="search" method="get" id="searchform" action="">
-     <label for="s">
-     <svg viewBox="0 0 17.7 17.7" className='w-[16px] h-[16px] absolute  float-left mt-[5px] '>
-     <path fill="#475569" d="M12.6 11.2C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l5.1 5.1 1.4-1.4-5.1-5.1zM2 7c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z" />
-  </svg>
-  </label>
-      <input
-        onChange={onChange}
-        onFocus={onFocus}
-        placeholder=" "
-        type="text"
-        value={query}
-        id="s"
-      />
-  </form>
+      <form role="search" method="get" id="searchform" action="">
+        <label htmlFor="s">
+          <svg
+            viewBox="0 0 17.7 17.7"
+            className="absolute float-left mt-[5px]  h-[16px] w-[16px] "
+          >
+            <path
+              fill="#475569"
+              d="M12.6 11.2C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l5.1 5.1 1.4-1.4-5.1-5.1zM2 7c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"
+            />
+          </svg>
+        </label>
+        <input
+          onChange={onChange}
+          onFocus={onFocus}
+          placeholder=" "
+          type="text"
+          value={query}
+          id="s"
+        />
+      </form>
       {active && results.length > 0 && (
         <ul className="absolute top-full left-0 right-0 mt-2 truncate">
           {results.map(({ id, title, language }) => {
