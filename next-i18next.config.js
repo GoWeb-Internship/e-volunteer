@@ -4,4 +4,5 @@ module.exports = {
     locales: ['ru', 'uk'],
     localeDetection: false,
   },
+  
 };

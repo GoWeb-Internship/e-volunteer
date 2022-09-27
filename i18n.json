@@ -1,0 +1,9 @@
+{
+    "locales": ["ru", "uk"],
+    "defaultLocale": "ru",
+    "pages": {
+      "*": ["common"],
+      "/": ["about", "example"]
+    }
+  }
+
