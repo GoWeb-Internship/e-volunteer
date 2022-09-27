@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import sendMessageToTg from '../services/telegramApi';
+import sendMessageToTg from '../../services/telegramApi';
 import { useState } from "react";
 import TextField from '@material-ui/core/TextField';
 import useFormPersist from 'react-hook-form-persist';
@@ -10,9 +10,11 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
-export default function form() {
+export default function Form() {
   const { t } = useTranslation('common');
+
   const [showModal, setShowModal] = useState(false);
+
   const formSchema = yup.object().shape({
     email: yup
       .string()
@@ -35,10 +37,13 @@ export default function form() {
     handleSubmit,
     watch,
     setValue,
+    reset ,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(formSchema),
   });
+
+  
 
   useFormPersist('storageKey', {
     watch,
@@ -46,8 +51,12 @@ export default function form() {
   });
   useFormPersist('form', { watch, setValue });
 
-  const onSubmit = data => {
+  const onSubmit = (data, e) => {
+    e.preventDefault();
     console.log(data);
+    setShowModal(`thank you ${data.name} for your message`);
+    reset();
+    
     //TELEGRAM
 
     let message = `
@@ -78,7 +87,7 @@ export default function form() {
       <div className="container">
         <h2>{t('textForm')}</h2>
         <p>{t('write')}</p>
-        <form className="form" method="POST" onSubmit={handleSubmit(onSubmit)}>
+        <form className="form" method="POST" name="contact" onSubmit={handleSubmit(onSubmit)}>
           <TextField label={t('name')} {...register('name')} />
           <span className='text-red-600 '>{errors.name?.message}</span>
           <TextField label={t('lactName')} {...register('last')} />
@@ -100,20 +109,18 @@ export default function form() {
           <button className="btn" type="submit"    onClick={() => setShowModal(true)}>
             Відправити
           </button>
-          {showModal ? (
-        <div className="mt-10 flex justify-center items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
+        </form>
+        {showModal ? (
+        <div className="absolute mt-10 flex justify-center bg-slate-600 items-center flex-col w-72 rounded-lg shadow-xl h-auto p-2">
           <h2 className="text-base mt-2 mx-4 text-gray-400 font-semibold text-center">
           {t('gratitude')}
           </h2>
           <button
             className="my-5 w-auto px-8 h-10 bg-blue-600 text-white rounded-md shadow hover:shadow-lg font-semibold"
             onClick={() => setShowModal(false)}
-          >
-            Close
-          </button>
+          >Close</button>
         </div>
       ) : null}
-        </form>
       </div>
    
 

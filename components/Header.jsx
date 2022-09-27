@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-export default function  () {
+export default function Header () {
   const router = useRouter();
 
   const handleLocaleChange = (event) => {

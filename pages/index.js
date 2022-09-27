@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Search from '@/components/search/Search';
+import Form from '@/components/form/Form';
 import { getSortedCardData } from '@/lib/cards';
 import { useEffect } from 'react';
 
@@ -41,6 +42,8 @@ const Home = ({ slugs }) => {
           </li>
         ))}
       </ul>
+
+      <Form/>
     </>
   );
 };
