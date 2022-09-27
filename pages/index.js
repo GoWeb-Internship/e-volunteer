@@ -3,8 +3,10 @@ import Script from 'next/script';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
-import { Spinner, Search, Form } from '../components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { Search } from '@/components/Search/Search';
+import { Spinner } from '@/components/Spinner/Spinner';
+import { Form } from '@/components/Form/Form';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -28,6 +30,7 @@ const Home = ({ slugs }) => {
 
       <Search />
       <Spinner />
+      <Form />
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
 
@@ -40,7 +43,6 @@ const Home = ({ slugs }) => {
           </li>
         ))}
       </ul>
-      <Form />
     </>
   );
 };

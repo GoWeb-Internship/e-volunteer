@@ -64,6 +64,7 @@ export const Search = () => {
           id="s"
         />
       </form>
+
       {active && results.length > 0 && (
         <ul className="absolute top-full left-0 right-0 mt-2 truncate">
           {results.map(({ id, title, language }) => {
