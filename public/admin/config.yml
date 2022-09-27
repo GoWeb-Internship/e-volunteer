@@ -16,6 +16,7 @@ collections:
     filter: { field: 'language', value: 'ru' }
     fields:
       - { label: 'Folder', name: 'folder', widget: 'string' }
+
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'date' }
       - {
@@ -51,10 +52,3 @@ collections:
           options: ['uk'],
           default: 'uk',
         }
-      - label: 'Links'
-        name: 'links'
-        widget: list
-        fields:
-          - { label: 'Href', name: 'href', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }

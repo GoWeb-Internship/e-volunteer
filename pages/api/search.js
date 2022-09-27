@@ -1,6 +1,6 @@
 const cards = require('../../cache/data').cards;
 
-export default (req, res) => {
+const getCardsCache = (req, res) => {
   const results = req.query.q
     ? cards.filter(
         card =>
@@ -8,7 +8,10 @@ export default (req, res) => {
           card.text.toLowerCase().includes(req.query.q.toLowerCase()),
       )
     : [];
+
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({ results }));
 };
+
+export default getCardsCache;
