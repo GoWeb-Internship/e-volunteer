@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
 
-import Search from '@/components/search/Search';
+import Search from '@/components/Search/Search';
 import { getSortedCardData } from '@/lib/cards';
+import { Spinner } from 'components';
 import { useEffect } from 'react';
 
 const Home = ({ slugs }) => {
@@ -27,6 +28,8 @@ const Home = ({ slugs }) => {
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
       <Search />
+
+      <Spinner />
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
 

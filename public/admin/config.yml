@@ -1,30 +1,30 @@
 backend:
   name: git-gateway
-  repo: GoWeb-Internship/e-volunteer
   branch: main
+  repo: GoWeb-Internship/e-volunteer
 media_folder: 'static/img'
 public_folder: '/img'
-slug:
-  encoding: 'ascii'
-  clean_accents: true
-  sanitize_replacement: '-'
 collections:
   # Cards
-  - name: 'cards'
-    label: 'Cards'
-    identifier_field: title
+  - label: 'Cards_RU'
+    name: 'cards_ru'
     folder: 'content/cards'
+    label_singular: 'Cards_RU'
+    slug: '{{fields.slug}}'
     create: true
-    slug: '{{fieldIdName}}-{{language}}'
+    path: '{{folder}}/{{language}}'
+    filter: { field: 'language', value: 'ru' }
     fields:
-      - { label: 'Path', name: 'fieldIdName', widget: 'string' }
+      - { label: 'Folder', name: 'folder', widget: 'string' }
+
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'date' }
       - {
           label: 'Language',
           name: 'language',
           widget: 'select',
-          options: ['ru', 'uk'],
+          options: ['ru'],
+          default: 'ru',
         }
       - label: 'Links'
         name: 'links'
@@ -32,4 +32,24 @@ collections:
         fields:
           - { label: 'Href', name: 'href', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Cards_UA'
+    name: 'cards_ua'
+    folder: 'content/cards'
+    label_singular: 'Cards_UA'
+    slug: '{{fields.slug}}'
+    create: true
+    path: '{{folder}}/{{language}}'
+    filter: { field: 'language', value: 'uk' }
+    fields:
+      - { label: 'Folder', name: 'folder', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['uk'],
+          default: 'uk',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
