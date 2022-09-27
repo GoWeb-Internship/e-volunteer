@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import Form from '/components/Form/Form';
 import { getSortedCardData } from '@/lib/cards';
-import { Spinner, Search } from '../components';
+import { Spinner, Search, Form } from '../components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Home = ({ slugs }) => {
