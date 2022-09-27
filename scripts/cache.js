@@ -4,16 +4,21 @@ const matter = require('gray-matter');
 const { i18n } = require('../next-i18next.config');
 
 function getCards() {
-  const cardsDirectory = path.join(process.cwd(), 'content/cards'); //retrieving the posts directory path
+  const cardsDirectory = path.join(process.cwd(), 'content/categories'); //retrieving the posts directory path
   const fileNames = fs.readdirSync(cardsDirectory); // getting the names of the files, with the .md extension
   let cards = [];
+
   for (let fileName of fileNames) {
     for (let locale of i18n.locales) {
       const id = fileName;
-      let fullPath = path.join('content/cards', fileName, `index.${locale}.md`);
+
+      let fullPath = path.join('content/categories', fileName, `${locale}.md`);
+
       if (!fs.existsSync(fullPath)) continue;
+
       const fileContents = fs.readFileSync(fullPath, 'utf8'); //getting the contents of the file
       const matterResult = matter(fileContents);
+
       cards.push({
         id,
         title: matterResult.data.title, // readinf the file and retrieving its id and title from the markdown

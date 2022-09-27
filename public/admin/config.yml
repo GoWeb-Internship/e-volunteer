@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
   repo: GoWeb-Internship/e-volunteer
-media_folder: 'static/img'
+media_folder: 'public/static/img'
 public_folder: '/img'
 collections:
   # Categories

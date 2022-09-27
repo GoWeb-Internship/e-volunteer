@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function Search() {
+export const Search = () => {
   const searchRef = useRef(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
@@ -78,4 +78,4 @@ export default function Search() {
       )}
     </div>
   );
-}
+};
