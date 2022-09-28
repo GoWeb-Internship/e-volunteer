@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 export const Card = ({ title, preview, image, href, alt }) => {
   const { t } = useTranslation('common');
   return (
-    <article className=" mx-auto h-[518px] max-w-[440px] rounded-[32px] bg-slate-50 shadow-card md:w-[338px] md:max-w-none xl:h-[542px] xl:w-[412px]">
+    <article className=" mx-auto h-[518px] max-w-[440px] rounded-[32px] bg-slate-50 shadow-card md:max-w-[330px] xl:h-[542px] xl:max-w-[412px]">
       <a
         href={href}
         className="flex h-full flex-col items-center justify-between px-6 pt-6 pb-10 text-slate-600 md:pb-12"

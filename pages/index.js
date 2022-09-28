@@ -3,12 +3,14 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import { Cards, Help, Search } from 'views';
 import { Spinner, Form } from '@/components';
 
-
 const Home = ({ slugs }) => {
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on('init', user => {
@@ -27,13 +29,13 @@ const Home = ({ slugs }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-      <Help title="Ma tahan aidata" button="Vali" href="/" EST />
+      <Help title="Ma tahan aidata" button="Vali" EST />
 
       <Spinner />
       <Search />
       <Form />
 
-      <Help title="Хочу оказать помощь" button="Выбрать" href="/" />
+      <Help title={t('helpTitle')} button={t('buttonCard')} href="/" />
 
       <Cards slugs={slugs} />
     </>
