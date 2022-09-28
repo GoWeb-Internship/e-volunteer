@@ -2,8 +2,11 @@
 category: references
 title: Полезные ссылки
 poster: references.jpeg
-language: ru
+preview: Ссылки и каналы, общая информация для беженцев из Украины
+alt: "Девушка рисует на ноутбуке "
 date: 2022-09-24T15:03:03.452Z
+language: ru
+range: 9
 ---
 
 ## Полезные ссылки и каналы:

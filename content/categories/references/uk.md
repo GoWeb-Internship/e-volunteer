@@ -2,8 +2,11 @@
 category: references
 title: Корисні посилання
 poster: references.jpeg
-language: uk
+preview: Посилання та канали, загальна інформація для біженців з України
+alt: Дівчина малює на ноутбуці
 date: 2022-09-24T15:03:03.452Z
+language: uk
+range: 9
 ---
 
 ## Корисні посилання та канали:

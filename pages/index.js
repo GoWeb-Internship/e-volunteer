@@ -6,7 +6,6 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // import { Search } from '@/components/Search/Search';
 import { Spinner } from '@/components/Spinner/Spinner';
-import { Form } from '@/components/Form/Form';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -29,8 +28,8 @@ const Home = ({ slugs }) => {
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
       {/* <Search /> */}
+
       <Spinner />
-      <Form />
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
 

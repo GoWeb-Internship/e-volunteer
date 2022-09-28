@@ -2,8 +2,11 @@
 category: medicine
 title: Медична допомога
 poster: medicine.jpeg
-language: uk
+preview: Медицинская помощь. Неотложная зубная помощь
+alt: Іменна картка у лікаря на шиї
 date: 2022-09-20T14:48:21.685Z
+language: uk
+range: 4
 ---
 
 ## Медична допомога.

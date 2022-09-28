@@ -2,8 +2,11 @@
 category: work
 title: Робота
 poster: work.jpeg
-language: uk
+preview: Встати на облік на біржу праці. Робота
+alt: Дві жінки обговорюють робочі моменти
 date: 2022-09-19T14:45:36.413Z
+language: uk
+range: 3
 ---
 
 ## Стати на облік на біржу праці

@@ -2,8 +2,11 @@
 category: medicine
 title: Медицинская помощь
 poster: medicine.jpeg
-language: ru
+preview: Медицинская помощь. Неотложная зубная помощь
+alt: Именная карточка у врача на шее
 date: 2022-09-20T14:48:21.685Z
+language: ru
+range: 4
 ---
 
 ## Медицинская помощь.
