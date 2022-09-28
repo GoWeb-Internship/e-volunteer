@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { ButtonLink } from '../ButtonLink/ButtonLink';
 import { useTranslation } from 'next-i18next';
@@ -27,4 +28,11 @@ export const Card = ({ title, preview, image, href, alt }) => {
       </a>
     </article>
   );
+};
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  preview: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };

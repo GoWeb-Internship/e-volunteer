@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { Card, Grid } from 'components';
 
@@ -20,4 +21,8 @@ export const Cards = ({ slugs }) => {
       </Grid>
     </section>
   );
+};
+
+Cards.propTypes = {
+  slugs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

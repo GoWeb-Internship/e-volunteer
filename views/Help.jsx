@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ButtonLink } from '/components';
 import Flower from 'public/img/svg/help.svg';
 
@@ -23,4 +24,11 @@ export const Help = ({ title, button, href, EST }) => {
       )}
     </section>
   );
+};
+
+Help.propTypes = {
+  title: PropTypes.string.isRequired,
+  button: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  EST: PropTypes.bool,
 };

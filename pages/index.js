@@ -35,7 +35,7 @@ const Home = ({ slugs }) => {
       <Search />
       <Form />
 
-      <Help title={t('helpTitle')} button={t('buttonCard')} href="/" />
+      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
 
       <Cards slugs={slugs} />
     </>

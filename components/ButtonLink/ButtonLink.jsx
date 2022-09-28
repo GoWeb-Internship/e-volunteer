@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 export const ButtonLink = ({ children, href, button, className, props }) => {
@@ -20,4 +21,11 @@ export const ButtonLink = ({ children, href, button, className, props }) => {
       </a>
     </Link>
   );
+};
+
+ButtonLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string,
+  button: PropTypes.bool,
+  className: PropTypes.string,
 };
