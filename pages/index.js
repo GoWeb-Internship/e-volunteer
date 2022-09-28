@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-// import { Search } from '@/components/Search/Search';
+import { Form } from '@/components/form/Form';
 import { Spinner } from '@/components/Spinner/Spinner';
 
 const Home = ({ slugs }) => {
@@ -42,6 +42,7 @@ const Home = ({ slugs }) => {
           </li>
         ))}
       </ul>
+      <Form/>
     </>
   );
 };
