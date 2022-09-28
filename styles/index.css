@@ -2,8 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply bg-blue-200
+/* COMMON STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans font-normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @apply mt-0;
+}
+
+ul,
+ol {
+  @apply mt-0 mb-0 pl-0;
+}
+
+b {
+  @apply font-bold;
+}
+
+blockquote {
+  font-style: normal !important;
+  quotes: none !important;
+  border-left: none !important;
+  font-weight: inherit !important;
+}
+
+blockquote {
+  @apply m-0 rounded-[20px] bg-blue-200 py-5 pl-[108px];
 }
 
 .visually-hidden {

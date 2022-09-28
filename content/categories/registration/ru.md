@@ -2,23 +2,21 @@
 category: registration
 title: Первые шаги
 poster: registration.jpeg
-preview:
-  Регистрация. Приобретение стартового пакета мобильной связи.  Получение
+preview: Регистрация. Приобретение стартового пакета мобильной связи.  Получение
   социальной помощи. Проездной билет. Получение пособия на детей и пенсии
 alt: Вырезанная стрелка на бетонной стене
 language: ru
 range: 1
 ---
-
-## Регистрация
-
-1.1 Если нужна помощь с жильем (временное размещение новоприбывших военных
-беженцев) обращаться в инфопункт по адресу **Pikk 18, Pärnu**,
-[+37253499911](tel::+37253499911)
-
-1.2 Если нужна только временная защита обращаться по адресу **Tammsaare pst,61**
-в отделение полиции, забронировав время по
-[ссылке](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA)
+> ## Регистрация
+>
+> 1.1 Если нужна помощь с жильем (временное размещение новоприбывших военных
+> беженцев) обращаться в инфопункт по адресу **Pikk 18, Pärnu**,
+> [+37253499911](tel::+37253499911)
+>
+> 1.2 Если нужна только временная защита обращаться по адресу **Tammsaare pst,61**
+> в отделение полиции, забронировав время по
+> [ссылке](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA)
 
 ## Приобретение стартового пакета мобильной связи
 
@@ -30,13 +28,10 @@ range: 1
 После получения личного кода (isikukood) необходимо открыть счет в любом банке
 на выбор:
 
-- [https://www.lhv.ee](https://www.lhv.ee)
-
-- [https://www.seb.ee/ru](https://www.seb.ee/ru)
-
-- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start)
-
-- [https://luminor.ee](https://luminor.ee)
+* <https://www.lhv.ee>
+* <https://www.seb.ee/ru>
+* <https://www.swedbank.ee/private/d2d/start>
+* <https://luminor.ee>
 
 ## Получение социальной помощи
 
