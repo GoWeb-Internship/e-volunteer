@@ -12,7 +12,7 @@ collections:
     label_singular: 'Categories_RU'
     slug: '{{fields.slug}}'
     create: true
-    delete: false
+    delete: true
     path: '{{category}}/{{language}}'
     filter: { field: 'language', value: 'ru' }
     fields:
@@ -53,7 +53,7 @@ collections:
     label_singular: 'categories_UA'
     slug: '{{fields.slug}}'
     create: true
-    delete: false
+    delete: true
     path: '{{category}}/{{language}}'
     filter: { field: 'language', value: 'uk' }
     fields:
@@ -94,7 +94,7 @@ collections:
     folder: 'content/help'
     label_singular: 'Help_RU'
     create: true
-    delete: false
+    delete: true
     path: '{{language}}'
     filter: { field: 'language', value: 'ru' }
     fields:
@@ -112,7 +112,7 @@ collections:
     folder: 'content/help'
     label_singular: 'Help_UA'
     create: true
-    delete: false
+    delete: true
     path: '{{language}}'
     filter: { field: 'language', value: 'uk' }
     fields:
