@@ -6,7 +6,7 @@ import   Teleg  from '../public/img/teleg.svg';
 
 
 
-export default function Footer({ slugs }) {
+export const Footer = ({ slugs }) => {
   const { t } = useTranslation('common');
     
   return (

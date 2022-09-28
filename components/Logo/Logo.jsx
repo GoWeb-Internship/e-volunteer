@@ -3,7 +3,7 @@ import React from 'react';
 import   LogoSite  from '../../public/img/Logo.svg';
 
 
-export default function Logo() {
+export const Logo = () => {
 
     
     return (

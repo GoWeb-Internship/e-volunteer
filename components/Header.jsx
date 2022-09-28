@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Logo  from './Logo/Logo';
 
 
-export default function Header() {
+export const Header = () => {
   const router = useRouter();
   const { t } = useTranslation('common');
   const handleLocaleChange = event => {
