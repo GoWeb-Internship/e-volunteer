@@ -95,10 +95,9 @@ collections:
     label_singular: 'Help_RU'
     create: true
     delete: false
-    path: '{{help}}/{{language}}'
+    path: '{{language}}'
     filter: { field: 'language', value: 'ru' }
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
       - {
           label: 'Language',
           name: 'language',
@@ -106,6 +105,7 @@ collections:
           options: ['ru'],
           default: 'ru',
         }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: 'Help_UA'
     name: 'help_ua'
@@ -113,15 +113,62 @@ collections:
     label_singular: 'Help_UA'
     create: true
     delete: false
-    path: '{{help}}/{{language}}'
+    path: '{{language}}'
     filter: { field: 'language', value: 'uk' }
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
       - {
           label: 'Language',
           name: 'language',
           widget: 'select',
           options: ['uk'],
           default: 'uk',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  #Banner
+  - label: 'Banner_RU'
+    name: 'banner_ru'
+    folder: 'content/banner'
+    label_singular: 'Banner_RU'
+    create: true
+    delete: true
+    path: '{{language}}'
+    filter: { field: 'language', value: 'ru' }
+    fields:
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['ru'],
+          default: 'ru',
+        }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          default: Баннер над хедером,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Banner_UA'
+    name: 'banner_ua'
+    folder: 'content/banner'
+    label_singular: 'Banner_UA'
+    create: true
+    delete: true
+    path: '{{language}}'
+    filter: { field: 'language', value: 'uk' }
+    fields:
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['uk'],
+          default: 'uk',
+        }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          default: Банер над хедером,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
