@@ -3,9 +3,7 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Search } from '@/components/Search/Search';
 import { Spinner } from '@/components/Spinner/Spinner';
-import { Form } from '@/components/Form/Form';
 import { Cards } from 'views';
 
 const Home = ({ slugs }) => {
@@ -28,9 +26,7 @@ const Home = ({ slugs }) => {
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
-      <Search />
       <Spinner />
-      <Form />
 
       <Cards slugs={slugs} />
     </>
