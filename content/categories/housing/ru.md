@@ -2,6 +2,8 @@
 category: housing
 title: Жильё
 poster: housing.jpeg
+alt: Связка ключей на фоне игрушечного домика
+preview: Возмещение расходов на жилплощадь для военных беженцев в Украине
 language: ru
 date: 2022-09-18T10:40:49.030Z
 ---

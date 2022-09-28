@@ -2,6 +2,8 @@
 category: work
 title: Работа
 poster: work.jpeg
+alt: Две женщины обсуждают рабочие моменты
+preview: Встать на учет на биржу труда. Работа
 language: ru
 date: 2022-09-19T14:45:36.413Z
 ---
