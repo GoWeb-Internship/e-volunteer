@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Search } from '@/components/Search/Search';
 import { Spinner } from '@/components/Spinner/Spinner';
 import { Form } from '@/components/Form/Form';
-import { Card } from '@/components/Card/Card';
+import { Cards } from 'views';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -32,20 +32,7 @@ const Home = ({ slugs }) => {
       <Spinner />
       <Form />
 
-      <h2 className="mt-12 text-center font-bold">Ссылки</h2>
-
-      <div>
-        {slugs.map((slug, idx) => (
-          <Card
-            key={idx}
-            title={slug.title}
-            preview={slug.preview}
-            image={slug.poster}
-            href={slug.href}
-            alt={slug.alt}
-          />
-        ))}
-      </div>
+      <Cards slugs={slugs} />
     </>
   );
 };
