@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import useFormPersist from 'react-hook-form-persist';
 import * as yup from 'yup';
 
-import sendMessageToTg from '../../services/telegramApi';
+import sendMessageToTg from '../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
 
 export const Form = () => {
