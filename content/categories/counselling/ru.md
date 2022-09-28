@@ -2,6 +2,8 @@
 category: counselling
 title: Психологическая помощь
 poster: counselling.jpeg
+alt: Клиент на приеме у психолога
+preview: "Психологическая помощь, Услуга психолога "
 language: ru
 date: 2022-09-21T14:51:14.468Z
 ---
