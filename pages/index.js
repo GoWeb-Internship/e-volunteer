@@ -5,6 +5,7 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Spinner } from 'components';
 import { Cards } from 'views';
+import { Help } from 'views';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -25,8 +26,11 @@ const Home = ({ slugs }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
+      <Help title="Ma tahan aidata" button="Vali" href="/" EST />
 
       <Spinner />
+
+      <Help title="Хочу оказать помощь" button="Выбрать" href="/" />
 
       <Cards slugs={slugs} />
     </>
