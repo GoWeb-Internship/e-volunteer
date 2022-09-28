@@ -52,3 +52,4 @@ R-кіоску.
 
 Більше інформації про те, де і як отримати -
 [https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy)
+
