@@ -2,6 +2,8 @@
 category: counselling
 title: Психологічна допомога
 poster: counselling.jpeg
+preview: '"Психологічна допомога, Послуга психолога"'
+alt: Клієнт на прийомі у психолога
 language: uk
 date: 2022-09-21T14:51:14.468Z
 ---
