@@ -3,20 +3,24 @@ const path = require('path');
 const matter = require('gray-matter');
 const { i18n } = require('../next-i18next.config');
 
+const PATH = 'content/categories';
+
 function getCards() {
-  const cardsDirectory = path.join(process.cwd(), 'content/categories'); //retrieving the posts directory path
-  const fileNames = fs.readdirSync(cardsDirectory); // getting the names of the files, with the .md extension
+  const cardsDirectory = path.join(process.cwd(), PATH);
+  const fileNames = fs.readdirSync(cardsDirectory);
+
   let cards = [];
 
   for (let fileName of fileNames) {
     for (let locale of i18n.locales) {
       const id = fileName;
 
-      let fullPath = path.join('content/categories', fileName, `${locale}.md`);
+      let fullPath = path.join(PATH, fileName, `${locale}.md`);
 
       if (!fs.existsSync(fullPath)) continue;
 
       const fileContents = fs.readFileSync(fullPath, 'utf8'); //getting the contents of the file
+
       const matterResult = matter(fileContents);
 
       cards.push({
@@ -42,5 +46,5 @@ try {
 fs.writeFile('cache/data.js', fileContents, function (err) {
   // writing to the cache/data.js file
   if (err) return console.log(err);
-  console.log('Posts cached.');
+  console.log('Categories cached.');
 });

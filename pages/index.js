@@ -3,9 +3,10 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Spinner } from 'components';
-import { Cards } from 'views';
-import { Help } from 'views';
+
+import { Cards, Help, Search } from 'views';
+import { Spinner, Form } from '@/components';
+
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -29,6 +30,8 @@ const Home = ({ slugs }) => {
       <Help title="Ma tahan aidata" button="Vali" href="/" EST />
 
       <Spinner />
+      <Search />
+      <Form />
 
       <Help title="Хочу оказать помощь" button="Выбрать" href="/" />
 

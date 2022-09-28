@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import sendMessageToTg from '../../services/telegramApi';
-import { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
+import { yupResolver } from '@hookform/resolvers/yup';
+import useFormPersist from 'react-hook-form-persist';
+import * as yup from 'yup';
+
+import sendMessageToTg from '../../services/telegramApi';
+import TextField from '@material-ui/core/TextField';
 
 export const Form = () => {
   const { t } = useTranslation('common');
