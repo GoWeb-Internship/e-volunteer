@@ -40,7 +40,7 @@ export const Search = () => {
 
   return (
     <div
-      className="relative my-8 mx-auto flex max-w-lg items-center justify-center"
+      className="relative ml-auto mr-[20px]  flex max-w-lg items-center justify-center"
       ref={searchRef}
     >
       <form role="search" method="get" id="searchform" action="">
