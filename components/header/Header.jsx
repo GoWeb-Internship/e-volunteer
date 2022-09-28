@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Search } from '@/components/Search/Search';
+import { Search } from '@/components/search/Search';
 import { useTranslation } from 'next-i18next';
 import Logo  from '../Logo/Logo';
 
