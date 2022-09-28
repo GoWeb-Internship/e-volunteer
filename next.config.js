@@ -16,7 +16,6 @@ module.exports = {
       require('./scripts/cache');
     }
 
-
     const fileLoaderRule = cfg.module.rules.find(
       rule => rule.test && rule.test.test('.svg'),
     );
@@ -29,5 +28,3 @@ module.exports = {
     return cfg;
   },
 };
-
-

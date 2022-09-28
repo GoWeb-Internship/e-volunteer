@@ -1,7 +1,9 @@
 import '../styles/index.css';
 import { appWithTranslation } from 'next-i18next';
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+
 
 
 const MyApp = ({ Component, pageProps}) => {
