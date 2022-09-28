@@ -31,6 +31,9 @@ collections:
               { label: 'Выплаты', value: 'payments' },
               { label: 'Инфо телефоны', value: 'info' },
               { label: 'Полезные ссылки', value: 'references' },
+              { label: 'Мастера из Украины', value: 'masters' },
+              { label: 'Образование', value: 'education' },
+              { label: 'Досуг', value: 'leisure' },
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -42,13 +45,7 @@ collections:
           options: ['ru'],
           default: 'ru',
         }
-      - { label: 'Date', name: 'date', widget: 'date', format: 'MMM Do YY' }
-      # - label: 'Links'
-      #   name: 'links'
-      #   widget: list
-      #   fields:
-      #     - { label: 'Href', name: 'href', widget: 'string' }
-      #     - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Range', name: 'range', widget: 'number' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: 'Categories_UA'
     name: 'categories_ua'
@@ -75,6 +72,9 @@ collections:
               { label: 'Виплати', value: 'payments' },
               { label: 'Інфо телефони', value: 'info' },
               { label: 'Корисні посилання', value: 'references' },
+              { label: 'Майстри з України', value: 'masters' },
+              { label: 'Освіта', value: 'education' },
+              { label: 'Дозвілля', value: 'leisure' },
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -86,5 +86,42 @@ collections:
           options: ['uk'],
           default: 'uk',
         }
-      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Range', name: 'range', widget: 'number' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  # Help
+  - label: 'Help_RU'
+    name: 'help_ru'
+    folder: 'content/help'
+    label_singular: 'Help_RU'
+    create: true
+    delete: false
+    path: '{{help}}/{{language}}'
+    filter: { field: 'language', value: 'ru' }
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['ru'],
+          default: 'ru',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Help_UA'
+    name: 'help_ua'
+    folder: 'content/help'
+    label_singular: 'Help_UA'
+    create: true
+    delete: false
+    path: '{{help}}/{{language}}'
+    filter: { field: 'language', value: 'uk' }
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['uk'],
+          default: 'uk',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
