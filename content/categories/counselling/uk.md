@@ -2,9 +2,8 @@
 category: counselling
 title: Психологічна допомога
 poster: counselling.jpeg
-preview: '"Психологічна допомога, Послуга психолога"'
+preview: Психологічна допомога. Послуга психолога
 alt: Клієнт на прийомі у психолога
-date: 2022-09-21T14:51:14.468Z
 language: uk
 range: 5
 ---
@@ -23,8 +22,8 @@ range: 5
 
 Послуга психолога надається безкоштовно клієнтам, які стоять на обліку в Касі з
 безробіття (Töötukassa), та клієнтам, спрямованим Державною послугою допомоги
-жертвам (Riiklik Ohvriabi [+3726147393](+3726147393))
+жертвам (Riiklik Ohvriabi [+3726147393](tel::+3726147393))
 
 [https://www.sotsiaalkindlustusamet.ee/ru/pomoshch-zhertvam-prestupleniya/liniya-krizisnogo-telefona-pomoshchi-zhertvam-116-006](https://www.sotsiaalkindlustusamet.ee/ru/pomoshch-zhertvam-prestupleniya/liniya-krizisnogo-telefona-pomoshchi-zhertvam-116-006)
 
-Контакт: [parnu@sensus.ee](parnu@sensus.ee); тел [5212928](5212928)
+Контакт: [parnu@sensus.ee](mailto:parnu@sensus.ee); тел [5212928](tel::5212928)
