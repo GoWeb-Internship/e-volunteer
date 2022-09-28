@@ -219,3 +219,50 @@ collections:
           default: 'Центри прийомів біженців',
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  # Footer
+  - label: 'Footer_RU'
+    name: 'footer_ru'
+    folder: 'content/footer'
+    label_singular: 'Footer_RU'
+    create: true
+    delete: true
+    path: '{{language}}'
+    filter: { field: 'language', value: 'ru' }
+    fields:
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['ru'],
+          default: 'ru',
+        }
+      - {
+          label: 'Footer',
+          name: 'footer',
+          widget: 'string',
+          default: 'Контакты доп информации',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Footer_UA'
+    name: 'footer_ua'
+    folder: 'content/footer'
+    label_singular: 'Footer_ua'
+    create: true
+    delete: true
+    path: '{{language}}'
+    filter: { field: 'language', value: 'uk' }
+    fields:
+      - {
+          label: 'Language',
+          name: 'language',
+          widget: 'select',
+          options: ['uk'],
+          default: 'uk',
+        }
+      - {
+          label: 'Footer',
+          name: 'footer',
+          widget: 'string',
+          default: 'Контакти дод інформації',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
