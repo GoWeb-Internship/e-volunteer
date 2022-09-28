@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Search } from '@/components/Search/Search';
 import { Spinner } from '@/components/Spinner/Spinner';
 import { Form } from '@/components/Form/Form';
+import { Card } from '@/components/Card/Card';
 
 const Home = ({ slugs }) => {
   useEffect(() => {
@@ -34,15 +34,18 @@ const Home = ({ slugs }) => {
 
       <h2 className="mt-12 text-center font-bold">Ссылки</h2>
 
-      <ul className="mx-auto mt-4 max-w-lg list-inside list-disc ">
+      <div>
         {slugs.map((slug, idx) => (
-          <li key={idx}>
-            <Link href={`/${slug.href}`}>
-              <a>{slug.title}</a>
-            </Link>
-          </li>
+          <Card
+            key={idx}
+            title={slug.title}
+            preview={slug.preview}
+            image={slug.poster}
+            href={slug.href}
+            alt={slug.alt}
+          />
         ))}
-      </ul>
+      </div>
     </>
   );
 };

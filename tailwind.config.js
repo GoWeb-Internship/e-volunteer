@@ -15,6 +15,11 @@ module.exports = {
           xl: '1.4rem',
         },
       },
+      colors: {
+        blue2: '#73A9FF',
+        button: '#5483C9',
+        hero: '#4571B1',
+      },
     },
   },
   plugins: [

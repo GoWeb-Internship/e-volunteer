@@ -7,7 +7,6 @@ import { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const Form = () => {
   const { t } = useTranslation('common');
@@ -153,11 +152,3 @@ export const Form = () => {
     </div>
   );
 };
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-}
