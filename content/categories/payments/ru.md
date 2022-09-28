@@ -2,10 +2,11 @@
 category: payments
 title: Выплаты
 poster: payments.jpeg
-alt: Голубая платежная карточка Master Card в руке у мужчины.
 preview: "Получение пособия на детей и пенсии "
-language: ru
+alt: Голубая платежная карточка Master Card в руке у мужчины.
 date: 2022-09-22T14:57:31.853Z
+language: ru
+range: 7
 ---
 
 ## Получение пособия на детей и пенсии
