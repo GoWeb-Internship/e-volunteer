@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo  from '../Logo/Logo';
+import Logo  from './Logo/Logo';
 import { useTranslation } from 'next-i18next';
-import   Teleg  from '../../public/img/teleg.svg';
+import   Teleg  from '../public/img/teleg.svg';
 
 
 

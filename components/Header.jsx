@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Search } from '../Search/Search';
+import { Search } from './Search/Search';
 import { useTranslation } from 'next-i18next';
-import Logo  from '../Logo/Logo';
+import Logo  from './Logo/Logo';
 
 
 export const Header = () => {
