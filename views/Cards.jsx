@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { Card } from '@/components/Card/Card';
+import { Card } from 'components';
 
 export const Cards = ({ slugs }) => {
   const { t } = useTranslation('common');

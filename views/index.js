@@ -1,1 +1,2 @@
-export * from './Cards.jsx';
+export * from './Cards';
+export * from './Search';

@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Spinner } from '@/components/Spinner/Spinner';
+import { Spinner } from 'components';
 import { Cards } from 'views';
 
 const Home = ({ slugs }) => {
