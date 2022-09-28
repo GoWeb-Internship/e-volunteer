@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import sendMessageToTg from '../../services/telegramApi';
-import { useState } from 'react';
+// import { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import useFormPersist from 'react-hook-form-persist';
 import { useTranslation } from 'next-i18next';
@@ -12,7 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export const Form = () => {
   const { t } = useTranslation('common');
 
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const formSchema = yup.object().shape({
     email: yup
@@ -44,11 +44,11 @@ export const Form = () => {
       .required(t('nameRequired'))
       .min(9, t('phoneMin'))
       .max(18, t('phoneMax')),
-    textN: yup
-      .string()
-      .required(t('nameRequired'))
-      .min(10, t('textMin'))
-      .max(2000, t('textMax')),
+    // textN: yup
+    //   .string()
+    //   .required(t('nameRequired'))
+    //   .min(10, t('textMin'))
+    //   .max(2000, t('textMax')),
   });
 
   const {
@@ -71,7 +71,7 @@ export const Form = () => {
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log(data);
-    setShowModal(`thank you ${data.name} for your message`);
+    // setShowModal(`thank you ${data.name} for your message`);
     reset();
 
     //TELEGRAM
@@ -131,12 +131,12 @@ export const Form = () => {
           <button
             className="btn"
             type="submit"
-            onClick={() => setShowModal(true)}
+            // onClick={() => setShowModal(true)}
           >
             Відправити
           </button>
         </form>
-        {showModal ? (
+        {/* {showModal ? (
           <div className="absolute mt-10 flex h-auto w-72 flex-col items-center justify-center rounded-lg bg-slate-600 p-2 shadow-xl">
             <h2 className="mx-4 mt-2 text-center text-base font-semibold text-gray-400">
               {t('gratitude')}
@@ -148,7 +148,7 @@ export const Form = () => {
               Close
             </button>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </div>
   );

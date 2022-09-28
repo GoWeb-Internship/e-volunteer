@@ -15,6 +15,7 @@ module.exports = {
           xl: '1.4rem',
         },
       },
+     
     },
   },
   plugins: [
