@@ -5,15 +5,34 @@ module.exports = {
   content: ['./pages/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        card: '8px 8px 12px rgba(84, 131, 201, 0.5)',
+      },
+
+      colors: {
+        blue2: '#73A9FF',
+        button: '#5483C9',
+        hero: '#4571B1',
+      },
+
       container: {
         center: true,
         padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
-          md: '2rem',
-          lg: '2rem',
-          xl: '1.4rem',
+          DEFAULT: '1.25rem',
+          sm: '1.25rem',
+          md: '2.125rem',
+          xl: '1.25rem',
         },
+      },
+
+      fontFamily: {
+        sans: ['Ubuntu', 'sans-serif'],
+      },
+
+      screens: {
+        sm: '480px',
+        md: '768px',
+        xl: '1280px',
       },
     },
   },
