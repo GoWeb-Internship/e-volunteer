@@ -4,7 +4,6 @@ title: Виплати
 poster: payments.jpeg
 preview: Отримання допомоги на дітей та пенсії
 alt: Блакитна платіжна картка Master Card у руці у чоловіка.
-date: 2022-09-22T14:57:31.853Z
 language: uk
 range: 7
 ---
