@@ -3,44 +3,40 @@ category: references
 title: Полезные ссылки
 poster: references.jpeg
 language: ru
-date: Sep 27th 22
+date: 2022-09-24T15:03:03.452Z
 ---
 
+## Полезные ссылки и каналы:
 
-1. (RU) Полезные ссылки: ссылки и каналы
+[https://t.me/infohelpparnu](https://t.me/infohelpparnu)
 
-Полезные ссылки и каналы:
+[https://t.me/uaineechat](https://t.me/uaineechat)
 
-<https://t.me/infohelpparnu>
+[https://t.me/uainee](https://t.me/uainee)
 
-<https://t.me/uaineechat>
+[https://www.facebook.com/groups/180754273928201](https://www.facebook.com/groups/180754273928201)
 
-<https://t.me/uainee>
+[https://www.facebook.com/groups/1135339406618782](https://www.facebook.com/groups/1135339406618782)
 
-<https://www.facebook.com/groups/180754273928201>
+[https://www.facebook.com/groups/1001775757099224](https://www.facebook.com/groups/1001775757099224)
 
-<https://www.facebook.com/groups/1135339406618782>
+[https://www.facebook.com/groups/ukrainasobradeestis](https://www.facebook.com/groups/ukrainasobradeestis)
 
-<https://www.facebook.com/groups/1001775757099224>
+[https://www.facebook.com/groups/335438515295420](https://www.facebook.com/groups/335438515295420)
 
-<https://www.facebook.com/groups/ukrainasobradeestis>
+[https://www.facebook.com/groups/perevezennya](https://www.facebook.com/groups/perevezennya)
 
-<https://www.facebook.com/groups/335438515295420>
+[https://kinnisvara24.delfi.ee/ru/ukraini](https://kinnisvara24.delfi.ee/ru/ukraini) -
+поиск жилья
 
-https://www.facebook.com/groups/perevezennya
+[https://vabaajakeskus.ee/](https://vabaajakeskus.ee/) - центр досуга
 
- 
+[https://pollianna.ee/](https://pollianna.ee/) - бесплатные мероприятия Эстонии
 
- 
+[https://kriis.ee/ru](https://kriis.ee/ru) - Общая информация для беженцев из
+Украины
 
-<https://kinnisvara24.delfi.ee/ru/ukraini> - поиск жилья
+[https://dopomogo.com/](https://dopomogo.com/) - поиск услуг украинцев
+заграницей
 
-<https://vabaajakeskus.ee/> - центр досуга
-
-<https://pollianna.ee/> - бесплатные мероприятия Эстонии
-
-<https://kriis.ee/ru> - Общая информация для беженцев из Украины
-
-<https://dopomogo.com/> - поиск услуг украинцев заграницей
-
-<https://humanrights.ee/ru/>  - Права человека
+[https://humanrights.ee/ru/](https://humanrights.ee/ru/) - Права человека
