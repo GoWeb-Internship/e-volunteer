@@ -12,9 +12,15 @@ export const Help = ({ title, button, href, EST }) => {
       <h2 className=" mb-6 text-[24px] leading-[28px] md:mb-0 md:text-[34px] md:leading-[44px]">
         {title}
       </h2>
-      <ButtonLink href={href} className="mx-auto md:mx-0">
-        {button}
-      </ButtonLink>
+      {EST ? (
+        <ButtonLink button className="mx-auto md:mx-0">
+          {button}
+        </ButtonLink>
+      ) : (
+        <ButtonLink href={href} className="mx-auto md:mx-0">
+          {button}
+        </ButtonLink>
+      )}
     </section>
   );
 };

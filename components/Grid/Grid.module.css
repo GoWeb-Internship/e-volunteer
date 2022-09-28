@@ -1,11 +1,11 @@
 .card {
-@apply grid grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-y-[60px] md:gap-x-5 lg:grid-cols-3 
+@apply grid grid-cols-1  gap-y-10 md:grid-cols-2 md:gap-y-[60px] md:gap-x-5 xl:grid-cols-3 
 }
 
 .contact {
-@apply grid grid-cols-1 md:grid-cols-2 md:gap-y-9 md:gap-x-5 lg:grid-cols-3 lg:gap-x-[130px]
+@apply grid grid-cols-1 md:grid-cols-2 md:gap-y-9 md:gap-x-5 xl:grid-cols-3 xl:gap-x-[130px]
 }
 
 .footer {
-@apply grid grid-cols-2 md:grid-cols-4 md:gap-y-5 md:gap-x-6 lg:gap-x-32 
+@apply grid grid-cols-2 md:grid-cols-4 md:gap-y-5 md:gap-x-6 xl:gap-x-32 
 }

@@ -1,12 +1,12 @@
 import { useTranslation } from 'next-i18next';
-import { Card } from 'components';
+import { Card, Grid } from 'components';
 
 export const Cards = ({ slugs }) => {
   const { t } = useTranslation('common');
   return (
-    <section>
+    <section className="py-[58px] px-5 sm:py-[80px] md:py-[100px] md:px-9 xl:px-[80px]">
       <h2 className="visually-hidden">{t('cardsTitle')}</h2>
-      <div>
+      <Grid type="card">
         {slugs.map((slug, idx) => (
           <Card
             key={idx}
@@ -17,7 +17,7 @@ export const Cards = ({ slugs }) => {
             alt={slug.alt}
           />
         ))}
-      </div>
+      </Grid>
     </section>
   );
 };
