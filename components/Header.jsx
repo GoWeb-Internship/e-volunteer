@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-export default function Header() {
+export const Header = () => {
   const router = useRouter();
 
   const handleLocaleChange = event => {
@@ -20,4 +20,4 @@ export default function Header() {
       </select>
     </header>
   );
-}
+};
