@@ -11,13 +11,13 @@ range: 1
 
 ## Реєстрація
 
-1.1 Якщо потрібна допомога з житлом (тимчасове розміщення новоприбулих
-військових біженців) звертатись до інфопункту за адресою **Pikk 18, Pärnu**,
-[+37253499911](tel::+37253499911)
-
-1.2 Якщо потрібен лише тимчасовий захист звертатись за адресою **Tammsaare
-pst,61** у відділення поліції, забронювавши час за
-[посиланням](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA)
+> Якщо потрібна допомога з житлом (тимчасове розміщення новоприбулих військових
+> біженців) звертатись до інфопункту за адресою **Pikk 18, Pärnu**,
+> [+37253499911](tel::+37253499911)
+>
+> Якщо потрібен лише тимчасовий захист звертатись за адресою **Tammsaare
+> pst,61** у відділення поліції, забронювавши час за
+> [посиланням](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA){:target="\_blank"}
 
 ## Придбання стартового пакета мобільного зв'язку
 
@@ -29,13 +29,13 @@ pst,61** у відділення поліції, забронювавши час
 Після отримання особистого коду (isikukood) необхідно відкрити рахунок у
 будь-якому банку на вибір
 
-- [https://www.lhv.ee](https://www.lhv.ee)
+- [https://www.lhv.ee](https://www.lhv.ee){:target="\_blank"}
 
-- [https://www.seb.ee/ru](https://www.seb.ee/ru)
+- [https://www.seb.ee/ru](https://www.seb.ee/ru){:target="\_blank"}
 
-- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start)
+- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start){:target="\_blank"}
 
-- [https://luminor.ee](https://luminor.ee)
+- [https://luminor.ee](https://luminor.ee){:target="\_blank"}
 
 ## Отримання соціальної допомоги
 
@@ -50,5 +50,4 @@ pst,61** у відділення поліції, забронювавши час
 R-кіоску.
 
 Більше інформації про те, де і як отримати -
-[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy)
-
+[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy){:target="\_blank"}
