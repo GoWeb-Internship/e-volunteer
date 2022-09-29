@@ -1,15 +1,15 @@
 .fotoIcons {
-    @apply  hidden absolute xl:block ml-[100px] mt-[20px] w-[480px] h-[748px]
+  @apply absolute ml-[100px] mt-[20px] hidden h-[748px] w-[480px] xl:block;
 }
-.formContainer{
-    @apply container pb-[64px] pt-[40px] relative sm:pb-[80px] sm:pr-[20px] sm:pl-[20px] md:pr-[40px] md:pl-[40px] xl:pr-[80px] xl:pl-[174px] xl:pt-[150px]  xl:ml-[550px] xl:h-[776px] my-auto
+.formContainer {
+  @apply container relative my-auto pb-[64px] pt-[40px] sm:pb-[80px] sm:pr-[20px] sm:pl-[20px] md:pr-[40px] md:pl-[40px] xl:ml-[550px] xl:h-[776px]  xl:pr-[80px] xl:pl-[174px] xl:pt-[150px];
 }
-.formGl{
-    @apply text-textForm  font-medium text-2xl pb-[17px] md:font-normal md:text-4xl
+.formGl {
+  @apply pb-[17px]  text-2xl font-medium text-textForm md:text-4xl md:font-normal;
 }
-.formText{
-    @apply text-textFormState  font-medium text-lg mr-[82px] sm:mr-[149px] md:font-normal md:text-xl md:mb-[20px]
+.formText {
+  @apply mr-[82px]  text-lg font-medium text-textFormState sm:mr-[149px] md:mb-[20px] md:text-xl md:font-normal;
 }
-.iconsForm{
-    @apply hidden sm:block -mt-[120px] md:hidden
+.iconsForm {
+  @apply -mt-[120px] hidden sm:block md:hidden;
 }

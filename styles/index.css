@@ -50,16 +50,10 @@ blockquote {
   overflow: hidden;
 }
 
-/* SLUG */
-
-/* .prose > a {
-  @apply !text-button;
-} */
-
 /* FORM BUTTON */
 
 .btn {
-  border: 1px solid #FEF08A;
+  border: 1px solid #fef08a;
   padding: 10px 20px;
   cursor: pointer;
   transition: 0.8s;
@@ -68,7 +62,6 @@ blockquote {
   border-radius: 20px;
   width: 280px;
   height: 56px;
- 
 }
 
 .btn::after {
@@ -114,13 +107,12 @@ blockquote {
 @media screen and (min-width: 480px) {
   .form button {
     margin-top: 40px;
- }
+  }
 }
 
 button:hover {
   filter: brightness(100%);
 }
-
 
 /* SEARCH */
 

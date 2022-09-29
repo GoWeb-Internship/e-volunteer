@@ -3,11 +3,16 @@ import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import useFormPersist from 'react-hook-form-persist';
 import * as yup from 'yup';
-import { fotoIcons, formContainer, formGl, formText, iconsForm } from './Form.module.css';
+import {
+  fotoIcons,
+  formContainer,
+  formGl,
+  formText,
+  iconsForm,
+} from './Form.module.css';
 import Image from 'next/image';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
-
 
 export const Form = () => {
   const { t } = useTranslation('common');
@@ -65,86 +70,84 @@ export const Form = () => {
       ------
       `;
     sendMessageToTg(message);
-
-  
   };
 
   return (
-    <div className='flex'>
- <div className='hidden md:block my-auto xl:hidden'> 
-       <Image
-          width="212px"
-          height="613px"
-          src="/img/form/plForm.svg"
-          className=" object-cover"
-          alt="shadow"
-        />
+    <section>
+      <div className="container">
+        <div className="flex">
+          <div className="my-auto hidden md:block xl:hidden">
+            <Image
+              width="212px"
+              height="613px"
+              src="/img/form/plForm.svg"
+              className=" object-cover"
+              alt="shadow"
+            />
+          </div>
+
+          <div className={fotoIcons}>
+            <Image
+              layout="fill"
+              src="/img/form/descForm.svg"
+              className="absolute"
+              alt="shadow"
+            />
+          </div>
+
+          <div className={formContainer}>
+            <h2 className={formGl}>{t('textForm')}</h2>
+            <div className="flex ">
+              <p className={formText}>{t('write')}</p>
+              <div className="sm:hidden">
+                <Image
+                  width="74px"
+                  height="76px"
+                  src="/img/form/iconForm.svg"
+                  className=" object-cover sm:block"
+                  alt="shadow"
+                />
+              </div>
+              <div className={iconsForm}>
+                <Image
+                  width="168px"
+                  height="171px"
+                  src="/img/form/iconForm.svg"
+                  className=" -pt-[40px] object-cover"
+                  alt="shadow"
+                />
+              </div>
+            </div>
+
+            <form
+              className="form xl:mr-[140px]"
+              method="POST"
+              name="contact"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <TextField label={t('name')} {...register('name')} />
+              <span className="text-red-600 ">{errors.name?.message}</span>
+              <TextField label="+380" {...register('cellphone')} />
+              <span className="text-red-600 ">{errors.cellphone?.message}</span>
+              <TextField
+                label="Email"
+                className="input-custom"
+                {...register('email')}
+              />
+              <span className="text-red-600 ">{errors.email?.message}</span>
+              <TextField
+                label="Текст"
+                className="!pt-[128px] md:!pt-[75px]"
+                {...register('textN')}
+              />
+              <span className="text-red ">{errors.offers?.message}</span>
+              <button className="btn mx-auto md:mr-auto md:ml-0" type="submit">
+                Відправити
+              </button>
+            </form>
+          </div>
         </div>
-  
-        <div className={fotoIcons}> 
-       <Image
-       layout='fill'
-          src="/img/form/descForm.svg"
-          className="absolute"
-          alt="shadow"
-        />
-        </div>
-       
-      <div className={formContainer}>
-        <h2 className={formGl}>{t('textForm')}</h2>
-       <div className='flex '><p className={formText}>{t('write')}</p>
-       <div className='sm:hidden'> 
-       <Image
-          width="74px"
-          height="76px"
-          src="/img/form/iconForm.svg"
-          className=" object-cover sm:block"
-          alt="shadow"
-        />
-        </div>
-        <div className={iconsForm}> 
-       <Image
-          width="168px"
-          height="171px"
-          src="/img/form/iconForm.svg"
-          className=" object-cover -pt-[40px]"
-          alt="shadow"
-        />
-        </div>
-        </div> 
-       
-        <form
-          className="form xl:mr-[140px]"
-          method="POST"
-          name="contact"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <TextField label={t('name')} {...register('name')} />
-          <span className="text-red-600 ">{errors.name?.message}</span>
-          <TextField label="+380" {...register('cellphone')} />
-          <span className="text-red-600 ">{errors.cellphone?.message}</span>
-          <TextField
-            label="Email"
-            className="input-custom"
-            {...register('email')}
-          />
-          <span className="text-red-600 ">{errors.email?.message}</span>
-          <TextField
-            label="Текст"
-            className="!pt-[128px] md:!pt-[75px]"
-            {...register('textN')}
-          />
-          <span className="text-red ">{errors.offers?.message}</span>
-          <button
-            className="btn mx-auto md:mr-auto md:ml-0"
-            type="submit"
-          >
-            Відправити
-          </button>
-        </form>
-        </div>
-        </div>
-       
-   
+      </div>
+    </section>
   );
 };

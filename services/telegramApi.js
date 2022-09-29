@@ -1,4 +1,6 @@
 import axios from 'axios';
+axios.defaults.baseURL = '';
+axios.defaults.params = {};
 
 const sendMessageToTg = async text => {
   const NEXT_TOKEN = '5704499246:AAFqnkYEH-OkFg5Oyd_7fprDIBLIn44Z0RE';

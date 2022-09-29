@@ -18,8 +18,8 @@ module.exports = {
         blue2: '#73A9FF',
         button: '#5483C9',
         hero: '#4571B1',
-        textForm: "#475569",
-        textFormState: "#9498AB"
+        textForm: '#475569',
+        textFormState: '#9498AB',
       },
 
       container: {
@@ -39,6 +39,7 @@ module.exports = {
       screens: {
         sm: '480px',
         md: '768px',
+        lg: '768px',
         xl: '1280px',
       },
     },
