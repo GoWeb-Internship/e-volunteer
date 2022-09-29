@@ -24,7 +24,7 @@ export const Footer = ({slugs}) => {
     </div>
     </div>
     <ul className='flex pb-[32px] text-center justify-around pt-[32px]'>
-    {slugs.map((slug, idx) => (
+    {slugs && slugs.map((slug, idx) => (
       <li className='pl-[20px] text-white ' key={idx}>
         <Link href={`/${slug.href}`}>
           <a>{slug.title}</a>
