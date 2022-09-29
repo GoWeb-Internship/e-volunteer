@@ -6,7 +6,7 @@ import   Teleg  from '../public/img/teleg.svg';
 
 
 
-export const Footer = () => {
+export const Footer = ({slugs}) => {
   const { t } = useTranslation('common');
     
   return (
@@ -23,7 +23,7 @@ export const Footer = () => {
       </Link>
     </div>
     </div>
-    {/* <ul className='flex pb-[32px] text-center justify-around pt-[32px]'>
+    <ul className='flex pb-[32px] text-center justify-around pt-[32px]'>
     {slugs.map((slug, idx) => (
       <li className='pl-[20px] text-white ' key={idx}>
         <Link href={`/${slug.href}`}>
@@ -31,7 +31,7 @@ export const Footer = () => {
         </Link>
       </li>
     ))}
-  </ul> */}
+  </ul>
   <p className='border-b-2 text-center pb-[24px] text-white'>{t('textFooter')}</p>
   <div className='flex pb-[24px] pt-[20px]'>
     <span className="pr-1 text-white">&copy;</span>
