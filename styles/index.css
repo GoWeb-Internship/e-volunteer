@@ -21,13 +21,8 @@ p {
   @apply mt-0;
 }
 
-/* ul,
-ol {
-  @apply mt-0 mb-0 pl-0;
-} */
-
 b {
-  @apply font-bold;
+  @apply font-bold text-slate-600;
 }
 
 blockquote {
@@ -38,7 +33,7 @@ blockquote {
 }
 
 blockquote {
-  @apply m-0 rounded-[20px] bg-blue-200 py-5 pl-[108px];
+  @apply m-0 rounded-[20px] bg-blue-200;
 }
 
 .visually-hidden {

@@ -29,6 +29,7 @@ module.exports = {
           xl: '1.25rem',
         },
       },
+
       fontFamily: {
         sans: ['Ubuntu', 'sans-serif'],
       },

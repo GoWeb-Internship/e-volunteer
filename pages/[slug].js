@@ -17,8 +17,8 @@ const Page = ({ data: { data, contents } }) => {
 
       <section>
         <header className="pt-12 pb-7 shadow-slugHeader">
-          <div className="container">
-            <div className="flex w-full items-baseline gap-8 ">
+          <div className="container overflow-hidden">
+            <div className="flex w-full items-center gap-8 xl:items-baseline">
               <Link href="/">
                 <a href="">
                   <ArrowLongLeftIcon className="h-7 w-7 text-gray-800" />
@@ -31,13 +31,13 @@ const Page = ({ data: { data, contents } }) => {
                 </h1>
               )}
 
-              <PageFlower className="ml-auto hidden w-[154px] sm:block md:w-[260px] xl:w-[412px]" />
+              <PageFlower className="ml-auto hidden w-[154px]  sm:block md:w-[260px] xl:w-[412px]" />
             </div>
           </div>
         </header>
 
         <div className="container">
-          <div className="prose max-w-full py-20 transition-all prose-h2:mt-0 prose-p:mt-0 prose-a:text-button prose-a:no-underline hover:prose-a:underline focus:prose-a:underline prose-blockquote:px-[42px] prose-ol:list-decimal prose-li:truncate">
+          <div className="prose mr-auto max-w-full break-words py-20 prose-h2:relative prose-h2:mt-0 prose-h2:text-2xl prose-h2:font-medium prose-h2:leading-7 prose-h2:text-slate-600 prose-p:mt-0 prose-p:text-base prose-p:leading-6 prose-p:text-slate-600 prose-a:whitespace-pre-wrap prose-a:text-button prose-a:no-underline hover:prose-a:underline focus:prose-a:underline prose-blockquote:p-2 prose-blockquote:py-4 prose-strong:text-slate-600 prose-ol:pl-4 prose-ul:pl-4 md:prose-h2:text-[34px] md:prose-h2:leading-[39px] md:before:prose-h2:top-[13px] md:before:prose-h2:left-[-20px] xl:prose-p:text-xl xl:prose-p:leading-[1.24] xl:prose-a:text-xl xl:prose-a:leading-[1.24] xl:prose-blockquote:p-4">
             <ReactMarkdown>{contents}</ReactMarkdown>
           </div>
         </div>
@@ -45,6 +45,8 @@ const Page = ({ data: { data, contents } }) => {
     </>
   );
 };
+
+export default Page;
 
 export const getStaticPaths = async ({ locales }) => {
   const paths = getAllCardsPath(locales);
@@ -65,4 +67,3 @@ export const getStaticProps = async ({ params: { slug }, locale }) => {
     },
   };
 };
-export default Page;

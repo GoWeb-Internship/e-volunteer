@@ -26,4 +26,6 @@ range: 5
 
 [https://www.sotsiaalkindlustusamet.ee/ru/pomoshch-zhertvam-prestupleniya/liniya-krizisnogo-telefona-pomoshchi-zhertvam-116-006](https://www.sotsiaalkindlustusamet.ee/ru/pomoshch-zhertvam-prestupleniya/liniya-krizisnogo-telefona-pomoshchi-zhertvam-116-006)
 
-Контакт: [parnu@sensus.ee](mailto:parnu@sensus.ee); тел [5212928](tel::5212928)
+Контакт: [parnu@sensus.ee](mailto:parnu@sensus.ee)
+
+тел [5212928](tel::5212928)
