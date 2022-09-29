@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 export const Card = ({ title, preview, image, href, alt }) => {
   const { t } = useTranslation('common');
+
   return (
     <article className=" mx-auto h-[518px] max-w-[440px] rounded-[32px] bg-slate-50 shadow-card md:max-w-[330px] xl:h-[542px] xl:max-w-[412px]">
       <a
