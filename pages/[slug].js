@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
 
@@ -48,6 +48,7 @@ export const getStaticProps = async ({ params: { slug }, locale }) => {
   const data = getCardData(slug, locale);
   return {
     props: data,
+    ...(await serverSideTranslations(locale, ['common'])),
   };
 };
 export default Page;
