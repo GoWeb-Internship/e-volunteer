@@ -1,0 +1,15 @@
+.fotoIcons {
+    @apply  hidden absolute xl:block ml-[100px] mt-[20px] w-[480px] h-[748px]
+}
+.formContainer{
+    @apply container pb-[64px] pt-[40px] relative sm:pb-[80px] sm:pr-[20px] sm:pl-[20px] md:pr-[40px] md:pl-[40px] xl:pr-[80px] xl:pl-[174px] xl:pt-[150px]  xl:ml-[550px] xl:h-[776px] my-auto
+}
+.formGl{
+    @apply text-textForm  font-medium text-2xl pb-[17px] md:font-normal md:text-4xl
+}
+.formText{
+    @apply text-textFormState  font-medium text-lg mr-[82px] sm:mr-[149px] md:font-normal md:text-xl md:mb-[20px]
+}
+.iconsForm{
+    @apply hidden sm:block -mt-[120px] md:hidden
+}

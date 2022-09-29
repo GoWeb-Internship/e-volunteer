@@ -43,8 +43,8 @@ export const Search = () => {
       className="relative  ml-auto mr-[20px] flex max-w-lg items-center justify-center"
       ref={searchRef}
     >
-      <form role="search" method="get" id="searchform" action="">
-        <label htmlFor="s">
+      <form role="search" method="get"className='searchform'  action="">
+        <label htmlFor="search" className='search'>
           <svg
             viewBox="0 0 17.7 17.7"
             className="absolute float-left mt-[5px]  h-[16px] w-[16px] "
@@ -61,7 +61,8 @@ export const Search = () => {
           placeholder=" "
           type="text"
           value={query}
-          id="s"
+          className="search"
+          id="search"
         />
       </form>
 

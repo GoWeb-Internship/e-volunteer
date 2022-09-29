@@ -4,9 +4,8 @@ import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-
 import { Cards, Help, Search } from 'views';
-import { Spinner, Form } from '@/components';
+import { Spinner, Form, FormEst } from '@/components';
 
 const Home = ({ slugs }) => {
   const { t } = useTranslation('common');
@@ -33,11 +32,13 @@ const Home = ({ slugs }) => {
 
       <Spinner />
       <Search />
-      <Form />
+      
 
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
 
       <Cards slugs={slugs} />
+      <Form />
+      <FormEst />
     </>
   );
 };
