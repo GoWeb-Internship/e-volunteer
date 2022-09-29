@@ -1,14 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { Search } from './Search/Search';
-import { useTranslation } from 'next-i18next';
-import {Logo } from './Logo/Logo';
+// import Link from 'next/link';
+// import { Search } from './Search/Search';
+// import { useTranslation } from 'next-i18next';
+// import {Logo } from './Logo/Logo';
 
 
 export const Header = () => {
   const router = useRouter();
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
   const handleLocaleChange = event => {
     const value = event.target.value;
 
