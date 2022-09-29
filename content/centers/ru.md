@@ -8,7 +8,7 @@ list:
     tel: "+37253499911"
   - city: "Таллинн "
     address: Lastekodu 46 (автовокзал)
-  - name: " "
+  - name: ""
     city: Нарва
     address: Vestervalli 7 (пограничный пункт)
   - city: "Тарту "
