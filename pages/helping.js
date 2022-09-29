@@ -5,11 +5,12 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import Flower from 'public/img/svg/pageFlower.svg';
+import { getBannerData } from '@/lib/banner';
 
 const Helping = ({ help: { contents, data } }) => {
   return (
     <section className="px-5 py-10 md:px-9 md:pt-[69px] md:pb-[100px] xl:px-[80px] xl:pt-[14px]">
-      <header className="flex justify-between shadow-page">
+      <header className="shadow-page flex justify-between">
         <div className="flex items-baseline text-slate-600 xl:pt-[90px]">
           <Link href="/">
             <a
@@ -37,10 +38,13 @@ const Helping = ({ help: { contents, data } }) => {
 export const getStaticProps = async ({ locale }) => {
   const help = getHelpData(locale);
   const slugs = getSortedCardData(locale);
+  const bannerData = getBannerData(locale);
+
   return {
     props: {
       help,
       slugs,
+      bannerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };

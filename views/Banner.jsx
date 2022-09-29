@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 export const Banner = ({ contents }) => {
+  console.log(contents);
+
   return (
     <>
       {contents && (
