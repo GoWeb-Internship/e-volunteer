@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
 
-const Page = ({ contents, data }) => {
+const Page = ({  data: {data, contents} }) => {
   return (
     <>
       <Head>
