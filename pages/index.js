@@ -32,8 +32,8 @@ const Home = ({ slugs }) => {
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
       <Help title="Ma tahan aidata" button="Vali" EST />
-      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
       <Cards slugs={slugs} />
+      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
       <Form />
       <FormEst />
     </>
