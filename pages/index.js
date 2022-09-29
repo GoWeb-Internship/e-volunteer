@@ -1,12 +1,16 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import Link from 'next/link';
 import { useEffect } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Spinner, Search, Form } from '@/components';
+import { useTranslation } from 'next-i18next';
+
+import { Cards, Help, Search } from 'views';
+import { Spinner, Form } from '@/components';
 
 const Home = ({ slugs }) => {
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on('init', user => {
@@ -25,22 +29,15 @@ const Home = ({ slugs }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
+      <Help title="Ma tahan aidata" button="Vali" EST />
 
       <Spinner />
       <Search />
       <Form />
 
-      <h2 className="mt-12 text-center font-bold">Ссылки</h2>
+      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
 
-      <ul className="mx-auto mt-4 max-w-lg list-inside list-disc ">
-        {slugs.map((slug, idx) => (
-          <li key={idx}>
-            <Link href={`/${slug.href}`}>
-              <a>{slug.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Cards slugs={slugs} />
     </>
   );
 };
