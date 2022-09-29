@@ -5,7 +5,7 @@ import Flower from 'public/img/svg/help.svg';
 export const Help = ({ title, button, href, EST, ...props }) => {
   return (
     <section
-      className={` bg-gradient-to-b py-10  shadow-card  md:py-6  ${
+      className={`bg-gradient-to-b py-10 shadow-card md:py-6 ${
         EST ? 'from-blue-200 to-white' : 'from-white to-blue-200'
       }`}
     >
