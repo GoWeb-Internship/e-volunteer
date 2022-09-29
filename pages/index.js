@@ -5,8 +5,8 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import { Cards, Help, Search } from 'views';
-import { Spinner, Form } from '@/components';
+import { Cards, Help } from 'views';
+import { getBannerData } from '@/lib/banner';
 
 const Home = ({ slugs }) => {
   const { t } = useTranslation('common');
@@ -29,11 +29,8 @@ const Home = ({ slugs }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-      <Help title="Ma tahan aidata" button="Vali" EST />
 
-      <Spinner />
-      <Search />
-      <Form />
+      <Help title="Ma tahan aidata" button="Vali" EST />
 
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
 
@@ -44,9 +41,12 @@ const Home = ({ slugs }) => {
 
 export const getStaticProps = async ({ locale }) => {
   const slugs = getSortedCardData(locale);
+  const bannerData = getBannerData(locale);
+
   return {
     props: {
       slugs,
+      bannerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };

@@ -50,12 +50,6 @@ blockquote {
   overflow: hidden;
 }
 
-/* SLUG */
-
-/* .prose > a {
-  @apply !text-button;
-} */
-
 /* FORM BUTTON */
 
 .btn {
