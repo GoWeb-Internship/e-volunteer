@@ -40,14 +40,14 @@ export const Search = () => {
 
   return (
     <div
-      className="relative  ml-auto mr-[20px] flex max-w-lg items-center justify-center"
+      className="hidden md:block -ml-[50px] relative xl:ml-auto mr-[20px]  items-center justify-center"
       ref={searchRef}
     >
       <form role="search" method="get" className="searchform" action="">
-        <label htmlFor="search" className="search">
+        <label htmlFor="search" >
           <svg
             viewBox="0 0 17.7 17.7"
-            className="absolute float-left mt-[5px]  h-[16px] w-[16px] "
+            className="absolute float-left mt-[5px] ml-[10px]  h-[16px] w-[16px] "
           >
             <path
               fill="#475569"

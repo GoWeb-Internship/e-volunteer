@@ -6,4 +6,6 @@ export * from './FormEst/FormEst';
 export * from './Grid/Grid';
 export * from './Header';
 export * from './Logo/Logo';
+export * from './Selected/Selected';
+export * from './Navbar/Navbar';
 export * from './Spinner/Spinner';

@@ -20,6 +20,7 @@ module.exports = {
         hero: '#4571B1',
         textForm: '#475569',
         textFormState: '#9498AB',
+        headerBg: "#73A9FF"
       },
 
       container: {

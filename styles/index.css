@@ -129,7 +129,7 @@ button:hover {
 
 #search {
   transition: all 0.2s ease-out;
-  width: 20rem;
+  width: 18rem;
   border-radius: 0;
   box-shadow: none;
   outline: none;
@@ -140,11 +140,28 @@ button:hover {
   opacity: 0;
 }
 
-#search:focus {
-  width: 500px;
-  opacity: 1;
+input {
+  text-indent: 90px;
 }
 
-input {
-  text-indent: 30px;
-}
+  #search:focus {
+    width: 18rem;
+    opacity: 1;
+  }
+  input {
+    text-indent: 30px;
+  }
+  
+@media (min-width: 1280px) {
+  #search:focus {
+    width: 500px;
+    opacity: 1;
+  }
+  input {
+    text-indent: 30px;
+  }
+  }
+
+
+
+
