@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-export const Banner = ({ contents }) => {
+export const Banner = ({ bannerData: { contents } }) => {
   return (
     <>
       {contents && (

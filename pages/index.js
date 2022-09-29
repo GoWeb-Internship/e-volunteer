@@ -59,7 +59,6 @@ export const getStaticProps = async ({ locale }) => {
       slugs,
       centres,
       bannerData,
-
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
