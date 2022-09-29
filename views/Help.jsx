@@ -9,19 +9,22 @@ export const Help = ({ title, button, href, EST }) => {
         EST ? 'from-blue-200 to-white' : 'from-white to-blue-200'
       }`}
     >
-      <Flower className="hidden h-[113px] w-[175px] xl:block" />
-      <h2 className=" mb-6 text-[24px] leading-[28px] md:mb-0 md:text-[34px] md:leading-[44px]">
-        {title}
-      </h2>
-      {EST ? (
-        <ButtonLink button className="mx-auto md:mx-0">
-          {button}
-        </ButtonLink>
-      ) : (
-        <ButtonLink href={href} className="mx-auto md:mx-0">
-          {button}
-        </ButtonLink>
-      )}
+      <div className="container">
+        <Flower className="hidden h-[113px] w-[175px] xl:block" />
+
+        <h2 className=" mb-6 text-[24px] leading-[28px] md:mb-0 md:text-[34px] md:leading-[44px]">
+          {title}
+        </h2>
+        {EST ? (
+          <ButtonLink button className="mx-auto md:mx-0">
+            {button}
+          </ButtonLink>
+        ) : (
+          <ButtonLink href={href} className="mx-auto md:mx-0">
+            {button}
+          </ButtonLink>
+        )}
+      </div>
     </section>
   );
 };
