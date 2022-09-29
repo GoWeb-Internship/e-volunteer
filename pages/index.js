@@ -5,7 +5,7 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import { Cards, Help, Search } from 'views';
+import { Cards, Help } from 'views';
 import { Spinner, Form } from '@/components';
 
 const Home = ({ slugs }) => {
@@ -32,7 +32,6 @@ const Home = ({ slugs }) => {
       <Help title="Ma tahan aidata" button="Vali" EST />
 
       <Spinner />
-      <Search />
       <Form />
 
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
