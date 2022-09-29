@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getSortedCardData } from '@/lib/cards';
 import { Form, FormEst } from '@/components';
 import { getBannerData } from '@/lib/banner';
-import { Cards, Help } from 'views';
+import { Cards, Help, Hero } from 'views';
 
 const Home = ({ slugs }) => {
   const { t } = useTranslation('common');
@@ -31,11 +31,12 @@ const Home = ({ slugs }) => {
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
+      <Hero />
       <Help title="Ma tahan aidata" button="Vali" EST />
-      <Cards slugs={slugs} />
+      {/* <Cards slugs={slugs} /> */}
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
-      <Form />
-      <FormEst />
+      {/* <Form /> */}
+      {/* <FormEst /> */}
     </>
   );
 };

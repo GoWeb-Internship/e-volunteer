@@ -50,6 +50,43 @@ blockquote {
   overflow: hidden;
 }
 
+/* HERO */
+
+.hero {
+  background-position: center bottom;
+  background-image: url('/img/hero/hero-320.svg');
+  background-size: 310px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 480px) {
+  .hero {
+    background-image: url('/img/hero/hero-480.svg');
+    background-size: 455px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: url('/img/hero/hero-768.svg');
+    background-size: 736px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    background-position: center bottom -58px;
+    background-image: url('/img/hero/hero-1440.svg');
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    background-size: 1436px;
+  }
+}
+
 /* FORM BUTTON */
 
 .btn {
