@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
 import Link from 'next/link';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
+import PageFlower from '../public/img/svg/pageFlower.svg';
 
 const Page = ({ contents, data }) => {
   return (
@@ -22,10 +23,12 @@ const Page = ({ contents, data }) => {
               </Link>
 
               {data.title && (
-                <h1 className="mb-0 text-2xl font-medium leading-7 text-slate-600">
+                <h1 className="mb-0 text-2xl font-medium leading-7 text-slate-600 md:text-[40px] md:leading-[46px]">
                   {data.title}
                 </h1>
               )}
+
+              <PageFlower className="ml-auto hidden w-[154px] sm:block md:w-[260px] xl:w-[412px]" />
             </div>
           </div>
         </header>
