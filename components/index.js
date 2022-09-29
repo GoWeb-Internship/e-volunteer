@@ -8,4 +8,4 @@ export * from './Card/Card';
 export * from './Header';
 export * from './Logo/Logo';
 export * from './ButtonLink/ButtonLink';
-
+export * from './FormEst/FormEst';

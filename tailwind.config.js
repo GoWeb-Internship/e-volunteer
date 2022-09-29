@@ -17,6 +17,8 @@ module.exports = {
         blue2: '#73A9FF',
         button: '#5483C9',
         hero: '#4571B1',
+        textForm: "#475569",
+        textFormState: "#9498AB"
       },
 
       container: {
