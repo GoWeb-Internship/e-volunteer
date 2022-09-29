@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { getSortedCardData } from '@/lib/cards';
-
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
 
-const Page = ({ data: { contents, data } }) => {
+const Page = ({ data: { data, contents } }) => {
   return (
     <>
       <Head>
@@ -49,7 +49,11 @@ export const getStaticProps = async ({ params: { slug }, locale }) => {
   const data = getCardData(slug, locale);
   const slugs = getSortedCardData(locale);
   return {
-    props: { data, slugs },
+    props: {
+      data,
+      slugs,
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
   };
 };
 export default Page;

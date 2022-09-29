@@ -22,14 +22,15 @@ export const Footer = ({ slugs }) => {
             </Link>
           </div>
         </div>
-        <Grid tag="ul" type="footer" className="pb-[32px] pt-[32px] ">
-          {slugs.map((slug, idx) => (
-            <li className="pl-[20px] text-white " key={idx}>
-              <Link href={`/${slug.href}`}>
-                <a>{slug.title}</a>
-              </Link>
-            </li>
-          ))}
+        <Grid tad="footer" className="pb-[32px] pt-[32px]">
+          {slugs &&
+            slugs.map((slug, idx) => (
+              <li className="pl-[20px] text-white " key={idx}>
+                <Link href={`/${slug.href}`}>
+                  <a>{slug.title}</a>
+                </Link>
+              </li>
+            ))}
         </Grid>
         <p className="border-b-2 pb-[24px] text-center text-white">
           {t('textFooter')}

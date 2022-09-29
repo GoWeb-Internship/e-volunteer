@@ -7,7 +7,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Header />
       <Component {...pageProps} />
-      <Footer slugs={pageProps.slugs}/>
+      <Footer slugs={pageProps.slugs} />
     </>
   );
 };

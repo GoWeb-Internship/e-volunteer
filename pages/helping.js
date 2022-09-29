@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { getHelpData } from '@/lib/helping';
+import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import Flower from 'public/img/svg/pageFlower.svg';
@@ -35,9 +36,11 @@ const Helping = ({ help: { contents, data } }) => {
 
 export const getStaticProps = async ({ locale }) => {
   const help = getHelpData(locale);
+  const slugs = getSortedCardData(locale);
   return {
     props: {
       help,
+      slugs,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
