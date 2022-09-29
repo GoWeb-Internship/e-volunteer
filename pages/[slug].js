@@ -7,6 +7,7 @@ import { getAllCardsPath, getCardData } from '@/lib/cards';
 import Link from 'next/link';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import PageFlower from '../public/img/svg/pageFlower.svg';
+import { getBannerData } from '@/lib/banner';
 
 const Page = ({ data: { data, contents } }) => {
   return (
@@ -59,10 +60,13 @@ export const getStaticPaths = async ({ locales }) => {
 export const getStaticProps = async ({ params: { slug }, locale }) => {
   const data = getCardData(slug, locale);
   const slugs = getSortedCardData(locale);
+  const bannerData = getBannerData(locale);
+
   return {
     props: {
       data,
       slugs,
+      bannerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
