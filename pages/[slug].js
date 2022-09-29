@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
 import { getAllCardsPath, getCardData } from '@/lib/cards';
+import Link from 'next/link';
+import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 
 const Page = ({ contents, data }) => {
   return (
@@ -11,27 +11,31 @@ const Page = ({ contents, data }) => {
         <title>{data.title}</title>
       </Head>
 
-      <h1 className="mb-8 text-center text-2xl font-bold">{data.title}</h1>
-      <div className="prose mx-auto max-w-5xl prose-a:text-blue-600">
-        <ReactMarkdown>{contents}</ReactMarkdown>
-      </div>
+      <section>
+        <header className="pt-12 pb-7 shadow-slugHeader">
+          <div className="container">
+            <div className="flex w-full items-center gap-8 ">
+              <Link href="/">
+                <a href="">
+                  <ArrowLongLeftIcon className="h-7 w-7 text-gray-800" />
+                </a>
+              </Link>
 
-      {data.links && (
-        <h2 className="mt-8 text-center text-xl font-bold">Ссылки</h2>
-      )}
-      <ul className="mx-auto mt-4 max-w-xl list-inside list-disc">
-        {data.links?.map((link, idx) => (
-          <li key={idx}>
-            <a
-              href={link.href}
-              target="_blank"
-              rel="nofollow, noopener, noreferrer"
-            >
-              {link.description}
-            </a>
-          </li>
-        ))}
-      </ul>
+              {data.title && (
+                <h1 className="mb-0 text-2xl font-medium leading-7 text-slate-600">
+                  {data.title}
+                </h1>
+              )}
+            </div>
+          </div>
+        </header>
+
+        <div className="container">
+          <div className="prose max-w-full py-20 transition-all prose-h2:mt-0 prose-p:mt-0 prose-a:text-button prose-a:no-underline hover:prose-a:underline focus:prose-a:underline prose-blockquote:px-[42px] prose-ol:list-decimal prose-li:truncate">
+            <ReactMarkdown>{contents}</ReactMarkdown>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
