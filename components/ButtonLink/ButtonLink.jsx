@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-export const ButtonLink = ({ children, href, button, className, props }) => {
+export const ButtonLink = ({ children, href, button, className, ...props }) => {
   return button ? (
     <button
       type="button"

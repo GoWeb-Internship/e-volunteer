@@ -1,15 +1,25 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import { Cards, Help } from 'views';
-import { Spinner, Form } from '@/components';
+import { Spinner, Form, Modal } from '@/components';
 
 const Home = ({ slugs }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { t } = useTranslation('common');
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   useEffect(() => {
     if (window.netlifyIdentity) {
@@ -33,9 +43,10 @@ const Home = ({ slugs }) => {
       <Spinner />
       <Form />
 
-      <Help title="Ma tahan aidata" button="Vali" EST />
+      <Help title="Ma tahan aidata" button="Vali" EST onClick={openModal} />
       <Cards slugs={slugs} />
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
+      <Modal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 };

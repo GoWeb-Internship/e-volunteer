@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ButtonLink } from '/components';
 import Flower from 'public/img/svg/help.svg';
 
-export const Help = ({ title, button, href, EST }) => {
+export const Help = ({ title, button, href, EST, ...props }) => {
   return (
     <section
       className={` bg-gradient-to-b py-10  shadow-card  md:py-6  ${
@@ -15,7 +15,7 @@ export const Help = ({ title, button, href, EST }) => {
           {title}
         </h2>
         {EST ? (
-          <ButtonLink button className="mx-auto md:mx-0">
+          <ButtonLink button className="mx-auto md:mx-0" {...props}>
             {button}
           </ButtonLink>
         ) : (

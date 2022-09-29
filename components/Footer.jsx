@@ -22,7 +22,7 @@ export const Footer = ({ slugs }) => {
             </Link>
           </div>
         </div>
-        <Grid tad="footer" className="pb-[32px] pt-[32px]">
+        <Grid type="footer" tag="ul" className="pb-[32px] pt-[32px]">
           {slugs &&
             slugs.map((slug, idx) => (
               <li className="pl-[20px] text-white " key={idx}>
@@ -38,7 +38,7 @@ export const Footer = ({ slugs }) => {
         <div className="flex pb-[24px] pt-[20px]">
           <span className="pr-1 text-white">&copy;</span>
           <span className="text-white ">{new Date().getFullYear()}</span>
-          <p className="pl-1 text-white">E-VOLONTEER</p>
+          <p className="pl-1 text-white">E-VOLUNTEER</p>
         </div>
       </div>
     </footer>
