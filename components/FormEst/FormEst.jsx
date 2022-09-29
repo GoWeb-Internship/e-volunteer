@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import useFormPersist from 'react-hook-form-persist';
 import * as yup from 'yup';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
+import { Notification } from '..';
 
 export const FormEst = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const formSchema = yup.object().shape({
     name: yup.string().trim().required().min(3).max(100),
     textN: yup.string().required().min(10).max(2000),
@@ -28,9 +31,18 @@ export const FormEst = () => {
   });
   useFormPersist('form', { watch, setValue });
 
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log(data);
+    openModal();
     reset();
 
     //TELEGRAM
@@ -72,10 +84,18 @@ export const FormEst = () => {
         <button
           className="btn mx-auto w-full max-w-[280px] sm:w-[280px] sm:max-w-none md:mr-auto md:ml-0 md:w-[384px]"
           type="submit"
+          onClick={openModal}
         >
           Saada
         </button>
       </form>
+      <Notification
+        isOpen={isOpen}
+        closeModal={closeModal}
+        title="Aitäh vastuse eest!"
+        text="Oodake vastust"
+        link="Telegrami kanalis"
+      />
     </div>
   );
 };
