@@ -5,9 +5,9 @@ import { Header, Footer } from '@/components';
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
-      <Footer slugs={pageProps.slugs} />
+      {/* <Footer slugs={pageProps.slugs} /> */}
     </>
   );
 };
