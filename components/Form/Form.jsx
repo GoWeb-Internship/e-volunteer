@@ -1,48 +1,29 @@
-// import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import useFormPersist from 'react-hook-form-persist';
 import * as yup from 'yup';
-
+import {
+  fotoIcons,
+  formContainer,
+  formGl,
+  formText,
+  iconsForm,
+} from './Form.module.css';
+import Image from 'next/image';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
 
 export const Form = () => {
   const { t } = useTranslation('common');
 
-//   const [showModal, setShowModal] = useState(false);
-
   const formSchema = yup.object().shape({
-    email: yup
-      .string()
-      .trim()
-      .required(t('nameRequired'))
-      .email()
-      .min(10, t('emailMin'))
-      .max(63, t('emailMax'))
-      .matches(
-        /^[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.]{1}[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż._-]{1,}[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.]{1}@[a-zA-Z0-9zñáéíóúüŁłĄąĘęŃńÓóŹźŻż.-]+.[a-zA-Z]{2,4}$/,
-        t('emailMatch'),
-      ),
     name: yup
       .string()
       .trim()
       .required(t('nameRequired'))
       .min(3, t('nameMin'))
       .max(100, t('nameMax')),
-    last: yup
-      .string()
-      .trim()
-      .required(t('nameRequired'))
-      .min(3, t('nameMin'))
-      .max(100, t('nameMax')),
-    cellphone: yup
-      .string()
-      .trim()
-      .required(t('nameRequired'))
-      .min(9, t('phoneMin'))
-      .max(18, t('phoneMax')),
     textN: yup
       .string()
       .required(t('nameRequired'))
@@ -70,7 +51,6 @@ export const Form = () => {
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log(data);
-    // setShowModal(`thank you ${data.name} for your message`);
     reset();
 
     //TELEGRAM
@@ -78,7 +58,6 @@ export const Form = () => {
     let message = `
       <b>Остались вопросы?:</b>
       Name: ${data.name}
-      last name: ${data.last}
       Email: ${data.email}
       Phone: ${data.cellphone}
       Text: ${data.textN}
@@ -87,68 +66,88 @@ export const Form = () => {
       <b>Additional information:</b>
       <i>Form name: contact</i>
       <i>Form send from:</i>
-      <a href="http://localhost:3000/form">http://localhost:3000/form</a>
+      <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
     sendMessageToTg(message);
-
-    // .then(() => {
-    //   openModal(true);
-    // })
-    // .catch(error => alert(error))
   };
 
   return (
-    <div>
+    <section>
       <div className="container">
-        <h2>{t('textForm')}</h2>
-        <p>{t('write')}</p>
-        <form
-          className="form"
-          method="POST"
-          name="contact"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <TextField label={t('name')} {...register('name')} />
-          <span className="text-red-600 ">{errors.name?.message}</span>
-          <TextField label={t('lactName')} {...register('last')} />
-          <span className="text-red-600 ">{errors.name?.message}</span>
-          <TextField label="+380" {...register('cellphone')} />
-          <span className="text-red-600 ">{errors.cellphone?.message}</span>
-          <TextField
-            label="Email"
-            className="input-custom"
-            {...register('email')}
-          />
-          <span className="text-red-600 ">{errors.email?.message}</span>
-          <TextField
-            label="Текст"
-            className="input-custom"
-            {...register('textN')}
-          />
-          <span className="text-red ">{errors.offers?.message}</span>
-          <button
-            className="btn"
-            type="submit"
-            // onClick={() => setShowModal(true)}
-          >
-            Відправити
-          </button>
-        </form>
-        {/* {showModal ? (
-          <div className="absolute mt-10 flex h-auto w-72 flex-col items-center justify-center rounded-lg bg-slate-600 p-2 shadow-xl">
-            <h2 className="mx-4 mt-2 text-center text-base font-semibold text-gray-400">
-              {t('gratitude')}
-            </h2>
-            <button
-              className="my-5 h-10 w-auto rounded-md bg-blue-600 px-8 font-semibold text-white shadow hover:shadow-lg"
-              onClick={() => setShowModal(false)}
-            >
-              Close
-            </button>
+        <div className="flex">
+          <div className="my-auto hidden md:block xl:hidden">
+            <Image
+              width="212px"
+              height="613px"
+              src="/img/form/plForm.svg"
+              className=" object-cover"
+              alt="shadow"
+            />
           </div>
-        ) : null} */}
+
+          <div className={fotoIcons}>
+            <Image
+              layout="fill"
+              src="/img/form/descForm.svg"
+              className="absolute"
+              alt="shadow"
+            />
+          </div>
+
+          <div className={formContainer}>
+            <h2 className={formGl}>{t('textForm')}</h2>
+            <div className="flex ">
+              <p className={formText}>{t('write')}</p>
+              <div className="sm:hidden">
+                <Image
+                  width="74px"
+                  height="76px"
+                  src="/img/form/iconForm.svg"
+                  className=" object-cover sm:block"
+                  alt="shadow"
+                />
+              </div>
+              <div className={iconsForm}>
+                <Image
+                  width="168px"
+                  height="171px"
+                  src="/img/form/iconForm.svg"
+                  className=" -pt-[40px] object-cover"
+                  alt="shadow"
+                />
+              </div>
+            </div>
+
+            <form
+              className="form xl:mr-[140px]"
+              method="POST"
+              name="contact"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <TextField label={t('name')} {...register('name')} />
+              <span className="text-red-600 ">{errors.name?.message}</span>
+              <TextField label="+380" {...register('cellphone')} />
+              <span className="text-red-600 ">{errors.cellphone?.message}</span>
+              <TextField
+                label="Email"
+                className="input-custom"
+                {...register('email')}
+              />
+              <span className="text-red-600 ">{errors.email?.message}</span>
+              <TextField
+                label="Текст"
+                className="!pt-[128px] md:!pt-[75px]"
+                {...register('textN')}
+              />
+              <span className="text-red ">{errors.offers?.message}</span>
+              <button className="btn mx-auto md:mr-auto md:ml-0" type="submit">
+                Відправити
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import { getBannerData } from '@/lib/banner';
 import { getHelpData } from '@/lib/helping';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -47,10 +48,13 @@ const Helping = ({ help: { contents, data } }) => {
 export const getStaticProps = async ({ locale }) => {
   const help = getHelpData(locale);
   const slugs = getSortedCardData(locale);
+  const bannerData = getBannerData(locale);
+
   return {
     props: {
       help,
       slugs,
+      bannerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
