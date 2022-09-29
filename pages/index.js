@@ -29,14 +29,13 @@ const Home = ({ slugs }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-      <Help title="Ma tahan aidata" button="Vali" EST />
 
       <Spinner />
       <Form />
 
-      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
-
+      <Help title="Ma tahan aidata" button="Vali" EST />
       <Cards slugs={slugs} />
+      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
     </>
   );
 };

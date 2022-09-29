@@ -5,7 +5,7 @@ import { Card, Grid } from 'components';
 export const Cards = ({ slugs }) => {
   const { t } = useTranslation('common');
   return (
-    <section className="bg-blue-200 py-[58px]  sm:py-[80px] md:py-[100px]">
+    <section className="bg-blue-200 py-[58px] sm:py-[80px] md:py-[100px]">
       <div className="container">
         <h2 className="visually-hidden">{t('cardsTitle')}</h2>
         <Grid type="card">
