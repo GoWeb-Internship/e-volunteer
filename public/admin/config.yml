@@ -38,6 +38,8 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
+      - { label: 'Poster Description', name: 'alt', widget: 'string' }
+      - { label: 'Preview', name: 'preview', widget: 'string' }
       - {
           label: 'Language',
           name: 'language',
@@ -79,6 +81,8 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
+      - { label: 'Poster Description', name: 'alt', widget: 'string' }
+      - { label: 'Preview', name: 'preview', widget: 'string' }
       - {
           label: 'Language',
           name: 'language',
