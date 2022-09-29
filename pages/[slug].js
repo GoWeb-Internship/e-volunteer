@@ -18,7 +18,7 @@ const Page = ({ data: { data, contents } }) => {
       <section>
         <header className="pt-12 pb-7 shadow-slugHeader">
           <div className="container">
-            <div className="flex w-full items-center gap-8 ">
+            <div className="flex w-full items-baseline gap-8 ">
               <Link href="/">
                 <a href="">
                   <ArrowLongLeftIcon className="h-7 w-7 text-gray-800" />
