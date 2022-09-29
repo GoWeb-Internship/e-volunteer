@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import PageFlower from 'public/img/svg/pageFlower.svg';
-import { Form } from '..';
+import { FormEst } from '..';
 
 const needs = [
   'riided',
@@ -67,8 +67,8 @@ export const Modal = ({ isOpen, closeModal }) => {
                   </ul>
                   <PageFlower className="mx-auto w-[230px] sm:w-[360px] md:w-[424px]" />
                 </div>
-                <div className="bg-slate-50 pb-[38px] xl:pt-[100px]">
-                  <Form />
+                <div className="bg-slate-50 px-5 pb-[60px] pt-4 sm:pt-[64px] sm:pb-[80px] md:pt-[66px] md:pb-[100px] xl:pt-[196px]">
+                  <FormEst />
                 </div>
 
                 <button

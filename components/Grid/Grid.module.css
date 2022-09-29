@@ -3,7 +3,7 @@
 }
 
 .contact {
-@apply grid grid-cols-1 md:grid-cols-2 md:gap-y-9 md:gap-x-5 xl:grid-cols-3 xl:gap-x-[130px]
+@apply grid grid-cols-1 gap-y-9 md:grid-cols-2 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px]
 }
 
 .footer {

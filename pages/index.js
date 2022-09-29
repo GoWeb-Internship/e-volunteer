@@ -5,7 +5,7 @@ import { getSortedCardData } from '@/lib/cards';
 import { getBannerData } from '@/lib/banner';
 import { getCentersData } from '@/lib/home';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Form, FormEst, Spinner, Modal } from '@/components';
+import { Form, Modal } from '@/components';
 import { useTranslation } from 'next-i18next';
 import { Cards, Help, Centers } from 'views';
 
