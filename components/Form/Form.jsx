@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 export const Form = () => {
   const { t } = useTranslation('common');
 
-  const [showModal, setShowModal] = useState(false);
+//   const [showModal, setShowModal] = useState(false);
 
   const formSchema = yup.object().shape({
     email: yup
@@ -70,7 +70,7 @@ export const Form = () => {
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log(data);
-    setShowModal(`thank you ${data.name} for your message`);
+    // setShowModal(`thank you ${data.name} for your message`);
     reset();
 
     //TELEGRAM
@@ -130,12 +130,12 @@ export const Form = () => {
           <button
             className="btn"
             type="submit"
-            onClick={() => setShowModal(true)}
+            // onClick={() => setShowModal(true)}
           >
             Відправити
           </button>
         </form>
-        {showModal ? (
+        {/* {showModal ? (
           <div className="absolute mt-10 flex h-auto w-72 flex-col items-center justify-center rounded-lg bg-slate-600 p-2 shadow-xl">
             <h2 className="mx-4 mt-2 text-center text-base font-semibold text-gray-400">
               {t('gratitude')}
@@ -147,7 +147,7 @@ export const Form = () => {
               Close
             </button>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </div>
   );

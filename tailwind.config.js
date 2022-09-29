@@ -2,7 +2,11 @@
 
 module.exports = {
   mode: 'jit', // see https://tailwindcss.com/docs/just-in-time-mode
-  content: ['./pages/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './views/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       boxShadow: {
@@ -25,7 +29,6 @@ module.exports = {
           xl: '1.25rem',
         },
       },
-
       fontFamily: {
         sans: ['Ubuntu', 'sans-serif'],
       },

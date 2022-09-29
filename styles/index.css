@@ -134,11 +134,13 @@ button:hover {
   border: 0.1em solid rgb(190, 196, 218);
   padding: 0.3em;
   background: white;
+  height: 44px;
+  border-radius: 6px;
 }
 
 #s {
   transition: all 0.2s ease-out;
-  width: 8rem;
+  width: 20rem;
   border-radius: 0;
   box-shadow: none;
   outline: none;
@@ -150,7 +152,7 @@ button:hover {
 }
 
 #s:focus {
-  width: 400px;
+  width: 500px;
   opacity: 1;
 }
 
