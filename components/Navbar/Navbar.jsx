@@ -18,7 +18,7 @@ export const Navbar = ({slugs}) => {
             }
           >
             
-            <li>
+            {/* <li>
               <a href='##'>Product</a>
             </li>
             <li>
@@ -32,15 +32,16 @@ export const Navbar = ({slugs}) => {
             </li>
             <li>
               <a href='##'>Contacts</a>
-            </li>
+            </li> */}
              {/* <ul className="flex justify-around pb-[32px] pt-[32px] text-center"> */}
             {slugs &&
               slugs.map((slug, idx) => (
                   <li className="pl-[20px] text-red-600 " key={idx}>
+                    <a href='##'>
                   <Link href={`/${slug.href}`}>
                     <a>{slug.title}</a>
                   </Link>
-                
+                  </a>
                 </li>
               ))}
           {/* </ul> */}

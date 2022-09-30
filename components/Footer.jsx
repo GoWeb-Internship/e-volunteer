@@ -15,7 +15,7 @@ export const Footer = ({ slugs }) => {
             <div className="flex ">
               <p className="pr-[19px] text-white">{t('telegram')}</p>
               <Link href="https://web.telegram.org/z/">
-                <a href="https://web.telegram.org/z/" aria-label="логотип">
+                <a href="https://t.me/eevolunteer" aria-label="логотип">
                   <Teleg className="w-[22px]" />
                 </a>
               </Link>
@@ -31,9 +31,9 @@ export const Footer = ({ slugs }) => {
                 </li>
               ))}
           </ul>
-          <p className="border-b-2 pb-[24px] text-center text-white">
+          <button className="border-b-2 pb-[24px] text-center text-white">
             {t('textFooter')}
-          </p>
+          </button>
           <div className="flex pb-[24px] pt-[20px]">
             <span className="pr-1 text-white">&copy;</span>
             <span className="text-white ">{new Date().getFullYear()}</span>

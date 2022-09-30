@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Banner contents={contents} />
-      <Header />
+      <Header  slugs={slugs}/>
       <Component {...pageProps} />
       <Footer slugs={slugs} />
     </>
