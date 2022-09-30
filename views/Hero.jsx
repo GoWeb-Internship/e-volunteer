@@ -1,4 +1,8 @@
+import { useTranslation } from 'next-i18next';
+
 export const Hero = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <section className="md:pb-354px hero pt-20 pb-[294px] sm:pb-[456px] xl:pb-[420px]">
@@ -8,7 +12,7 @@ export const Hero = () => {
               E-VOLUNTEER
             </h1>
             <p className="max-w-[260px] text-xl leading-6 md:max-w-[497px] md:text-[40px] md:font-medium md:leading-[46px]">
-              Электронный волонтёр для помощи беженцам
+              {t('heroDescription')}
             </p>
           </div>
         </div>
