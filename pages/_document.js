@@ -22,7 +22,7 @@ class MyDocument extends Document {
         <Head>
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icons/icon.png"></link>
+          <link rel="apple-touch-icon" href="/icons/icon.png" />
           <meta name="theme-color" content="#fff" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link
