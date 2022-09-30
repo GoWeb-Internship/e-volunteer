@@ -130,7 +130,6 @@ export const Form = () => {
                 />
               </div>
             </div>
-
             <form
               className="form"
               method="POST"

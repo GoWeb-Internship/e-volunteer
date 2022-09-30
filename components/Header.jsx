@@ -1,13 +1,10 @@
 import React  from 'react';
-// import { Search } from '../views/Search';
 import { Logo } from '../components/Logo/Logo';
 import { Navbar } from '../components/Navbar/Navbar';
 import { SearchBtn } from '../components/SearchBtn/SearchBtn';
-// import { HeaderDesc } from '../components/HeaderDesc/HeaderDesc';
 import { BtnHeader } from '../components/BtnHeader/BtnHeader';
-// import { Selected } from '../components/Selected/Selected';
 import { useRouter } from 'next/router';
-
+import Image from 'next/image';
 
 export const Header = ({slugs}) => {
   const router = useRouter();
@@ -23,12 +20,18 @@ export const Header = ({slugs}) => {
     <header className="bg-bgHeader pt-[12px] pb-[12px] h-[68px]">
       <div className="container">
         <div className=" flex items-center">
-          
-          <div className='flex justify-evenly'>
-          <Logo />
-          <div><span className=''>=</span></div>
-          
+          <div className='flex justify-evenly w-full'>
+          <div><Logo /></div>
         <Navbar slugs={slugs}/>
+        <div className="md:hidden mr-auto float-right text-white fill-white">
+        <Image
+          width="24px"
+          height="24px"
+          src="/img/men.svg"
+          className='fill-white'
+          alt="shadow"
+        />
+      </div>
           </div>
           <SearchBtn/>
           <BtnHeader/>
