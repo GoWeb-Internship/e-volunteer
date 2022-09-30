@@ -84,7 +84,6 @@ export const FormEst = () => {
         <button
           className="btn mx-auto w-full max-w-[280px] sm:w-[280px] sm:max-w-none md:mr-auto md:ml-0 md:w-[384px]"
           type="submit"
-          onClick={openModal}
         >
           Saada
         </button>

@@ -153,11 +153,7 @@ export const Form = () => {
                 {...register('textN')}
               />
               <span className="text-red ">{errors.offers?.message}</span>
-              <button
-                className="btn mx-auto md:mr-auto md:ml-0"
-                type="submit"
-                onClick={openModal}
-              >
+              <button className="btn mx-auto md:mr-auto md:ml-0" type="submit">
                 Відправити
               </button>
             </form>

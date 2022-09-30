@@ -75,7 +75,7 @@ export const Search = () => {
                   className="border-b border-blue-200 bg-slate-50 p-3 text-slate-600"
                   key={title}
                 >
-                  <Link href="/[id]" as={`/${id}`}>
+                  <Link href="[id]" as={`${id}`}>
                     <a>{title}</a>
                   </Link>
                 </li>
