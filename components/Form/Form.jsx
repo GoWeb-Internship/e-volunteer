@@ -163,6 +163,7 @@ export const Form = () => {
           </div>
         </div>
       </div>
+
       <Notification
         isOpen={isOpen}
         closeModal={closeModal}
