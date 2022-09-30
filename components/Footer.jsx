@@ -59,8 +59,8 @@ export const Footer = ({ slugs, footerData }) => {
 };
 
 Footer.propTypes = {
-  slugs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  slugs: PropTypes.arrayOf(PropTypes.object),
   footerData: PropTypes.shape({
     contents: PropTypes.string,
-  }).isRequired,
+  }),
 };

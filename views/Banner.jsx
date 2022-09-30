@@ -18,5 +18,5 @@ export const Banner = ({ data }) => {
 };
 
 Banner.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };
