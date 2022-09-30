@@ -1,27 +1,35 @@
 import Link from 'next/link';
-import { Logo } from './Logo/Logo';
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'next-i18next';
-import Teleg from '../public/img/teleg.svg';
+import { Logo } from './Logo/Logo';
+import Teleg from '../public/img/svg/teleg.svg';
 import { Grid } from 'components';
 
-export const Footer = ({ slugs }) => {
+export const Footer = ({ slugs, footerData }) => {
   const { t } = useTranslation('common');
 
   return (
     <footer className="bg-blue-400">
       <div className="container">
-        <div className="ml-[80px] mr-[80px]">
-          <div className="flex justify-between border-b-2 pb-[24px] pt-[24px]">
+        <div className="xl:px-20">
+          <div className="flex flex-wrap items-baseline justify-between border-b-2 pb-[24px] pt-[24px]">
             <Logo />
-            <div className="flex ">
-              <p className="pr-[19px] text-white">{t('telegram')}</p>
-              <Link href="https://web.telegram.org/z/">
-                <a href="https://web.telegram.org/z/" aria-label="логотип">
-                  <Teleg className="w-[22px]" />
-                </a>
-              </Link>
-            </div>
+
+            <Link href="https://web.telegram.org/z/">
+              <a
+                href="https://web.telegram.org/z/"
+                aria-label="логотип"
+                className="flex items-center"
+              >
+                <span className="mr-[19px] text-sm text-white">
+                  {t('telegram')}
+                </span>
+                <Teleg className="w-[22px]" />
+              </a>
+            </Link>
           </div>
+
           <Grid type="footer" tag="ul" className="pb-[32px] pt-[32px]">
             {slugs &&
               slugs.map((slug, idx) => (
@@ -32,9 +40,13 @@ export const Footer = ({ slugs }) => {
                 </li>
               ))}
           </Grid>
-          <p className="border-b-2 pb-[24px] text-center text-white">
-            {t('textFooter')}
-          </p>
+
+          {footerData && (
+            <div className="border-b-2 pb-[24px] text-center text-white">
+              <ReactMarkdown>{footerData.contents}</ReactMarkdown>
+            </div>
+          )}
+
           <div className="flex pb-[24px] pt-[20px]">
             <span className="pr-1 text-white">&copy;</span>
             <span className="text-white ">{new Date().getFullYear()}</span>
@@ -44,4 +56,11 @@ export const Footer = ({ slugs }) => {
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  slugs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  footerData: PropTypes.shape({
+    contents: PropTypes.string,
+  }).isRequired,
 };

@@ -36,6 +36,10 @@ blockquote {
   @apply m-0 rounded-[20px] bg-blue-200;
 }
 
+address {
+  font-style: normal;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
