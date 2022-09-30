@@ -40,14 +40,11 @@ export const FormEst = () => {
   }
 
   const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log(data);
-    openModal();
-    reset();
+    try {
+      e.preventDefault();
+      //TELEGRAM
 
-    //TELEGRAM
-
-    let message = `
+      let message = `
       <b>Kirjuta meile:</b>
       Name: ${data.name}
       Text: ${data.textN}
@@ -59,7 +56,12 @@ export const FormEst = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
-    sendMessageToTg(message);
+      sendMessageToTg(message);
+      openModal();
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -82,7 +84,7 @@ export const FormEst = () => {
         />
         <span className="text-red ">{errors.offers?.message}</span>
         <button
-          className="btn mx-auto w-full max-w-[280px] sm:w-[280px] sm:max-w-none md:mr-auto md:ml-0 md:w-[384px]"
+          className="btn mx-auto  w-full max-w-[280px] rounded-[20px] sm:w-[280px] sm:max-w-none md:mr-auto md:ml-0 md:w-[384px]"
           type="submit"
         >
           Saada

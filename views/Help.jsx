@@ -12,7 +12,7 @@ const Help = ({ title, button, href, EST, ...props }) => {
       <div className="container text-center md:flex md:flex-row md:items-center md:justify-between">
         <Flower className="hidden h-[113px] w-[175px] xl:mr-[45px] xl:block" />
 
-        <h2 className=" mb-6 text-[24px] leading-[28px] md:mb-0 md:text-[34px] md:leading-[44px]">
+        <h2 className=" mb-6 text-[24px] leading-[28px] text-slate-600 md:mb-0 md:text-[34px] md:leading-[44px]">
           {title}
         </h2>
         {EST ? (

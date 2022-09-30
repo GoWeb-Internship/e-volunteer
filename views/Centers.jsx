@@ -7,7 +7,7 @@ const Centers = ({ data }) => {
       <div className="container relative">
         <Flower className="hidden w-[214px] xl:absolute xl:top-0 xl:right-0 xl:block" />
         {data.title && (
-          <h2 className="mb-5 text-2xl font-medium leading-tight text-slate-50 sm:mb-12 md:mb-[100px] md:text-[40px]">
+          <h2 className="mb-5 text-2xl font-medium leading-tight text-slate-600 sm:mb-12 md:mb-[100px] md:text-[40px]">
             {data.title}
           </h2>
         )}

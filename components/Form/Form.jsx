@@ -60,14 +60,12 @@ export const Form = () => {
   useFormPersist('form', { watch, setValue });
 
   const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log(data);
-    openModal();
-    reset();
+    try {
+      e.preventDefault();
 
-    //TELEGRAM
+      //TELEGRAM
 
-    let message = `
+      let message = `
       <b>Остались вопросы?:</b>
       Name: ${data.name}
       Email: ${data.email}
@@ -81,7 +79,12 @@ export const Form = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
-    sendMessageToTg(message);
+      sendMessageToTg(message);
+      openModal();
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
