@@ -36,6 +36,10 @@ module.exports = {
         sans: ['Ubuntu', 'sans-serif'],
       },
 
+      dropShadow: {
+        card: '8px 8px 12px rgba(84, 131, 201, 0.5)',
+      },
+
       screens: {
         sm: '480px',
         md: '768px',

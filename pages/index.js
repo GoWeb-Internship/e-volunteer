@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { getBannerData } from '@/lib/banner';
 import { getSortedCardData } from '@/lib/cards';
+
 import { Form, Modal } from '@/components';
 import { getCentersData } from '@/lib/home';
 import { Cards, Centers, Help, Hero } from 'views';
