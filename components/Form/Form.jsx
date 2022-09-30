@@ -81,6 +81,7 @@ export const Form = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
+
     sendMessageToTg(message);
   };
 
@@ -160,6 +161,7 @@ export const Form = () => {
           </div>
         </div>
       </div>
+
       <Notification
         isOpen={isOpen}
         closeModal={closeModal}
