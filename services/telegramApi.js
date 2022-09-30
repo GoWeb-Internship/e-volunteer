@@ -8,14 +8,10 @@ const sendMessageToTg = async text => {
 
   const TG_URL = `https://api.telegram.org/bot${NEXT_TOKEN}/sendMessage?chat_id=${NEXT_CHAT_ID}`;
 
-  try {
-    return await axios.post(TG_URL, {
-      text,
-      parse_mode: 'HTML',
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  return await axios.post(TG_URL, {
+    text,
+    parse_mode: 'HTML',
+  });
 };
 
 export default sendMessageToTg;
