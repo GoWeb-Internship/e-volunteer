@@ -16,10 +16,12 @@ export const Footer = ({ slugs, footerData }) => {
           <div className="flex flex-wrap items-baseline justify-between border-b-2 pb-[24px] pt-[24px]">
             <Logo />
 
-            <Link href="https://web.telegram.org/z/">
+            <Link href="https://t.me/eevolunteer">
               <a
-                href="https://web.telegram.org/z/"
+                href="https://t.me/eevolunteer"
                 aria-label="логотип"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center"
               >
                 <span className="mr-[19px] text-sm text-white">
