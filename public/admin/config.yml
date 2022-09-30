@@ -37,7 +37,13 @@ collections:
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
+      - {
+          label: 'Poster',
+          name: 'poster',
+          widget: 'image',
+          choose_url: true,
+          default: '/img/default.jpeg',
+        }
       - { label: 'Poster Description', name: 'alt', widget: 'string' }
       - { label: 'Preview', name: 'preview', widget: 'string' }
       - {
@@ -80,7 +86,13 @@ collections:
             ],
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Poster', name: 'poster', widget: 'image', choose_url: true }
+      - {
+          label: 'Poster',
+          name: 'poster',
+          widget: 'image',
+          choose_url: true,
+          default: '/img/default.jpeg',
+        }
       - { label: 'Poster Description', name: 'alt', widget: 'string' }
       - { label: 'Preview', name: 'preview', widget: 'string' }
       - {
@@ -216,7 +228,6 @@ collections:
               { label: 'Tel', name: 'tel', widget: 'string', required: false },
             ],
         }
-
   - label: 'Reception Centers_UA'
     name: 'reception centers_ua'
     folder: 'content/centers'
