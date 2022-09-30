@@ -39,7 +39,7 @@ export const FormEst = () => {
     setIsOpen(true);
   }
 
-  const onSubmit = (data, e) => {
+  const onSubmit = async (data, e) => {
     try {
       e.preventDefault();
       //TELEGRAM
@@ -56,7 +56,7 @@ export const FormEst = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
-      sendMessageToTg(message);
+      await sendMessageToTg(message);
       openModal();
       reset();
     } catch (error) {

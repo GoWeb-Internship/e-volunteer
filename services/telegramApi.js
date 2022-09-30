@@ -14,7 +14,7 @@ const sendMessageToTg = async text => {
       parse_mode: 'HTML',
     });
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
 
