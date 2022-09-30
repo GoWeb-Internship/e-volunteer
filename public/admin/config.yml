@@ -199,7 +199,24 @@ collections:
           widget: 'string',
           default: 'Центры приемов беженцев',
         }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'List',
+          name: 'list',
+          widget: 'list',
+          fields:
+            [
+              {
+                label: 'Name',
+                name: 'name',
+                widget: 'string',
+                required: false,
+              },
+              { label: 'City', name: 'city', widget: 'string' },
+              { label: 'Address', name: 'address', widget: 'string' },
+              { label: 'Tel', name: 'tel', widget: 'string', required: false },
+            ],
+        }
+
   - label: 'Reception Centers_UA'
     name: 'reception centers_ua'
     folder: 'content/centers'
@@ -222,7 +239,23 @@ collections:
           widget: 'string',
           default: 'Центри прийомів біженців',
         }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'List',
+          name: 'list',
+          widget: 'list',
+          fields:
+            [
+              {
+                label: 'Name',
+                name: 'name',
+                widget: 'string',
+                required: false,
+              },
+              { label: 'City', name: 'city', widget: 'string' },
+              { label: 'Address', name: 'address', widget: 'string' },
+              { label: 'Tel', name: 'tel', widget: 'string', required: false },
+            ],
+        }
   # Footer
   - label: 'Footer_RU'
     name: 'footer_ru'
