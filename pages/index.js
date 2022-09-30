@@ -38,7 +38,7 @@ const Home = ({ slugs, centres }) => {
   return (
     <>
       <Head>
-        <title>Home Page</title>
+        <title>E-VOLUNTEER</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
