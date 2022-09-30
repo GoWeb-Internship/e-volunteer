@@ -21,6 +21,9 @@ class MyDocument extends Document {
       <Html lang={currentLocale}>
         <Head>
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/icons/icon.png"></link>
+          <meta name="theme-color" content="#fff" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <link
             rel="apple-touch-icon"

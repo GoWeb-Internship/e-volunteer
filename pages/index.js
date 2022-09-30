@@ -10,6 +10,7 @@ import { getSortedCardData } from '@/lib/cards';
 import { Form, LinkToTop, Modal } from '@/components';
 import { getCentersData } from '@/lib/home';
 import { Cards, Centers, Help, Hero } from 'views';
+import { getFooterData } from '@/lib/footer';
 
 const Home = ({ slugs, centres }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,12 +59,14 @@ export const getStaticProps = async ({ locale }) => {
   const slugs = getSortedCardData(locale);
   const centres = getCentersData(locale);
   const bannerData = getBannerData(locale);
+  const footerData = getFooterData(locale);
 
   return {
     props: {
       slugs,
       centres,
       bannerData,
+      footerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
