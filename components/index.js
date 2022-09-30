@@ -1,4 +1,5 @@
 export * from './ButtonLink/ButtonLink';
+export * from './Modal/Modal';
 export * from './Card/Card';
 export * from './Footer';
 export * from './Form/Form';
@@ -9,3 +10,4 @@ export * from './Logo/Logo';
 export * from './Selected/Selected';
 export * from './Navbar/Navbar';
 export * from './Spinner/Spinner';
+export * from './Notification/Notification';

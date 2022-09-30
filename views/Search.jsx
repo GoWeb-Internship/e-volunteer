@@ -67,11 +67,14 @@ export const Search = () => {
       </form>
 
       {active && results.length > 0 && (
-        <ul className="absolute top-full left-0 right-0 mt-2 truncate">
+        <ul className="absolute top-full left-0 right-0 z-10 mt-2 max-h-56 overflow-auto rounded-lg border border-blue-200">
           {results.map(({ id, title, language }) => {
             return (
               locale === language && (
-                <li className="mb-4 bg-slate-500 p-4 text-slate-50" key={title}>
+                <li
+                  className="border-b border-blue-200 bg-slate-50 p-3 text-slate-600"
+                  key={title}
+                >
                   <Link href="/[id]" as={`/${id}`}>
                     <a>{title}</a>
                   </Link>

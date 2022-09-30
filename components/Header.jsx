@@ -6,13 +6,22 @@ import { Logo } from '../components/Logo/Logo';
 import Image from 'next/image';
 // import { Navbar } from './Navbar/Navbar';
 import { Selected } from '../components/Selected/Selected';
+import { useRouter } from 'next/router';
 // import style from '../components/Navbar/';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 export const Header = ({slugs}) => {
   const { t } = useTranslation('common');
   const [nav, setNav] = useState(false);
+  const router = useRouter();
 
+  const handleLocaleChange = event => {
+    const value = event.target.value;
+
+    router.push(router.route, router.asPath, {
+      locale: value,
+    });
+  };
   return (
     <header className="bg-headerBg pt-[12px] pb-[12px] h-[68px]">
       <div className="container">
@@ -23,23 +32,25 @@ export const Header = ({slugs}) => {
 
           <div className='container '>
         <div className="box">
+          <div className=' bg-headerBg w-full flex items-center '> 
           <ul
             className={
               nav ? ["menu", "active"].join(' ') : ["menu"]
             }
           >
+    
             {slugs &&
               slugs.map((slug, idx) => (
-                  <li className="pl-[20px] text-white z-20" key={idx}>
+                  <li className=" text-textForm text-xl font-normal z-20 " key={idx}>
                   <Link href={`/${slug.href}`} >
                     <a onClick={() => setNav(!nav)}>{slug.title}</a>
                   </Link>
                 </li>
               ))}
-              <button className=" mr-[21px] !h-[80px] !mb-0  !w-[196px] rounded-md bg-blue-600  text-white ">
+              <button className=" mr-[21px] !h-[44px] !mb-0 !w-[194px] !mb-20px !mt-[20px] rounded-md bg-btnForm text-lg font-medium  text-white ">
               <Link href="">{t('help')}</Link>
             </button>
-            <div className=" md:hidden">
+            <div className="md:hidden">
             <Image
               width="286px"
               height="100%"
@@ -52,7 +63,7 @@ export const Header = ({slugs}) => {
           <div onClick={() => setNav(!nav)} className="mobile_btn">
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
           </div>
-         
+          </div>
         </div>
       </div>
       

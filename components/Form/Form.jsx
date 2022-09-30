@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -13,9 +14,19 @@ import {
 import Image from 'next/image';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
+import { Notification } from '..';
 
 export const Form = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation('common');
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   const formSchema = yup.object().shape({
     name: yup
@@ -51,6 +62,7 @@ export const Form = () => {
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log(data);
+    openModal();
     reset();
 
     //TELEGRAM
@@ -120,7 +132,7 @@ export const Form = () => {
             </div>
 
             <form
-              className="form xl:mr-[140px]"
+              className="form"
               method="POST"
               name="contact"
               onSubmit={handleSubmit(onSubmit)}
@@ -141,13 +153,24 @@ export const Form = () => {
                 {...register('textN')}
               />
               <span className="text-red ">{errors.offers?.message}</span>
-              <button className="btn mx-auto md:mr-auto md:ml-0" type="submit">
+              <button
+                className="btn mx-auto sm:w-[384px] sm:h-[56px] md:mr-auto md:ml-0"
+                type="submit"
+                onClick={openModal}
+              >
                 Відправити
               </button>
             </form>
           </div>
         </div>
       </div>
+      <Notification
+        isOpen={isOpen}
+        closeModal={closeModal}
+        title={t('notifyTitle')}
+        text={t('notifyText')}
+        link={t('notifyLink')}
+      />
     </section>
   );
 };

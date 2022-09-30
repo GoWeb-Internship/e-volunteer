@@ -2,7 +2,7 @@
   @apply absolute ml-[100px] mt-[20px] hidden h-[748px] w-[480px] xl:block;
 }
 .formContainer {
-  @apply container relative my-auto pb-[64px] pt-[40px] sm:pb-[80px] sm:pr-[20px] sm:pl-[20px] md:pr-[40px] md:pl-[40px] xl:ml-[550px] xl:h-[776px]  xl:pr-[80px] xl:pl-[174px] xl:pt-[150px];
+  @apply container relative my-auto pb-[64px] pt-[40px] sm:pt-[80px] sm:pb-[80px]  sm:pr-[20px] sm:pl-[20px] md:pr-[40px] md:pl-[40px] xl:pl-[650px] xl:h-[776px]  xl:pr-[80px]  xl:pt-[150px];
 }
 .formGl {
   @apply pb-[17px]  text-2xl font-medium text-textForm md:text-4xl md:font-normal;

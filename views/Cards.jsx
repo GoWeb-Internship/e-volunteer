@@ -6,7 +6,7 @@ export const Cards = ({ slugs }) => {
   const { t } = useTranslation('common');
 
   return (
-    <section className="py-[58px] px-5 sm:py-[80px] md:py-[100px] md:px-9 xl:px-[80px]">
+    <section className="bg-blue-200 py-[58px] sm:py-[80px] md:py-[100px]">
       <div className="container">
         <h2 className="visually-hidden">{t('cardsTitle')}</h2>
 

@@ -1,46 +1,60 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import { getBannerData } from '@/lib/banner';
 import { getHelpData } from '@/lib/helping';
 import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
-import Flower from 'public/img/svg/pageFlower.svg';
+import PageFlower from 'public/img/svg/pageFlower.svg';
 
 const Helping = ({ help: { contents, data } }) => {
   return (
-    <section className="px-5 py-10 md:px-9 md:pt-[69px] md:pb-[100px] xl:px-[80px] xl:pt-[14px]">
-      <header className="flex justify-between shadow-page">
-        <div className="flex items-baseline text-slate-600 xl:pt-[90px]">
-          <Link href="/">
-            <a
-              href=""
-              aria-label="Ссылка на главную страницу"
-              className="mr-[77px]"
-            >
-              <ArrowLongLeftIcon
-                className="h-7 w-7"
-                aria-label="Стрелка назад"
-              />
-            </a>
-          </Link>
-          <h1 className="text-[40px] font-medium leading-tight">
-            {data.title}
-          </h1>
+    <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
+
+      <section>
+        <header className="pt-12 pb-7 shadow-slugHeader">
+          <div className="container overflow-hidden">
+            <div className="flex w-full items-center gap-8 xl:items-baseline">
+              <Link href="/">
+                <a href="">
+                  <ArrowLongLeftIcon className="h-7 w-7 text-gray-800" />
+                </a>
+              </Link>
+
+              {data.title && (
+                <h1 className="mb-0 text-2xl font-medium leading-7 text-slate-600 md:text-[40px] md:leading-[46px]">
+                  {data.title}
+                </h1>
+              )}
+
+              <PageFlower className="ml-auto hidden w-[154px]  sm:block md:w-[260px] xl:w-[412px]" />
+            </div>
+          </div>
+        </header>
+        <div className="container">
+          <div className="prose mr-auto max-w-full break-words py-20 prose-h2:relative prose-h2:mt-0 prose-h2:text-2xl prose-h2:font-medium prose-h2:leading-7 prose-h2:text-slate-600 prose-p:mt-0 prose-p:text-base prose-p:leading-6 prose-p:text-slate-600 prose-a:whitespace-pre-wrap prose-a:text-button prose-a:no-underline hover:prose-a:underline focus:prose-a:underline prose-blockquote:p-2 prose-blockquote:py-4 prose-strong:text-slate-600 prose-ol:pl-4 prose-ul:pl-4 md:prose-h2:text-[34px] md:prose-h2:leading-[39px] md:before:prose-h2:top-[13px] md:before:prose-h2:left-[-20px] xl:prose-p:text-xl xl:prose-p:leading-[1.24] xl:prose-a:text-xl xl:prose-a:leading-[1.24] xl:prose-blockquote:p-4">
+            <ReactMarkdown>{contents}</ReactMarkdown>
+          </div>
         </div>
-        <Flower className="h-[54px] w-[158px] md:h-[89px] md:w-[260px] xl:h-[141px] xl:w-[413px]" />
-      </header>
-      <ReactMarkdown className="xl:mt-[80px]">{contents}</ReactMarkdown>
-    </section>
+      </section>
+    </>
   );
 };
 
 export const getStaticProps = async ({ locale }) => {
   const help = getHelpData(locale);
   const slugs = getSortedCardData(locale);
+  const bannerData = getBannerData(locale);
+
   return {
     props: {
       help,
       slugs,
+      bannerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
