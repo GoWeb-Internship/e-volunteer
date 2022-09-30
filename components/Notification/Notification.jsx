@@ -38,7 +38,7 @@ export const Notification = ({ isOpen, closeModal, title, text, link }) => {
               {isTablet ? (
                 <Dialog.Panel className="relative rounded-2xl bg-blue-200 md:block md:px-[160px] md:py-[120px] xl:px-[215px]">
                   <NotifyTop className="absolute top-5 left-0 hidden md:block md:w-[171px] xl:top-6 xl:w-[227px]" />
-                  <NotifyBottom className="absolute bottom-6 right-0 hidden md:block md:w-[134px] xl:w-[188px]" />
+                  <NotifyBottom className="absolute bottom-6 right-3 hidden md:block md:w-[134px] xl:w-[188px]" />
                   <button
                     type="button"
                     onClick={closeModal}
@@ -62,7 +62,7 @@ export const Notification = ({ isOpen, closeModal, title, text, link }) => {
                           className="text-button hover:underline focus:underline"
                           rel="noopener noreferrer nofollow"
                           target="_blank"
-                          href="https://web.telegram.org/"
+                          href="https://t.me/eevolunteer"
                         >
                           {link}
                         </a>

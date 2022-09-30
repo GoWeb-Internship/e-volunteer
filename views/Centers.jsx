@@ -3,9 +3,9 @@ import Flower from '@/public/img/svg/centers.svg';
 
 const Centers = ({ data }) => {
   return (
-    <section className=" relative bg-blue-200 py-[60px] sm:py-[80px] md:py-[100px]">
-      <Flower className="hidden w-[214px] xl:absolute xl:top-[38px] xl:right-[60px] xl:block" />
-      <div className="container">
+    <section className="bg-blue-200 py-[60px] sm:py-[80px] md:py-[100px]">
+      <div className="container relative">
+        <Flower className="hidden w-[214px] xl:absolute xl:top-0 xl:right-0 xl:block" />
         {data.title && (
           <h2 className="mb-5 text-2xl font-medium leading-tight text-slate-50 sm:mb-12 md:mb-[100px] md:text-[40px]">
             {data.title}
@@ -34,7 +34,9 @@ const Centers = ({ data }) => {
                     {city && (
                       <p className="mb-3 text-lg leading-tight">{city}</p>
                     )}
-                    {address && <address className="mb-3">{address}</address>}
+                    {address && (
+                      <address className="mb-3 not-italic">{address}</address>
+                    )}
                   </a>
                   {tel && (
                     <a

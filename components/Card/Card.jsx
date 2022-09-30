@@ -7,7 +7,7 @@ export const Card = ({ title, preview, image, href, alt }) => {
   const { t } = useTranslation('common');
 
   return (
-    <article className="mx-auto flex h-[518px] max-w-[440px] flex-col items-center justify-between rounded-[32px] bg-slate-50 px-6 pt-6 pb-10 text-slate-600 shadow-card md:max-w-[330px] md:pb-12 xl:h-[542px] xl:max-w-[412px]">
+    <article className="mx-auto flex h-[518px] flex-col items-center justify-between rounded-[32px] bg-slate-50 px-6 pt-6 pb-10 text-slate-600 shadow-card sm:max-w-[440px] md:max-w-[330px] md:pb-12 xl:h-[542px] xl:max-w-[412px]">
       <div>
         <Image
           src={`/img/${image}`}

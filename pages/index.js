@@ -7,10 +7,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { getBannerData } from '@/lib/banner';
 import { getSortedCardData } from '@/lib/cards';
-
 import { getCentersData } from '@/lib/home';
 import { getFooterData } from '@/lib/footer';
-import { Form, Modal } from '@/components';
+import { Form, Modal, LinkToTop } from '@/components';
 
 const Hero = dynamic(() => import('views/Hero.jsx'), {
   suspense: true,
@@ -55,7 +54,7 @@ const Home = ({ slugs, centres }) => {
   return (
     <>
       <Head>
-        <title>Home Page</title>
+        <title>E-VOLUNTEER</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
@@ -67,6 +66,7 @@ const Home = ({ slugs, centres }) => {
         <Centers data={centres} />
         <Form />
         <Modal isOpen={isOpen} closeModal={closeModal} />
+        <LinkToTop />
       </Suspense>
     </>
   );
