@@ -14,7 +14,7 @@ import {
 import Image from 'next/image';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
-import { Notification, FullScreenLoader } from '..';
+import { Notification, ScreenLoader } from '..';
 
 export const Form = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,18 +109,18 @@ export const Form = () => {
   return (
     <>
       {error && (
-        <FullScreenLoader error={error}>
+        <ScreenLoader error={error}>
           <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
             {t('error')}
           </p>
-        </FullScreenLoader>
+        </ScreenLoader>
       )}
       {isLoading && (
-        <FullScreenLoader>
+        <ScreenLoader>
           <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
             {t('loading')}
           </p>
-        </FullScreenLoader>
+        </ScreenLoader>
       )}
       <section>
         <div className="container">

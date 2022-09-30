@@ -9,7 +9,7 @@ import { getBannerData } from '@/lib/banner';
 import { getSortedCardData } from '@/lib/cards';
 import { getCentersData } from '@/lib/home';
 import { getFooterData } from '@/lib/footer';
-import { Form, Modal, LinkToTop, FullScreenLoader } from '@/components';
+import { Form, Modal, LinkToTop } from '@/components';
 
 const Hero = dynamic(() => import('views/Hero.jsx'));
 const Help = dynamic(() => import('views/Help.jsx'));
@@ -46,8 +46,6 @@ const Home = ({ slugs, centres }) => {
         <title>E-VOLUNTEER</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
-
-      <FullScreenLoader />
 
       <Hero />
       <Help title="Ma tahan aidata" button="Vali" EST onClick={openModal} />

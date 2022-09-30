@@ -5,7 +5,7 @@ import useFormPersist from 'react-hook-form-persist';
 import * as yup from 'yup';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
-import { Notification, FullScreenLoader } from '..';
+import { Notification, ScreenLoader } from '..';
 
 export const FormEst = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,21 +87,21 @@ export const FormEst = () => {
   return (
     <>
       {error && (
-        <FullScreenLoader error={error}>
+        <ScreenLoader error={error}>
           <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
             Oops! Midagi läks valesti.
           </p>
           <p className="text-[28px] font-normal leading-[36px] text-button md:text-[40px] md:leading-[24px]">
             Proovi uuesti
           </p>
-        </FullScreenLoader>
+        </ScreenLoader>
       )}
       {isLoading && (
-        <FullScreenLoader>
+        <ScreenLoader>
           <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
             Palun oodake, teie taotlust töödeldakse
           </p>
-        </FullScreenLoader>
+        </ScreenLoader>
       )}
       <div className="mx-auto max-w-[440px] md:w-[480px] md:max-w-none xl:ml-[128px] xl:w-[414px]">
         <h3 className="pb-[17px] text-2xl font-medium text-textForm md:text-4xl md:font-normal">
