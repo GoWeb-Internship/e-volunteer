@@ -10,3 +10,4 @@ export * from './Logo/Logo';
 export * from './Modal/Modal';
 export * from './Notification/Notification';
 export * from './Spinner/Spinner';
+export * from './FullScreenLoader/FullscreenLoader';
