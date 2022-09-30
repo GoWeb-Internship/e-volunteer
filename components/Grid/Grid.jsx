@@ -19,7 +19,7 @@ export const Grid = ({ children, type, className, tag, ...props }) => {
 };
 
 Grid.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   type: PropTypes.string.isRequired,
   tag: PropTypes.string,
   className: PropTypes.string,

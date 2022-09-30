@@ -3,9 +3,9 @@
 }
 
 .contact {
-@apply grid grid-cols-1 md:grid-cols-2 md:gap-y-9 md:gap-x-5 xl:grid-cols-3 xl:gap-x-[130px]
+@apply grid grid-cols-1 gap-y-9 md:grid-cols-2 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px]
 }
 
 .footer {
-@apply grid grid-cols-2 md:grid-cols-4 md:gap-y-5 md:gap-x-6 xl:gap-x-32 
+@apply grid gap-y-[12px]  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-y-5 md:gap-x-6 xl:grid-cols-4 xl:gap-x-32 
 }
