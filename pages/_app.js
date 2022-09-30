@@ -5,6 +5,7 @@ import { Banner } from 'views';
 
 const MyApp = ({ Component, pageProps }) => {
   const { slugs, bannerData } = pageProps;
+
   return (
     <>
       <Banner data={bannerData} />

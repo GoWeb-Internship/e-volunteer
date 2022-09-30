@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
-import { getSortedCardData } from '@/lib/cards';
-import { getBannerData } from '@/lib/banner';
-import { getCentersData } from '@/lib/home';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Form, Modal } from '@/components';
 import { useTranslation } from 'next-i18next';
-import { Cards, Help, Centers } from 'views';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { getBannerData } from '@/lib/banner';
+import { getSortedCardData } from '@/lib/cards';
+import { Form, Modal } from '@/components';
+import { getCentersData } from '@/lib/home';
+import { Cards, Centers, Help, Hero } from 'views';
 
 const Home = ({ slugs, centres }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +40,8 @@ const Home = ({ slugs, centres }) => {
         <title>Home Page</title>
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
+
+      <Hero />
       <Help title="Ma tahan aidata" button="Vali" EST onClick={openModal} />
       <Cards slugs={slugs} />
       <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />

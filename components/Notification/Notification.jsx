@@ -8,6 +8,7 @@ import NotifyBottom from '@/public/img/svg/notifyBottom.svg';
 
 export const Notification = ({ isOpen, closeModal, title, text, link }) => {
   const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-30" onClose={closeModal}>

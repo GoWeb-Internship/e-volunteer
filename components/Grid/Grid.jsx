@@ -4,6 +4,7 @@ import { card, contact, footer } from './Grid.module.css';
 
 export const Grid = ({ children, type, className, tag, ...props }) => {
   const Tag = tag ?? 'div';
+
   return (
     <Tag
       className={classNames(className, {
