@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
-export const Hero = () => {
+const Hero = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -20,3 +20,5 @@ export const Hero = () => {
     </>
   );
 };
+
+export default Hero;

@@ -1,7 +1,7 @@
 import { Grid } from '@/components';
 import Flower from '@/public/img/svg/centers.svg';
 
-export const Centers = ({ data }) => {
+const Centers = ({ data }) => {
   return (
     <section className=" relative bg-blue-200 py-[60px] sm:py-[80px] md:py-[100px]">
       <Flower className="hidden w-[214px] xl:absolute xl:top-[38px] xl:right-[60px] xl:block" />
@@ -53,3 +53,5 @@ export const Centers = ({ data }) => {
     </section>
   );
 };
+
+export default Centers;

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ButtonLink } from '/components';
 import Flower from 'public/img/svg/help.svg';
 
-export const Help = ({ title, button, href, EST, ...props }) => {
+const Help = ({ title, button, href, EST, ...props }) => {
   return (
     <section
       className={`relative z-10 bg-gradient-to-b py-10 drop-shadow-card md:py-6 ${
@@ -28,6 +28,8 @@ export const Help = ({ title, button, href, EST, ...props }) => {
     </section>
   );
 };
+
+export default Help;
 
 Help.propTypes = {
   title: PropTypes.string.isRequired,

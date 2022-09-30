@@ -1,16 +1,32 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { Suspense, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { getBannerData } from '@/lib/banner';
 import { getSortedCardData } from '@/lib/cards';
 
-import { Form, Modal } from '@/components';
 import { getCentersData } from '@/lib/home';
-import { Cards, Centers, Help, Hero } from 'views';
 import { getFooterData } from '@/lib/footer';
+import { Form, Modal } from '@/components';
+
+const Hero = dynamic(() => import('views/Hero.jsx'), {
+  suspense: true,
+});
+
+const Help = dynamic(() => import('views/Help.jsx'), {
+  suspense: true,
+});
+
+const Centers = dynamic(() => import('views/Centers.jsx'), {
+  suspense: true,
+});
+
+const Cards = dynamic(() => import('views/Cards.jsx'), {
+  suspense: true,
+});
 
 const Home = ({ slugs, centres }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,13 +59,15 @@ const Home = ({ slugs, centres }) => {
       </Head>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
 
-      <Hero />
-      <Help title="Ma tahan aidata" button="Vali" EST onClick={openModal} />
-      <Cards slugs={slugs} />
-      <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
-      <Centers data={centres} />
-      <Form />
-      <Modal isOpen={isOpen} closeModal={closeModal} />
+      <Suspense fallback={`Loading...`}>
+        <Hero />
+        <Help title="Ma tahan aidata" button="Vali" EST onClick={openModal} />
+        <Cards slugs={slugs} />
+        <Help title={t('helpTitle')} button={t('buttonCard')} href="helping" />
+        <Centers data={centres} />
+        <Form />
+        <Modal isOpen={isOpen} closeModal={closeModal} />
+      </Suspense>
     </>
   );
 };
