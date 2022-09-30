@@ -17,7 +17,7 @@ export const Selected = () => {
      <select
        onChange={handleLocaleChange}
        value={router.locale}
-       className="hidden h-[35px] w-[76px] rounded-lg pt-[5px] md:block"
+       className=" h-[35px] w-[76px] ml-[120px] rounded-lg pt-[5px] md:block"
      >
        <option className="z-1" value="ru">
          RU

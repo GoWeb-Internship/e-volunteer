@@ -10,11 +10,12 @@ export const Footer = ({ slugs }) => {
   return (
     <footer className="bg-blue-400">
       <div className="container">
-        <div className="ml-[80px] mr-[80px]">
-          <div className="flex justify-between border-b-2 pb-[24px] pt-[24px]">
+        <div className="md:ml-[80px] md:mr-[80px]">
+          <div className="flex  items-center border-b-2 pb-[24px] pt-[24px] justify-between">
             <Logo />
-            <div className="flex ">
-              <p className="pr-[19px] text-white">{t('telegram')}</p>
+            <div className="flex mt-[30px] pl-[24px]  ">
+              <Link href="https://web.telegram.org/z/">
+              <p className="pr-[19px] text-white">{t('telegram')}</p></Link>
               <Link href="https://web.telegram.org/z/">
                 <a href="https://web.telegram.org/z/" aria-label="логотип">
                   <Teleg className="w-[22px]" />

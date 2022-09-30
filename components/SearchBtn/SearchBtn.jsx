@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export const Search = () => {
+export const SearchBtn = () => {
   const searchRef = useRef(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
@@ -40,7 +40,7 @@ export const Search = () => {
 
   return (
     <div
-      className=" md:block -ml-[50px] z-20 relative xl:ml-auto mr-[20px]  items-center justify-center"
+      className="hidden lg:block -ml-[50px] z-20 relative xl:ml-auto mr-[20px]  items-center justify-center"
       ref={searchRef}
     >
       <form role="search" method="get" className="searchform" action="">

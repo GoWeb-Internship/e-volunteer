@@ -21,6 +21,7 @@ module.exports = {
         textForm: '#475569',
         textFormState: '#9498AB',
         headerBg: "#73A9FF",
+        bgHeader: "#BFDBFE",
         btnForm: "#73A9FF"
       },
 
