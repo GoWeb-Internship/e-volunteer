@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import { Logo } from './Logo/Logo';
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'next-i18next';
-import Teleg from '../public/img/teleg.svg';
+import { Logo } from './Logo/Logo';
+import Teleg from '../public/img/svg/teleg.svg';
 import { Grid } from 'components';
 
-export const Footer = ({ slugs }) => {
+export const Footer = ({ slugs, footerData }) => {
   const { t } = useTranslation('common');
 
   return (
@@ -33,9 +35,13 @@ export const Footer = ({ slugs }) => {
                 </li>
               ))}
           </Grid>
-          <p className="border-b-2 pb-[24px] text-center text-white">
-            {t('textFooter')}
-          </p>
+
+          {footerData && (
+            <div className="border-b-2 pb-[24px] text-center text-white">
+              <ReactMarkdown>{footerData.contents}</ReactMarkdown>
+            </div>
+          )}
+
           <div className="flex pb-[24px] pt-[20px]">
             <span className="pr-1 text-white">&copy;</span>
             <span className="text-white ">{new Date().getFullYear()}</span>
@@ -45,4 +51,11 @@ export const Footer = ({ slugs }) => {
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  slugs: PropTypes.arrayOf(PropTypes.object),
+  footerData: PropTypes.shape({
+    contents: PropTypes.string,
+  }),
 };

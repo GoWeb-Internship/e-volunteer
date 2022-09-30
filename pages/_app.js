@@ -4,14 +4,14 @@ import { Header, Footer } from '@/components';
 import { Banner } from 'views';
 
 const MyApp = ({ Component, pageProps }) => {
-  const { slugs, bannerData } = pageProps;
+  const { slugs, bannerData, footerData } = pageProps;
 
   return (
     <>
       <Banner data={bannerData} />
       <Header  slugs={slugs}/>
       <Component {...pageProps} />
-      <Footer slugs={slugs} />
+      <Footer slugs={slugs} footerData={footerData} />
     </>
   );
 };

@@ -5,7 +5,7 @@ export const Banner = ({ data }) => {
   return (
     <>
       {data?.contents && (
-        <div className="bg-white py-5">
+        <div className="bg-white py-5" id="banner">
           <div className="container">
             <div className="m-0 text-center text-base font-medium leading-6 text-slate-500">
               <ReactMarkdown>{data.contents}</ReactMarkdown>
@@ -18,5 +18,5 @@ export const Banner = ({ data }) => {
 };
 
 Banner.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };

@@ -81,6 +81,7 @@ export const Form = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
+
     sendMessageToTg(message);
   };
 
@@ -152,17 +153,20 @@ export const Form = () => {
                 {...register('textN')}
               />
               <span className="text-red ">{errors.offers?.message}</span>
+
               <button
                 className="btn mx-auto w-[280px] h-[40px] sm:w-[384px] sm:h-[56px] md:mr-auto md:ml-0"
                 type="submit"
                 onClick={openModal}
               >
+
                 Відправити
               </button>
             </form>
           </div>
         </div>
       </div>
+
       <Notification
         isOpen={isOpen}
         closeModal={closeModal}

@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import PageFlower from '../public/img/svg/pageFlower.svg';
 import { getBannerData } from '@/lib/banner';
+import { getFooterData } from '@/lib/footer';
 
 const Page = ({ data: { data, contents } }) => {
   return (
@@ -61,12 +62,14 @@ export const getStaticProps = async ({ params: { slug }, locale }) => {
   const data = getCardData(slug, locale);
   const slugs = getSortedCardData(locale);
   const bannerData = getBannerData(locale);
+  const footerData = getFooterData(locale);
 
   return {
     props: {
       data,
       slugs,
       bannerData,
+      footerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };

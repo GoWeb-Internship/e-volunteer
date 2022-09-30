@@ -7,6 +7,7 @@ import { getSortedCardData } from '@/lib/cards';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid';
 import PageFlower from 'public/img/svg/pageFlower.svg';
+import { getFooterData } from '@/lib/footer';
 
 const Helping = ({ help: { contents, data } }) => {
   return (
@@ -49,12 +50,14 @@ export const getStaticProps = async ({ locale }) => {
   const help = getHelpData(locale);
   const slugs = getSortedCardData(locale);
   const bannerData = getBannerData(locale);
+  const footerData = getFooterData(locale);
 
   return {
     props: {
       help,
       slugs,
       bannerData,
+      footerData,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   };
