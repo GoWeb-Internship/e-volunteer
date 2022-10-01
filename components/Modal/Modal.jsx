@@ -58,7 +58,7 @@ export const Modal = ({ isOpen, closeModal }) => {
                   <p className="mt-3 text-start text-xl text-slate-600">
                     Tavaliselt on need põhilised asjad:
                   </p>
-                  <ul className="mb-8 list-inside list-disc text-start">
+                  <ul className="mb-8 list-inside list-disc text-start text-slate-600">
                     {needs.map(item => (
                       <li key={item} className="mt-3 ">
                         {item}

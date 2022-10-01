@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'next-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -14,11 +14,16 @@ import {
 import Image from 'next/image';
 import sendMessageToTg from '../../services/telegramApi';
 import TextField from '@material-ui/core/TextField';
-import { Notification } from '..';
+import { Notification, ScreenLoader } from '..';
 
 export const Form = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const { t } = useTranslation('common');
+
+  const isBrowser = typeof window !== 'undefined';
 
   function closeModal() {
     setIsOpen(false);
@@ -53,21 +58,25 @@ export const Form = () => {
     resolver: yupResolver(formSchema),
   });
 
-  useFormPersist('storageKey', {
+  useEffect(() => {
+    isLoading
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
+  }, [isLoading]);
+  useFormPersist('form', {
     watch,
     setValue,
+    storage: isBrowser ? sessionStorage : null,
   });
-  useFormPersist('form', { watch, setValue });
 
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log(data);
-    openModal();
-    reset();
+  const onSubmit = async (data, e) => {
+    setIsLoading(true);
+    try {
+      e.preventDefault();
 
-    //TELEGRAM
+      //TELEGRAM
 
-    let message = `
+      let message = `
       <b>Остались вопросы?:</b>
       Name: ${data.name}
       Email: ${data.email}
@@ -81,94 +90,127 @@ export const Form = () => {
       <a href="https://e-volunteer.netlify.app/">https://e-volunteer.netlify.app/</a>
       ------
       `;
+      await sendMessageToTg(message);
+      openModal();
+      reset();
+      sessionStorage.removeItem('form');
+    } catch (error) {
+      console.log(error);
+      setError(true);
+    } finally {
+      setIsLoading(false);
 
-    sendMessageToTg(message);
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
+    }
   };
 
   return (
-    <section>
-      <div className="container">
-        <div className="flex">
-          <div className="my-auto hidden md:block xl:hidden">
-            <Image
-              width="212px"
-              height="613px"
-              src="/img/form/plForm.svg"
-              className=" object-cover"
-              alt="shadow"
-            />
-          </div>
-
-          <div className={fotoIcons}>
-            <Image
-              layout="fill"
-              src="/img/form/descForm.svg"
-              className="absolute"
-              alt="shadow"
-            />
-          </div>
-
-          <div className={formContainer}>
-            <h2 className={formGl}>{t('textForm')}</h2>
-            <div className="flex ">
-              <p className={formText}>{t('write')}</p>
-              <div className="sm:hidden">
-                <Image
-                  width="74px"
-                  height="76px"
-                  src="/img/form/iconForm.svg"
-                  className=" object-cover sm:block"
-                  alt="shadow"
-                />
-              </div>
-              <div className={iconsForm}>
-                <Image
-                  width="168px"
-                  height="171px"
-                  src="/img/form/iconForm.svg"
-                  className=" -pt-[40px] object-cover"
-                  alt="shadow"
-                />
-              </div>
+    <>
+      {error && (
+        <ScreenLoader error={error}>
+          <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
+            {t('error')}
+          </p>
+        </ScreenLoader>
+      )}
+      {isLoading && (
+        <ScreenLoader>
+          <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
+            {t('loading')}
+          </p>
+        </ScreenLoader>
+      )}
+      <section>
+        <div className="container">
+          <div className="flex">
+            <div className="my-auto hidden md:block xl:hidden">
+              <Image
+                width="212px"
+                height="613px"
+                src="/img/form/plForm.svg"
+                className=" object-cover"
+                alt="shadow"
+              />
             </div>
 
-            <form
-              className="form xl:mr-[140px]"
-              method="POST"
-              name="contact"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <TextField label={t('name')} {...register('name')} />
-              <span className="text-red-600 ">{errors.name?.message}</span>
-              <TextField label="+380" {...register('cellphone')} />
-              <span className="text-red-600 ">{errors.cellphone?.message}</span>
-              <TextField
-                label="Email"
-                className="input-custom"
-                {...register('email')}
+            <div className={fotoIcons}>
+              <Image
+                layout="fill"
+                src="/img/form/descForm.svg"
+                className="absolute"
+                alt="shadow"
               />
-              <span className="text-red-600 ">{errors.email?.message}</span>
-              <TextField
-                label="Текст"
-                className="!pt-[128px] md:!pt-[75px]"
-                {...register('textN')}
-              />
-              <span className="text-red ">{errors.offers?.message}</span>
-              <button className="btn mx-auto md:mr-auto md:ml-0" type="submit">
-                Відправити
-              </button>
-            </form>
+            </div>
+
+            <div className={formContainer}>
+              <h2 className={formGl}>{t('textForm')}</h2>
+              <div className="flex ">
+                <p className={formText}>{t('write')}</p>
+                <div className="sm:hidden">
+                  <Image
+                    width="74px"
+                    height="76px"
+                    src="/img/form/iconForm.svg"
+                    className=" object-cover sm:block"
+                    alt="shadow"
+                  />
+                </div>
+                <div className={iconsForm}>
+                  <Image
+                    width="168px"
+                    height="171px"
+                    src="/img/form/iconForm.svg"
+                    className=" -pt-[40px] object-cover"
+                    alt="shadow"
+                  />
+                </div>
+              </div>
+
+              <form
+                className="form xl:mr-[140px]"
+                method="POST"
+                name="contact"
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <TextField label={t('name')} {...register('name')} />
+                <span className="text-red-600 ">{errors.name?.message}</span>
+                <TextField label="+380" {...register('cellphone')} />
+                <span className="text-red-600 ">
+                  {errors.cellphone?.message}
+                </span>
+                <TextField
+                  label="Email"
+                  className="input-custom"
+                  {...register('email')}
+                />
+                <span className="text-red-600 ">{errors.email?.message}</span>
+                <TextField
+                  label="Текст"
+                  className="!pt-[128px] md:!pt-[75px]"
+                  {...register('textN')}
+                />
+                <span className="text-red ">{errors.offers?.message}</span>
+                <button
+                  className="btn mx-auto md:mr-auto md:ml-0"
+                  type="submit"
+                >
+                  Відправити
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Notification
-        isOpen={isOpen}
-        closeModal={closeModal}
-        title={t('notifyTitle')}
-        text={t('notifyText')}
-        link={t('notifyLink')}
-      />
-    </section>
+        <Notification
+          isOpen={isOpen}
+          closeModal={closeModal}
+          title={t('notifyTitle')}
+          text={t('notifyText')}
+          link={t('notifyLink')}
+        />
+      </section>
+    </>
   );
 };
