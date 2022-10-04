@@ -1,14 +1,11 @@
-import Link from 'next/link';
-import { Search } from '../views/Search';
 import { useTranslation } from 'next-i18next';
-
-import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
-import { LanguageToggle, Logo } from '.';
-import { Bars3Icon } from '@heroicons/react/24/outline';
-import { useLocalChange } from 'hooks/useLocalChange';
+import { useMediaQuery } from 'react-responsive';
 
-export const Header = () => {
+import { useLocalChange } from 'hooks/useLocalChange';
+import { Logo, MobileMenu, Navbar } from '.';
+
+export const Header = ({ slugs }) => {
   const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
   const [showNavbar, setNavbar] = useState(null);
@@ -25,30 +22,13 @@ export const Header = () => {
           <Logo />
 
           {showNavbar ? (
-            <div className="flex items-center gap-10">
-              <Search />
-
-              <Link href="" className="">
-                <a
-                  className="flex !h-[44px] !w-[196px] items-center justify-center
-                rounded-md bg-blue-500 text-white transition
-                duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('help')}
-                </a>
-              </Link>
-
-              <LanguageToggle
-                handleLocaleChange={handleLocaleChange}
-                value={router.locale}
-              />
-            </div>
+            <Navbar
+              linkValue={t('help')}
+              handleLocaleChange={handleLocaleChange}
+              locale={router.locale}
+            />
           ) : (
-            <button type="button" onClick={() => console.log('Click')}>
-              <Bars3Icon className="h-7 w-7 text-slate-50 transition-all hover:text-yellow-200 focus:text-yellow-200" />
-            </button>
+            <MobileMenu slugs={slugs} />
           )}
         </div>
       </div>

@@ -50,24 +50,24 @@ export const Search = () => {
 
   return (
     <div className="relative" ref={searchRef}>
-      <div className="relative md:w-[228px] xl:w-[522px]">
-        <MagnifyingGlassIcon className="absolute left-2 h-5 w-5 translate-y-1/2 text-slate-600" />
+      <div className="relative rounded-xl shadow-md md:w-[228px] xl:w-[522px]">
+        <MagnifyingGlassIcon className="absolute left-2 h-5 w-5 translate-y-1/2  text-slate-600" />
 
         <input
           onChange={onChange}
           onFocus={onFocus}
           type="text"
           value={query}
-          className="w-full rounded-xl pl-8 text-slate-600"
+          className="w-full rounded-xl border border-gray-300 pl-8 text-slate-600"
           id="search"
         />
 
         <button
           type="button"
           onClick={handleClearInput}
-          className="absolute right-2 translate-y-1/2"
+          className="absolute right-2 translate-y-1/2 text-slate-600 transition-all hover:text-slate-400"
         >
-          <XMarkIcon className="h-5 w-5 text-slate-600" />
+          <XMarkIcon className="h-5 w-5 " />
         </button>
       </div>
 
