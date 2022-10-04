@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 export const Search = () => {
   const searchRef = useRef(null);
@@ -35,48 +37,53 @@ export const Search = () => {
 
   const onFocus = useCallback(() => {
     setActive(true);
+
     window.addEventListener('click', onClick);
   }, [onClick]);
 
+  const handleClearInput = () => {
+    setActive(false);
+    setQuery('');
+  };
+
+  const showResults = active && results.length > 0 && query !== '';
+
   return (
-    <div
-      className="relative  ml-auto mr-[20px] flex max-w-lg items-center justify-center"
-      ref={searchRef}
-    >
-      <form role="search" method="get" className="searchform" action="">
-        <label htmlFor="search" className="search">
-          <svg
-            viewBox="0 0 17.7 17.7"
-            className="absolute float-left mt-[5px]  h-[16px] w-[16px] "
-          >
-            <path
-              fill="#475569"
-              d="M12.6 11.2C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l5.1 5.1 1.4-1.4-5.1-5.1zM2 7c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"
-            />
-          </svg>
-        </label>
+    <div className="relative" ref={searchRef}>
+      <div className="relative md:w-[228px] xl:w-[522px]">
+        <MagnifyingGlassIcon className="absolute left-2 h-5 w-5 translate-y-1/2 text-slate-600" />
+
         <input
           onChange={onChange}
           onFocus={onFocus}
-          placeholder=" "
           type="text"
           value={query}
-          className="search"
+          className="w-full rounded-xl pl-8 text-slate-600"
           id="search"
         />
-      </form>
 
-      {active && results.length > 0 && (
-        <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200">
+        <button
+          type="button"
+          onClick={handleClearInput}
+          className="absolute right-2 translate-y-1/2"
+        >
+          <XMarkIcon className="h-5 w-5 text-slate-600" />
+        </button>
+      </div>
+
+      {showResults && (
+        <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
           {results.map(({ id, title, language }) => {
             return (
               locale === language && (
                 <li
-                  className="border-b border-blue-200 bg-slate-50 px-8 text-slate-600"
+                  className="border-b border-blue-200 bg-slate-50  text-slate-600"
                   key={title}
                 >
                   <Link href="[id]" as={`${id}`}>
-                    <a className="inline-block w-full py-3">{title}</a>
+                    <a className="inline-block w-full py-3 px-8 transition-all hover:bg-blue-200 focus:bg-blue-200">
+                      {title}
+                    </a>
                   </Link>
                 </li>
               )

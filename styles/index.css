@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 font-sans font-normal relative;
+  @apply relative bg-slate-50 font-sans font-normal;
 }
 
 h1,
@@ -149,43 +149,4 @@ address {
   .form button {
     margin-top: 40px;
   }
-}
-
-button:hover {
-  filter: brightness(100%);
-}
-
-/* SEARCH */
-
-.searchform {
-  display: inline;
-  font-size: 1em;
-  border-radius: 1em;
-  border: 0.1em solid rgb(190, 196, 218);
-  padding: 0.3em;
-  background: white;
-  height: 44px;
-  border-radius: 6px;
-}
-
-#search {
-  transition: all 0.2s ease-out;
-  width: 20rem;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: transparent;
-  opacity: 0;
-}
-
-#search:focus {
-  width: 500px;
-  opacity: 1;
-}
-
-input {
-  text-indent: 30px;
 }

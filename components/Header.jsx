@@ -1,44 +1,55 @@
-import React from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Search } from '../views/Search';
 import { useTranslation } from 'next-i18next';
-import { Logo } from './Logo/Logo';
+
+import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from 'react';
+import { LanguageToggle, Logo } from '.';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import { useLocalChange } from 'hooks/useLocalChange';
 
 export const Header = () => {
-  const router = useRouter();
+  const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
-  const handleLocaleChange = event => {
-    const value = event.target.value;
+  const [showNavbar, setNavbar] = useState(null);
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
-    router.push(router.route, router.asPath, {
-      locale: value,
-    });
-  };
+  useEffect(() => {
+    setNavbar(isTablet);
+  }, [isTablet]);
 
   return (
-    <header className="bg-blue-400 pt-[12px] pb-[12px]">
+    <header className="bg-blue-300 pt-[12px] pb-[12px]">
       <div className="container">
-        <div className="ml-[80px] mr-[80px] flex items-center">
+        <div className="flex items-center justify-between">
           <Logo />
-          <Search />
-          <div>
-            <button className=" mr-[21px] !h-[44px]  !w-[196px] rounded-md bg-blue-600  text-white ">
-              <Link href="">{t('help')}</Link>
+
+          {showNavbar ? (
+            <div className="flex items-center gap-10">
+              <Search />
+
+              <Link href="" className="">
+                <a
+                  className="flex !h-[44px] !w-[196px] items-center justify-center
+                rounded-md bg-blue-500 text-white transition
+                duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('help')}
+                </a>
+              </Link>
+
+              <LanguageToggle
+                handleLocaleChange={handleLocaleChange}
+                value={router.locale}
+              />
+            </div>
+          ) : (
+            <button type="button" onClick={() => console.log('Click')}>
+              <Bars3Icon className="h-7 w-7 text-slate-50 transition-all hover:text-yellow-200 focus:text-yellow-200" />
             </button>
-          </div>
-          <select
-            onChange={handleLocaleChange}
-            value={router.locale}
-            className="h-[35px] w-[76px] rounded-lg pt-[5px]"
-          >
-            <option className="z-1" value="ru">
-              RU
-            </option>
-            <option className="z-1" value="uk">
-              UA
-            </option>
-          </select>
+          )}
         </div>
       </div>
     </header>
