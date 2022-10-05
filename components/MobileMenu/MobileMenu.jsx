@@ -8,11 +8,14 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 import { LanguageToggle, Logo } from '..';
 import { useTranslation } from 'next-i18next';
 import { Search } from 'views';
+import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 
 export const MobileMenu = ({ slugs }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
+  const isMobileScreen = useMediaQuery({ query: '(min-width: 480px)' });
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -25,7 +28,7 @@ export const MobileMenu = ({ slugs }) => {
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={toggleModal}>
+        <Dialog as="div" className=" relative z-10" onClose={toggleModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -38,7 +41,7 @@ export const MobileMenu = ({ slugs }) => {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto ">
+          <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center text-center ">
               <Transition.Child
                 as={Fragment}
@@ -49,7 +52,7 @@ export const MobileMenu = ({ slugs }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="h-screen w-full transform overflow-auto bg-gradient-to-b from-blue-200 to-white transition-all">
+                <Dialog.Panel className=" h-screen w-full transform overflow-auto bg-gradient-to-b from-blue-200 to-white transition-all">
                   <div className=" bg-blue2 py-3">
                     <div className="container">
                       <div className="flex items-center justify-between">
@@ -88,13 +91,29 @@ export const MobileMenu = ({ slugs }) => {
 
                     <Link href="">
                       <a
-                        className="mx-auto flex !h-[44px] !w-[196px] items-center justify-center rounded-xl bg-blue-500 text-white transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600"
+                        className="mx-auto mb-6 flex !h-[44px] !w-[196px] items-center justify-center rounded-xl bg-blue-500 text-white transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {t('help')}
                       </a>
                     </Link>
+
+                    {isMobileScreen ? (
+                      <Image
+                        src="/img/mobile/mobile-480.svg"
+                        alt="decor"
+                        width="478px"
+                        height="176px"
+                      />
+                    ) : (
+                      <Image
+                        src="/img/mobile/mobile-320.svg"
+                        alt="decor"
+                        width="286px"
+                        height="105px"
+                      />
+                    )}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

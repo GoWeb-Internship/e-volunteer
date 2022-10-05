@@ -37,7 +37,9 @@ export const Footer = ({ slugs, footerData }) => {
               slugs.map(({ href, title }) => (
                 <li className="pl-[20px] text-white " key={href}>
                   <Link href={`/${href}`}>
-                    <a>{title}</a>
+                    <a className="transition-all hover:text-slate-200 focus:text-slate-200">
+                      {title}
+                    </a>
                   </Link>
                 </li>
               ))}

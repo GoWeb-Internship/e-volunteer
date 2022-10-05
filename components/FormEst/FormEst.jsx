@@ -122,7 +122,7 @@ export const FormEst = () => {
           />
           <span className="text-red ">{errors.offers?.message}</span>
           <button
-            className="btn mx-auto  w-full max-w-[280px] rounded-[20px] sm:w-[280px] sm:max-w-none md:mr-auto md:ml-0 md:w-[384px]"
+            className="${className} mt-[52px] w-[220px] rounded-[20px] bg-blue2 py-[14px] text-center text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600 sm:w-[298px] xl:w-[300px]"
             type="submit"
           >
             Saada

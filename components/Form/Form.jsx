@@ -63,6 +63,7 @@ export const Form = () => {
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto');
   }, [isLoading]);
+
   useFormPersist('form', {
     watch,
     setValue,
@@ -115,6 +116,7 @@ export const Form = () => {
           </p>
         </ScreenLoader>
       )}
+
       {isLoading && (
         <ScreenLoader>
           <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
@@ -122,9 +124,10 @@ export const Form = () => {
           </p>
         </ScreenLoader>
       )}
+
       <section>
-        <div className="container">
-          <div className="flex">
+        <div className="container relative">
+          <div className="flex items-center justify-between">
             <div className="my-auto hidden md:block xl:hidden">
               <Image
                 width="212px"
@@ -153,7 +156,7 @@ export const Form = () => {
                     width="74px"
                     height="76px"
                     src="/img/form/iconForm.svg"
-                    className=" object-cover sm:block"
+                    className="object-cover sm:block"
                     alt="shadow"
                   />
                 </div>
@@ -174,7 +177,11 @@ export const Form = () => {
                 name="contact"
                 onSubmit={handleSubmit(onSubmit)}
               >
-                <TextField label={t('name')} {...register('name')} />
+                <TextField
+                  label={t('name')}
+                  {...register('name')}
+                  className="border-none outline-none"
+                />
                 <span className="text-red-600 ">{errors.name?.message}</span>
                 <TextField label="+380" {...register('cellphone')} />
                 <span className="text-red-600 ">
@@ -192,11 +199,12 @@ export const Form = () => {
                   {...register('textN')}
                 />
                 <span className="text-red ">{errors.offers?.message}</span>
+
                 <button
-                  className="btn mx-auto md:mr-auto md:ml-0"
+                  className="${className} mt-[52px] w-[220px] rounded-[20px] bg-blue2 py-[14px] text-center text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600 sm:w-[298px] xl:w-[300px]"
                   type="submit"
                 >
-                  Відправити
+                  {t('formBtn')}
                 </button>
               </form>
             </div>

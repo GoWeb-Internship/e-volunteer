@@ -11,5 +11,5 @@
   @apply mr-[82px]  text-lg font-medium text-textFormState sm:mr-[149px] md:mb-[20px] md:text-xl md:font-normal;
 }
 .iconsForm {
-  @apply -mt-[120px] hidden sm:block md:hidden;
+  @apply -mt-[120px] hidden sm:-mt-[80px] sm:block  md:hidden;
 }
