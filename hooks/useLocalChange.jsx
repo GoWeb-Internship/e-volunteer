@@ -3,11 +3,9 @@ import { useRouter } from 'next/router';
 export const useLocalChange = () => {
   const router = useRouter();
 
-  const handleLocaleChange = event => {
-    const value = event.target.value;
-
+  const handleLocaleChange = ({ id }) => {
     router.push(router.route, router.asPath, {
-      locale: value,
+      locale: id,
     });
   };
 
