@@ -34,10 +34,12 @@ export const Footer = ({ slugs, footerData }) => {
 
           <Grid type="footer" tag="ul" className="pb-[32px] pt-[32px]">
             {slugs &&
-              slugs.map((slug, idx) => (
-                <li className="pl-[20px] text-white " key={idx}>
-                  <Link href={`/${slug.href}`}>
-                    <a>{slug.title}</a>
+              slugs.map(({ href, title }) => (
+                <li className="pl-[20px] text-white " key={href}>
+                  <Link href={`/${href}`}>
+                    <a className="transition-all hover:text-slate-200 focus:text-slate-200">
+                      {title}
+                    </a>
                   </Link>
                 </li>
               ))}

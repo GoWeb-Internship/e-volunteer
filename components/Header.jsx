@@ -1,44 +1,35 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { Search } from '../views/Search';
 import { useTranslation } from 'next-i18next';
-import { Logo } from './Logo/Logo';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
-export const Header = () => {
-  const router = useRouter();
+import { useLocalChange } from 'hooks/useLocalChange';
+import { Logo, MobileMenu, Navbar } from '.';
+
+export const Header = ({ slugs }) => {
+  const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
-  const handleLocaleChange = event => {
-    const value = event.target.value;
+  const [showNavbar, setNavbar] = useState(null);
+  const isTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
-    router.push(router.route, router.asPath, {
-      locale: value,
-    });
-  };
+  useEffect(() => {
+    setNavbar(isTablet);
+  }, [isTablet]);
 
   return (
-    <header className="bg-blue-400 pt-[12px] pb-[12px]">
+    <header className="bg-blue-300 pt-[12px] pb-[12px]">
       <div className="container">
-        <div className="ml-[80px] mr-[80px] flex items-center">
+        <div className="flex items-center justify-between">
           <Logo />
-          <Search />
-          <div>
-            <button className=" mr-[21px] !h-[44px]  !w-[196px] rounded-md bg-blue-600  text-white ">
-              <Link href="">{t('help')}</Link>
-            </button>
-          </div>
-          <select
-            onChange={handleLocaleChange}
-            value={router.locale}
-            className="h-[35px] w-[76px] rounded-lg pt-[5px]"
-          >
-            <option className="z-1" value="ru">
-              RU
-            </option>
-            <option className="z-1" value="uk">
-              UA
-            </option>
-          </select>
+
+          {showNavbar ? (
+            <Navbar
+              linkValue={t('help')}
+              handleLocaleChange={handleLocaleChange}
+              locale={router.locale}
+            />
+          ) : (
+            <MobileMenu slugs={slugs} />
+          )}
         </div>
       </div>
     </header>

@@ -26,7 +26,7 @@ const Centers = ({ data }) => {
                     </h3>
                   )}
                   <a
-                    className=" hover:underline focus:underline"
+                    className="transition-all hover:text-slate-500 focus:text-slate-500"
                     rel="noopener noreferrer nofollow"
                     target="_blank"
                     href={`https://www.google.com.ua/maps/place/${street[0]}+${street[1]},${city}`}
@@ -38,10 +38,11 @@ const Centers = ({ data }) => {
                       <address className="mb-3 not-italic">{address}</address>
                     )}
                   </a>
+
                   {tel && (
                     <a
                       rel="noopener noreferrer nofollow"
-                      className=" mb-3 inline-block text-lg leading-tight hover:underline focus:underline"
+                      className=" mb-3 inline-block text-lg leading-tight transition-all hover:text-slate-500 focus:text-slate-500"
                       href={`tel:${tel}`}
                     >
                       {tel}

@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Banner data={bannerData} />
-      <Header />
+      <Header slugs={slugs} />
       <Component {...pageProps} />
       <Footer slugs={slugs} footerData={footerData} />
     </>

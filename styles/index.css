@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 font-sans font-normal relative;
+  @apply relative bg-slate-50 font-sans font-normal;
 }
 
 h1,
@@ -55,7 +55,6 @@ address {
 }
 
 /* HERO */
-
 .hero {
   background-position: center bottom;
   background-image: url('/img/hero/hero-320.svg');
@@ -79,51 +78,29 @@ address {
 
 @media screen and (min-width: 1280px) {
   .hero {
-    background-position: center bottom -58px;
-    background-image: url('/img/hero/hero-1440.svg');
-    background-size: cover;
+    background-position: center bottom;
+    background-image: url('/img/hero/hero-1280.svg');
+    background-size: 1148px;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .hero {
+    background-image: url('/img/hero/hero-1440.svg');
     background-size: 1436px;
+    background-position: center bottom -48px;
   }
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+  background-position: center bottom;
+  background-image: url('/img/mobile/mobile-320.svg');
+  background-size: 286px;
+  background-repeat: no-repeat;
 }
 
 /* FORM BUTTON */
-
-.btn {
-  border: 1px solid #fef08a;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: 0.8s;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  width: 280px;
-  height: 60px;
-}
-
-.btn::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 50%;
-  height: 0%;
-  top: 0;
-  transition: 0.8s;
-  border-radius: 0% 0% 50% 0%;
-  background-color: #73a9ff;
-  z-index: -1;
-}
-
-.btn:hover::after {
-  height: 180%;
-  bottom: 0;
-  border-radius: 0% 0% 90% 0%;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -133,59 +110,4 @@ address {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.form button {
-  margin-top: 52px;
-  height: 40px;
-  cursor: pointer;
-  color: #475569;
-  background-color: #fef08a;
-  border: 0px;
-  transition: 0.5s;
-}
-
-@media screen and (min-width: 480px) {
-  .form button {
-    margin-top: 40px;
-  }
-}
-
-button:hover {
-  filter: brightness(100%);
-}
-
-/* SEARCH */
-
-.searchform {
-  display: inline;
-  font-size: 1em;
-  border-radius: 1em;
-  border: 0.1em solid rgb(190, 196, 218);
-  padding: 0.3em;
-  background: white;
-  height: 44px;
-  border-radius: 6px;
-}
-
-#search {
-  transition: all 0.2s ease-out;
-  width: 20rem;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: transparent;
-  opacity: 0;
-}
-
-#search:focus {
-  width: 500px;
-  opacity: 1;
-}
-
-input {
-  text-indent: 30px;
 }
