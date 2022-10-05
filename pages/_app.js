@@ -7,6 +7,9 @@ import { Banner } from 'views';
 const Footer = dynamic(() =>
   import('../components/Footer.jsx').then(mod => mod.Footer),
 );
+const LinkToTop = dynamic(() =>
+  import('../components/LinkToTop/LinkToTop.jsx').then(mod => mod.LinkToTop),
+);
 
 const MyApp = ({ Component, pageProps }) => {
   const { slugs, bannerData, footerData } = pageProps;
@@ -17,6 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Header slugs={slugs} />
       <Component {...pageProps} />
       <Footer slugs={slugs} footerData={footerData} />
+      <LinkToTop />
     </>
   );
 };

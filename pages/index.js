@@ -20,9 +20,6 @@ const Form = dynamic(() =>
 const Modal = dynamic(() =>
   import('../components/Modal/Modal.jsx').then(mod => mod.Modal),
 );
-const LinkToTop = dynamic(() =>
-  import('../components/LinkToTop/LinkToTop.jsx').then(mod => mod.LinkToTop),
-);
 
 const Home = ({ slugs, centres }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +59,6 @@ const Home = ({ slugs, centres }) => {
       <Centers data={centres} />
       <Form />
       <Modal isOpen={isOpen} closeModal={closeModal} />
-      <LinkToTop />
     </>
   );
 };

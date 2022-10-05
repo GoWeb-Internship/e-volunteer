@@ -81,7 +81,7 @@ export const Search = () => {
                   key={title}
                 >
                   <Link href="[id]" as={`${id}`}>
-                    <a className="inline-block w-full py-3 px-8 transition-all hover:bg-blue-200 focus:bg-blue-200">
+                    <a className="inline-block w-full  py-3 px-8 transition-all hover:bg-blue-200 focus:bg-blue-200">
                       {title}
                     </a>
                   </Link>
