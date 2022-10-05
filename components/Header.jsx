@@ -1,9 +1,14 @@
+import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { useLocalChange } from 'hooks/useLocalChange';
-import { Logo, MobileMenu, Navbar } from '.';
+import { Logo, Navbar } from '.';
+
+const MobileMenu = dynamic(() =>
+  import('./MobileMenu/MobileMenu.jsx').then(mod => mod.MobileMenu),
+);
 
 export const Header = ({ slugs }) => {
   const [router, handleLocaleChange] = useLocalChange();

@@ -9,12 +9,20 @@ import { getBannerData } from '@/lib/banner';
 import { getSortedCardData } from '@/lib/cards';
 import { getCentersData } from '@/lib/home';
 import { getFooterData } from '@/lib/footer';
-import { Form, Modal, LinkToTop } from '@/components';
 
 const Hero = dynamic(() => import('views/Hero.jsx'));
 const Help = dynamic(() => import('views/Help.jsx'));
 const Centers = dynamic(() => import('views/Centers.jsx'));
 const Cards = dynamic(() => import('views/Cards.jsx'));
+const Form = dynamic(() =>
+  import('../components/Form/Form.jsx').then(mod => mod.Form),
+);
+const Modal = dynamic(() =>
+  import('../components/Modal/Modal.jsx').then(mod => mod.Modal),
+);
+const LinkToTop = dynamic(() =>
+  import('../components/LinkToTop/LinkToTop.jsx').then(mod => mod.LinkToTop),
+);
 
 const Home = ({ slugs, centres }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,12 @@
+import dynamic from 'next/dynamic';
 import '../styles/index.css';
 import { appWithTranslation } from 'next-i18next';
-import { Header, Footer } from '@/components';
+import { Header } from '@/components';
 import { Banner } from 'views';
+
+const Footer = dynamic(() =>
+  import('../components/Footer.jsx').then(mod => mod.Footer),
+);
 
 const MyApp = ({ Component, pageProps }) => {
   const { slugs, bannerData, footerData } = pageProps;
