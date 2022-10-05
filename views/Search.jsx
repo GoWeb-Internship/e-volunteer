@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
+const text = { uk: 'Не знайдено', ru: 'Не найдено' };
+
 export const Search = () => {
   const searchRef = useRef(null);
   const [query, setQuery] = useState('');
@@ -47,7 +49,7 @@ export const Search = () => {
   };
 
   const showResults = active && results.length > 0 && query !== '';
-
+  const noResults = active && results.length === 0 && query !== '';
   return (
     <div className="relative" ref={searchRef}>
       <div className="relative rounded-xl shadow-md md:w-[228px] xl:w-[522px]">
@@ -89,6 +91,13 @@ export const Search = () => {
               )
             );
           })}
+        </ul>
+      )}
+      {noResults && (
+        <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
+          <li className="border-b border-blue-200 bg-slate-50 py-3 px-8 text-slate-600 transition-all hover:bg-blue-200 focus:bg-blue-200">
+            {text[locale]}
+          </li>
         </ul>
       )}
     </div>

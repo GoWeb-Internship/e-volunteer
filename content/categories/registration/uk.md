@@ -17,7 +17,7 @@ range: 1
 >
 > Якщо потрібен лише тимчасовий захист звертатись за адресою **Tammsaare
 > pst,61** у відділення поліції, забронювавши час за
-> [посиланням](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA){:target="\_blank"}
+> [посиланням](https://broneering.politsei.ee/MakeReservation/SelectLocation?serviceId=KfOKmUSZpUehMDmMNGjpAA)
 
 ## Придбання стартового пакета мобільного зв'язку
 
@@ -29,13 +29,13 @@ range: 1
 Після отримання особистого коду (isikukood) необхідно відкрити рахунок у
 будь-якому банку на вибір
 
-- [https://www.lhv.ee](https://www.lhv.ee){:target="\_blank"}
+- [https://www.lhv.ee](https://www.lhv.ee)
 
-- [https://www.seb.ee/ru](https://www.seb.ee/ru){:target="\_blank"}
+- [https://www.seb.ee/ru](https://www.seb.ee/ru)
 
-- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start){:target="\_blank"}
+- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start)
 
-- [https://luminor.ee](https://luminor.ee){:target="\_blank"}
+- [https://luminor.ee](https://luminor.ee)
 
 ## Отримання соціальної допомоги
 
@@ -50,4 +50,4 @@ range: 1
 R-кіоску.
 
 Більше інформації про те, де і як отримати -
-[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy){:target="\_blank"}
+[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy)
