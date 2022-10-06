@@ -3,7 +3,8 @@ category: registration
 title: Перші кроки
 poster: registration.jpeg
 preview:
-  Реєстрація. Придбання стартового пакета мобільного зв'язку. Отримання соціальної допомоги. Проїзний квиток. Отримання допомоги на дітей та пенсії
+  Реєстрація. Придбання стартового пакета мобільного зв'язку. Отримання
+  соціальної допомоги. Проїзний квиток. Отримання допомоги на дітей та пенсії
 alt: Вирізана стрілка на бетонній стіні
 language: uk
 range: 1
@@ -29,13 +30,13 @@ range: 1
 Після отримання особистого коду (isikukood) необхідно відкрити рахунок у
 будь-якому банку на вибір
 
-- [https://www.lhv.ee](https://www.lhv.ee){:target="\_blank"}
+- [https://www.lhv.ee](https://www.lhv.ee)
 
-- [https://www.seb.ee/ru](https://www.seb.ee/ru){:target="\_blank"}
+- [https://www.seb.ee/ru](https://www.seb.ee/ru?target=_blank)
 
-- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start){:target="\_blank"}
+- [https://www.swedbank.ee/private/d2d/start](https://www.swedbank.ee/private/d2d/start?target=_blank)
 
-- [https://luminor.ee](https://luminor.ee){:target="\_blank"}
+- [https://luminor.ee](https://luminor.ee?target=_blank)
 
 ## Отримання соціальної допомоги
 
@@ -50,4 +51,4 @@ range: 1
 R-кіоску.
 
 Більше інформації про те, де і як отримати -
-[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy){:target="\_blank"}
+[https://parnu.pilet.ee/bu](https://parnu.pilet.ee/buy?target=_blank)
