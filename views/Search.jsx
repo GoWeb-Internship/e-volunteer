@@ -17,13 +17,19 @@ export const Search = () => {
 
   const onChange = useCallback(event => {
     const query = event.target.value;
-    setQuery(query);
+
+    setQuery(query.trim());
 
     if (query.length) {
       fetch(searchEndpoint(query))
         .then(res => res.json())
         .then(res => {
           setResults(res.results);
+          console.log(
+            results.filter(res =>
+              res.text.toLowerCase().includes(query.toLowerCase()),
+            ),
+          );
         });
     } else {
       setResults([]);
@@ -46,6 +52,10 @@ export const Search = () => {
   const handleClearInput = () => {
     setActive(false);
     setQuery('');
+  };
+
+  const transformData = data => {
+    return data.replace('##', '').slice(0, 100);
   };
 
   const showResults = active && results.length > 0 && query !== '';
@@ -75,16 +85,22 @@ export const Search = () => {
 
       {showResults && (
         <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
-          {results.map(({ id, title, language }) => {
+          {results.map(({ id, title, language, text }) => {
+            console.log(text.replace('##', '').split(0, 3));
+
             return (
               locale === language && (
                 <li
-                  className="border-b border-blue-200 bg-slate-50  text-slate-600"
+                  className="truncate border-b border-blue-200  bg-slate-50 text-slate-600"
                   key={title}
                 >
                   <Link href="[id]" as={`${id}`}>
-                    <a className="inline-block w-full  py-3 px-8 transition-all hover:bg-blue-200 focus:bg-blue-200">
+                    <a className="inline-block w-full py-3 px-8 transition-all hover:bg-blue-200 focus:bg-blue-200">
                       {title}
+                      <br />
+                      <span className="truncate text-xs font-light text-gray-400">
+                        {transformData(text)}
+                      </span>
                     </a>
                   </Link>
                 </li>
