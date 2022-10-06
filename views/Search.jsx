@@ -15,26 +15,29 @@ export const Search = () => {
 
   const searchEndpoint = query => `/api/search?q=${query}`;
 
-  const onChange = useCallback(event => {
-    const query = event.target.value;
+  const onChange = useCallback(
+    event => {
+      const query = event.target.value;
 
-    setQuery(query.trim());
+      setQuery(query.trim());
 
-    if (query.length) {
-      fetch(searchEndpoint(query))
-        .then(res => res.json())
-        .then(res => {
-          setResults(res.results);
-          console.log(
-            results.filter(res =>
-              res.text.toLowerCase().includes(query.toLowerCase()),
-            ),
-          );
-        });
-    } else {
-      setResults([]);
-    }
-  }, []);
+      if (query.length) {
+        fetch(searchEndpoint(query))
+          .then(res => res.json())
+          .then(res => {
+            setResults(res.results);
+            console.log(
+              results.filter(res =>
+                res.text.toLowerCase().includes(query.toLowerCase()),
+              ),
+            );
+          });
+      } else {
+        setResults([]);
+      }
+    },
+    [results],
+  );
 
   const onClick = useCallback(event => {
     if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -86,8 +89,6 @@ export const Search = () => {
       {showResults && (
         <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
           {results.map(({ id, title, language, text }) => {
-            console.log(text.replace('##', '').split(0, 3));
-
             return (
               locale === language && (
                 <li
