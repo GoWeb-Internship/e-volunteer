@@ -3,36 +3,38 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/solid';
+import { useTranslation } from 'next-i18next';
 
 export const Search = () => {
   const searchRef = useRef(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
+  const [isEmpty, setIsEmpty] = useState(false);
   const { locale } = useRouter();
+  const { t } = useTranslation('common');
 
   const searchEndpoint = query => `/api/search?q=${query}`;
 
-  const onChange = useCallback(event => {
-    const query = event.target.value;
+  const onChange = useCallback(
+    event => {
+      const query = event.target.value;
 
-    setQuery(query.trim());
+      setQuery(query);
 
-    if (query.length) {
-      fetch(searchEndpoint(query))
-        .then(res => res.json())
-        .then(res => {
-          setResults(res.results);
-          console.log(
-            results.filter(res =>
-              res.text.toLowerCase().includes(query.toLowerCase()),
-            ),
-          );
-        });
-    } else {
-      setResults([]);
-    }
-  }, []);
+      if (query.length) {
+        fetch(searchEndpoint(query))
+          .then(res => res.json())
+          .then(res => {
+            setResults(res.results);
+            setIsEmpty(results.length === 0);
+          });
+      } else {
+        setResults([]);
+      }
+    },
+    [results],
+  );
 
   const onClick = useCallback(event => {
     if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -50,6 +52,7 @@ export const Search = () => {
   const handleClearInput = () => {
     setActive(false);
     setQuery('');
+    setIsEmpty(false);
   };
 
   const transformData = data => {
@@ -68,23 +71,36 @@ export const Search = () => {
           onFocus={onFocus}
           type="text"
           value={query}
-          className="w-full rounded-xl border border-gray-300 pl-8 text-slate-600"
+          className="w-full rounded-xl border border-gray-300 pl-8 text-slate-600 placeholder:text-slate-300"
           id="search"
+          placeholder={t('searchPlaceholder')}
         />
 
-        <button
-          type="button"
-          onClick={handleClearInput}
-          className="absolute right-2 translate-y-1/2 text-slate-600 transition-all hover:text-slate-400"
-        >
-          <XMarkIcon className="h-5 w-5 " />
-        </button>
+        {query && (
+          <button
+            type="button"
+            onClick={handleClearInput}
+            className="absolute right-2 translate-y-1/2 text-slate-600 transition-all hover:text-slate-400"
+          >
+            <XMarkIcon className="h-5 w-5 " />
+          </button>
+        )}
       </div>
+
+      {isEmpty && (
+        <div className="absolute top-full left-0 right-0 z-10 max-h-56 overflow-auto rounded-lg border border-blue-200 bg-slate-50 shadow-lg">
+          <p className="truncate py-3 px-8 font-light text-gray-400">
+            {'Нічого не знайдено'}
+          </p>
+        </div>
+      )}
 
       {showResults && (
         <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
           {results.map(({ id, title, language, text }) => {
             console.log(text.replace('##', '').split(0, 3));
+
+            console.log(results.length);
 
             return (
               locale === language && (
