@@ -16,25 +16,27 @@ export const Search = () => {
 
   const searchEndpoint = query => `/api/search?q=${query}`;
 
-  const onChange = useCallback(
-    event => {
-      const query = event.target.value;
+  const onChange = useCallback(event => {
+    const query = event.target.value;
 
-      setQuery(query);
+    if (!query) {
+      setIsEmpty(false);
+      return;
+    }
 
-      if (query.length) {
-        fetch(searchEndpoint(query))
-          .then(res => res.json())
-          .then(res => {
-            setResults(res.results);
-            setIsEmpty(results.length === 0);
-          });
-      } else {
-        setResults([]);
-      }
-    },
-    [results],
-  );
+    setQuery(query);
+
+    if (query.length) {
+      fetch(searchEndpoint(query))
+        .then(res => res.json())
+        .then(res => {
+          setResults(res.results);
+          setIsEmpty(res.results.length === 0);
+        });
+    } else {
+      setResults([]);
+    }
+  }, []);
 
   const onClick = useCallback(event => {
     if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -98,10 +100,6 @@ export const Search = () => {
       {showResults && (
         <ul className="absolute top-full left-0 right-0 z-10  max-h-56 overflow-auto rounded-lg border border-blue-200 shadow-lg">
           {results.map(({ id, title, language, text }) => {
-            console.log(text.replace('##', '').split(0, 3));
-
-            console.log(results.length);
-
             return (
               locale === language && (
                 <li
